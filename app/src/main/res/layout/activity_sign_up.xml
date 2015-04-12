@@ -3,7 +3,8 @@
     android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.sistemasikanguro.kangurooguard.SignUpActivity">
 
 
     <ImageView
@@ -37,30 +38,46 @@
         <EditText
             android:id="@+id/passwordField"
             style="@style/AuthEditText"
-            android:ems="10"
             android:hint="@string/password_hint"
             android:inputType="textPassword" />
 
+        <EditText
+            android:id="@+id/emailField"
+            style="@style/AuthEditText"
+            android:hint="@string/email_hint"
+            android:inputType="textEmailAddress" />
+
     </LinearLayout>
 
-    <Button
-        android:id="@+id/loginbutton"
-        style="@style/AuthButton"
-        android:onClick="loginClick"
-        android:text="@string/loginbt"
-        android:layout_below="@id/editTextLayout"/>
-
-    <TextView
-        android:id="@+id/signup_text"
+    <ImageView
+        android:id="@+id/buttonDivider"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/loginbutton"
+        android:layout_below="@id/editTextLayout"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/login_vertical_margin"
-        android:clickable="true"
-        android:gravity="center"
-        android:onClick="openSignUp"
-        android:text="@string/signup_label"
-        android:textColor="@android:color/white" />
+        android:contentDescription="@string/content_desc_button_divider"
+        android:src="@drawable/button_divider" />
+
+    <Button
+        android:id="@+id/signupButton"
+        style="@style/AuthButton"
+        android:layout_below="@id/editTextLayout"
+        android:layout_marginEnd="@dimen/void_dimen"
+        android:layout_marginRight="@dimen/void_dimen"
+        android:layout_toLeftOf="@id/buttonDivider"
+        android:layout_toStartOf="@id/buttonDivider"
+        android:onClick="signUpClick"
+        android:text="@string/signup_button_label" />
+
+    <Button
+        android:id="@+id/cancelButton"
+        style="@style/AuthButton"
+        android:layout_below="@id/editTextLayout"
+        android:layout_marginLeft="@dimen/void_dimen"
+        android:layout_marginStart="@dimen/void_dimen"
+        android:layout_toEndOf="@id/buttonDivider"
+        android:layout_toRightOf="@id/buttonDivider"
+        android:onClick="cancelClick"
+        android:text="@android:string/cancel" />
 
 </RelativeLayout>
