@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="meses">
+        <item>@string/mes_enero</item>
+        <item>@string/mes_febrero</item>
+        <item>@string/mes_marzo</item>
+        <item>@string/mes_abril</item>
+        <item>@string/mes_mayo</item>
+        <item>@string/mes_junio</item>
+        <item>@string/mes_julio</item>
+        <item>@string/mes_agosto</item>
+        <item>@string/mes_septiembre</item>
+        <item>@string/mes_octubre</item>
+        <item>@string/mes_noviembre</item>
+        <item>@string/mes_diciembre</item>
+    </string-array>
+
+    <string-array name="dias_num">
+        <item>@string/dia_1</item>
+        <item>@string/dia_2</item>
+        <item>@string/dia_3</item>
+        <item>@string/dia_4</item>
+        <item>@string/dia_5</item>
+        <item>@string/dia_6</item>
+        <item>@string/dia_7</item>
+        <item>@string/dia_8</item>
+        <item>@string/dia_9</item>
+        <item>@string/dia_10</item>
+        <item>@string/dia_11</item>
+        <item>@string/dia_12</item>
+        <item>@string/dia_13</item>
+        <item>@string/dia_14</item>
+        <item>@string/dia_15</item>
+        <item>@string/dia_16</item>
+        <item>@string/dia_17</item>
+        <item>@string/dia_18</item>
+        <item>@string/dia_19</item>
+        <item>@string/dia_20</item>
+        <item>@string/dia_21</item>
+        <item>@string/dia_22</item>
+        <item>@string/dia_23</item>
+        <item>@string/dia_24</item>
+        <item>@string/dia_25</item>
+        <item>@string/dia_26</item>
+        <item>@string/dia_27</item>
+        <item>@string/dia_28</item>
+        <item>@string/dia_29</item>
+        <item>@string/dia_30</item>
+        <item>@string/dia_31</item>
+    </string-array>
+
+    <string-array name="dias_sem">
+        <item>@string/dia_lunes</item>
+        <item>@string/dia_martes</item>
+        <item>@string/dia_miercoles</item>
+        <item>@string/dia_jueves</item>
+        <item>@string/dia_viernes</item>
+        <item>@string/dia_sabado</item>
+        <item>@string/dia_domingo</item>
+    </string-array>
+
+
+</resources>
