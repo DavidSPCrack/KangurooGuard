@@ -1,5 +1,6 @@
 package com.sistemasikanguro.kangurooguard.framework;
 
+import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.sistemasikanguro.kangurooguard.util.basic.Fecha;
 import com.sistemasikanguro.kangurooguard.util.basic.Hora;
@@ -22,6 +23,7 @@ public abstract class BasicEntity {
     public static final int DEFAULT_MAX = 1000;
 
     private HashMap<String, String> datos;
+    private ParseObject pObject;
 
     protected BasicEntity() {
         this.datos = new HashMap<>();
@@ -29,6 +31,26 @@ public abstract class BasicEntity {
 
     protected BasicEntity(ParseObject pObject) {
         this.datos = new HashMap<>();
+        this.pObject = pObject;
+        update(this.pObject);
+    }
+
+    protected void update() throws ErrorGeneral {
+        try {
+            if (!isNull()) {
+                this.pObject = this.pObject.fetch();
+                update(this.pObject);
+            }
+        } catch (ParseException e) {
+            throw new ErrorGeneral(e);
+        }
+    }
+
+    protected boolean isNull() {
+        return pObject == null;
+    }
+
+    protected void update(ParseObject pObject) {
         String[] fields = getBasicFields();
         for (int i = 0; i < fields.length; i++) {
             addDato(fields[i], pObject.getString(fields[i]));

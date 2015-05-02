@@ -73,6 +73,9 @@
     <string name="err_num_trimestre_desconocido">Número de Trimestre desconocido</string>
     <string name="unknow">DESCONOCIDO</string>
     <string name="of">de</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_splash">Camins Escolars</string>
+    <string name="logo_ikanguro">Logo iKanguro</string>
 
 
 </resources>

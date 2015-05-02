@@ -1,10 +1,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.sistemasikanguro.kangurooguard.SignUpActivity">
+    android:layout_height="match_parent"
+    tools:context="com.sistemasikanguro.kangurooguard.ui.activities.SignUpActivity">
 
 
     <ImageView
@@ -79,5 +76,11 @@
         android:layout_toRightOf="@id/buttonDivider"
         android:onClick="cancelClick"
         android:text="@android:string/cancel" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:src="@drawable/ic_ikanguro_logo"
+        android:contentDescription="@string/logo_ikanguro"
+        style="@style/AuthBottomLogo"/>
 
 </RelativeLayout>
