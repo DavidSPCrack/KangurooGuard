@@ -15,7 +15,7 @@ import android.widget.Toast;
 import com.parse.ParseObject;
 import com.parse.ParseUser;
 import com.sistemasikanguro.kangurooguard.R;
-import com.sistemasikanguro.kangurooguard.activities.StandardAdapter;
+import com.sistemasikanguro.kangurooguard.adapters.StandardAdapter;
 
 
 /**

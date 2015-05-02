@@ -1,4 +1,4 @@
-package com.sistemasikanguro.kangurooguard.activities;
+package com.sistemasikanguro.kangurooguard.adapters;
 
 import android.content.Context;
 import android.widget.ArrayAdapter;

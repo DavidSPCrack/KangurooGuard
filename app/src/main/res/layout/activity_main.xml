@@ -61,6 +61,6 @@
         android:gravity="center"
         android:onClick="openSignUp"
         android:text="@string/signup_label"
-        android:textColor="@android:color/white" />
+        android:textColor="@color/accent" />
 
 </RelativeLayout>

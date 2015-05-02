@@ -1,8 +1,14 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="@style/_AppTheme">
         <!-- Customize your theme here. -->
+    </style>
+
+    <style name="_AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+
+        <item name="android:editTextBackground">@drawable/apptheme_edit_text_holo_light</item>
+
     </style>
 
     <style name="AuthButton">
@@ -11,8 +17,8 @@
         <item name="android:background">@drawable/button_custom</item>
         <item name="android:layout_marginLeft">@dimen/activity_horizontal_margin</item>
         <item name="android:layout_marginRight">@dimen/activity_horizontal_margin</item>
-        <item name="android:textSize">13sp</item>
-        <item name="android:textColor">@color/text_color</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/secondary_text</item>
         <item name="android:buttonStyle">?android:borderlessButtonStyle</item>
     </style>
 
@@ -26,9 +32,7 @@
         <item name="android:contentDescription">@string/background</item>
         <item name="android:layout_alignParentBottom">true</item>
         <item name="android:layout_alignParentRight">true</item>
-        <!-- La siguiente etiqueta hay que borrarla-->
-        <item name="android:background">#0000FF</item>
-        <!--<item name="android:src">@drawable/ poner la imagen adecuada</item>-->
+        <item name="android:background">@color/background</item>
     </style>
 
     <style name="AuthTitle">
@@ -37,14 +41,14 @@
         <item name="android:layout_alignParentTop">true</item>
         <item name="android:layout_centerHorizontal">true</item>
         <item name="android:layout_marginTop">32dp</item>
-        <item name="android:textSize">60sp</item>
-        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">40sp</item>
+        <item name="android:textColor">@color/primary_dark</item>
     </style>
 
     <style name="AuthSubTitle" parent="AuthTitle">
         <item name="android:layout_marginTop">110dp</item>
         <item name="android:textSize">18sp</item>
-        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textColor">@color/accent</item>
     </style>
 
 
@@ -66,7 +70,7 @@
     <style name="AuthEditText">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColorHint">@color/light_grey</item>
+        <item name="android:textColorHint">@color/secondary_text</item>
         <item name="android:textSize">17sp</item>
     </style>
 
