@@ -5,6 +5,7 @@ import android.support.v7.app.ActionBar;
 import android.view.View;
 
 import com.sistemasikanguro.kangurooguard.R;
+import com.sistemasikanguro.kangurooguard.util.UtilActivity;
 
 public class LoginActivity extends AbstractAppCompatActivity {
 
@@ -19,6 +20,7 @@ public class LoginActivity extends AbstractAppCompatActivity {
     }
 
     public void openSignUp(View view) {
-
+        UtilActivity util = getUtil();
+        util.openNewActivity(SignUpActivity.class);
     }
 }

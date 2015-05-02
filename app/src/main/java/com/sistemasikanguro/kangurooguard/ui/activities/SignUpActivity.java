@@ -22,9 +22,13 @@ public class SignUpActivity extends AbstractAppCompatActivity {
     }
 
     public void signUpClick(View view) {
+        UtilActivity util = getUtil();
+        util.openNewActivity(LoginActivity.class, true);
     }
 
     public void cancelClick(View view) {
+        UtilActivity util = getUtil();
+        util.openNewActivity(LoginActivity.class, true);
     }
 }
 
