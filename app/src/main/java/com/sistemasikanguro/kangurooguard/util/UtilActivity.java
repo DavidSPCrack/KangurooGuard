@@ -1,5 +1,6 @@
 package com.sistemasikanguro.kangurooguard.util;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
@@ -7,6 +8,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.text.Editable;
 import android.view.View;
 import android.widget.EditText;
@@ -145,12 +147,8 @@ public class UtilActivity {
     }
 
     public Drawable getDrawableRes(int id) {
-        return getDrawableRes(id, null);
-    }
-
-    public Drawable getDrawableRes(int id, Resources.Theme theme) {
         Resources res = getResources();
-        return res.getDrawable(id, theme);
+        return res.getDrawable(id);
     }
 
     public ProgressDialog getProgressDialog(int title) {

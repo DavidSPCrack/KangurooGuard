@@ -5,6 +5,7 @@ import com.parse.ParseObject;
 import com.sistemasikanguro.kangurooguard.util.basic.Fecha;
 import com.sistemasikanguro.kangurooguard.util.basic.Hora;
 import com.sistemasikanguro.kangurooguard.util.basic.Transform;
+import com.sistemasikanguro.kangurooguard.util.thread.ITheadElement;
 
 import java.util.Date;
 import java.util.HashMap;
