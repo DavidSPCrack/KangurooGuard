@@ -5,11 +5,11 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
     <TextView
-        style="@style/AuthTitlePrincipal"
-        android:text="@string/txtRoutes"
+        style="@style/AuthSubTitlePrincipal"
+        android:text="@string/txtroutes"
         android:id="@+id/textView"/>
     <ScrollView
-        style="@style/AuthTitlePrincipal"
+        style="@style/AuthSubTitlePrincipal"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.32">
@@ -20,7 +20,7 @@
             <ListView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/listView"
+                android:id="@+id/list_routers"
                 android:background="@color/backgroundlistview" />
         </LinearLayout>
     </ScrollView>

@@ -77,10 +77,6 @@
     <string name="title_activity_splash">Camins Escolars</string>
     <string name="logo_ikanguro">Logo iKanguro</string>
 
-    <string name="list_router">list_router</string>
-    <string name="txtRoutes">RUTAS:</string>
-    <string name="txtadd">Add route</string>
-
     <string name="route">Route</string>
     <string name="data">Data</string>
     <string name="password">Password</string>
@@ -88,13 +84,21 @@
     <string name="student">Student</string>
     <string name="qr">QR</string>
 
-    <string name="txtName">Name:</string>
+    <string name="txtroutes">ROUTES:</string>
+    <string name="txtstudents">STUDENTS:</string>
+    <string name="txtadd">Add route</string>
+    <string name="txtname">Name:</string>
     <string name="txtsurname">Surname:</string>
     <string name="txtdni">DNI:</string>
     <string name="txttelephone">Telephone:</string>
     <string name="txtemail">Email:</string>
     <string name="txtcomments">Comments:</string>
+    <string name="txtpassword">Password:</string>
+    <string name="txtnewpassword">New Password:</string>
+    <string name="txtrepeat">Repeat Password:</string>
+    <string name="txtnamerouteall">Route Name:</string>
 
     <string name="accept">OK</string>
     <string name="cancel">Cancel</string>
+
 </resources>
