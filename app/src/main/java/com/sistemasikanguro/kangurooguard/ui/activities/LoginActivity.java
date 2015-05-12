@@ -12,7 +12,7 @@ public class LoginActivity extends AbstractAppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_options);
 
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null)

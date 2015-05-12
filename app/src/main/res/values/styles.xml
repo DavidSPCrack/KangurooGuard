@@ -6,9 +6,7 @@
     </style>
 
     <style name="_AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-
         <item name="android:editTextBackground">@drawable/apptheme_edit_text_holo_light</item>
-
     </style>
 
     <style name="AuthButton">
@@ -21,8 +19,17 @@
         <item name="android:textColor">@android:color/white</item>
         <item name="android:buttonStyle">?android:borderlessButtonStyle</item>
     </style>
-
-
+    <style name="AuthButtonOptions">
+        <item name="android:layout_width">125dp</item>
+        <item name="android:layout_height">165dp</item>
+        <item name="android:layout_margin">2dip</item>
+        <item name="android:background">@color/primary_dark</item>
+        <item name="android:textColor">@color/icons</item>
+        <item name="android:src">@drawable/button_custom</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingLeft">5dip</item>
+        <item name="android:paddingRight">5dip</item>
+    </style>
     <style name="AuthBackground">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -33,6 +40,22 @@
         <item name="android:layout_alignParentBottom">true</item>
         <item name="android:layout_alignParentRight">true</item>
         <item name="android:background">@color/background</item>
+    </style>
+
+    <style name="AuthTitlePrincipal">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/title</item>
+    </style>
+    <style name="AuthSubTitlePrincipal" parent="AuthTitlePrincipal">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/primary_dark</item>
     </style>
 
     <style name="AuthTitle">
@@ -50,7 +73,6 @@
         <item name="android:textSize">18sp</item>
         <item name="android:textColor">@color/accent</item>
     </style>
-
 
     <style name="AuthFieldContainer">
         <item name="android:layout_width">match_parent</item>
@@ -84,6 +106,5 @@
         <item name="android:paddingRight">20dp</item>
         <item name="android:paddingBottom">20dp</item>
     </style>
-
 
 </resources>
