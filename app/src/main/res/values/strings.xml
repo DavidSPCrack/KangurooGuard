@@ -90,6 +90,7 @@
     <string name="txtname">Name:</string>
     <string name="txtsurname">Surname:</string>
     <string name="txtdni">DNI:</string>
+    <string name="txtroute">Route:</string>
     <string name="txttelephone">Telephone:</string>
     <string name="txtemail">Email:</string>
     <string name="txtcomments">Comments:</string>

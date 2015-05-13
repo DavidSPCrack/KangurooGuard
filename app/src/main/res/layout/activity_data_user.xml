@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:weightSum="1">
 
+    <!-- Nombre del padre -->
     <TextView
         style="@style/AuthSubTitlePrincipal"
         android:text="@string/txtname"
@@ -14,8 +15,10 @@
         style="@style/AuthSubTitlePrincipal"
         android:background="@drawable/borde"
         android:id="@+id/etxtName"
-        android:inputType="text" />
+        android:inputType="text"
+        android:layout_height="wrap_content" />
 
+    <!-- Apellido del padre -->
     <TextView
         style="@style/AuthSubTitlePrincipal"
         android:text="@string/txtsurname"
@@ -26,6 +29,7 @@
         android:id="@+id/etxtSurname"
         android:inputType="text" />
 
+    <!-- DNI del padre -->
     <TextView
         style="@style/AuthSubTitlePrincipal"
         android:text="@string/txtdni"
@@ -36,6 +40,18 @@
         android:id="@+id/etxtDni"
         android:inputType="text" />
 
+    <!-- Telefono del padre -->
+    <TextView
+        style="@style/AuthSubTitlePrincipal"
+        android:text="@string/txttelephone"
+        android:id="@+id/txtTelephone" />
+    <EditText
+        style="@style/AuthSubTitlePrincipal"
+        android:background="@drawable/borde"
+        android:id="@+id/etxtTelephone"
+        android:inputType="number" />
+
+    <!-- Email del padre -->
     <TextView
         style="@style/AuthSubTitlePrincipal"
         android:text="@string/txtemail"
@@ -44,28 +60,29 @@
         style="@style/AuthSubTitlePrincipal"
         android:background="@drawable/borde"
         android:id="@+id/etxtEmail"
-        android:inputType="text" />
+        android:inputType="textEmailAddress" />
 
+    <!-- Comentarios -->
     <TextView
         style="@style/AuthSubTitlePrincipal"
         android:text="@string/txtcomments"
         android:id="@+id/txtCommentsUser" />
-
     <EditText
         style="@style/AuthSubTitlePrincipal"
         android:background="@drawable/borde"
         android:id="@+id/etxtCommentUser"
-        android:inputType="textMultiLine"/>
+        android:inputType="textMultiLine"
+        android:layout_height="wrap_content" />
 
     <Space
-        android:layout_width="26dp"
-        android:layout_height="26dp" />
+        android:layout_width="30dp"
+        android:layout_height="30dp" />
 
+    <!-- Botones validar -->
     <LinearLayout
-        style="?android:attr/buttonBarStyle"
         android:id="@+id/bntListButtons"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="horizontal" >
 
         <Button android:id="@+id/btnaccept"
@@ -81,7 +98,6 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/cancel"/>
-
     </LinearLayout>
 
 </LinearLayout>
