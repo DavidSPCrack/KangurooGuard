@@ -5,7 +5,6 @@ import com.parse.ParseQuery;
 import com.parse.ParseUser;
 import com.sistemasikanguro.kangurooguard.framework.BasicEntity;
 import com.sistemasikanguro.kangurooguard.framework.ErrorGeneral;
-import com.sistemasikanguro.kangurooguard.util.thread.ITheadElement;
 
 import java.util.List;
 
@@ -85,7 +84,7 @@ public class Usuario extends BasicEntity {
 
     public static Usuario getInstance() {
         ParseUser pUser = ParseUser.getCurrentUser();
-        if(pUser == null)
+        if (pUser == null)
             return null;
         Usuario user = new Usuario(pUser);
         return user;
