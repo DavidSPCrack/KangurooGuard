@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/borde"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/txtSon"
+        style="@style/AuthSubTitlePrincipal"
+        android:text="@string/txtson" />
+
+    <ScrollView
+        style="@style/AuthSubTitlePrincipal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:background="@drawable/borde"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ListView
+                android:id="@+id/list_students"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/backgroundlistview" />
+        </LinearLayout>
+    </ScrollView>
+    <Space
+        android:layout_width="20dp"
+        android:layout_height="20dp" />
+
+    <!-- Botones validar -->
+    <LinearLayout
+        android:background="@drawable/borde"
+        android:id="@+id/bntListButtons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button android:id="@+id/btnadd"
+            style="@style/AuthButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/add"/>
+
+        <Button android:id="@+id/btnview"
+            style="@style/AuthButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/view"/>
+
+        <Button android:id="@+id/btndelete"
+            style="@style/AuthButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/delete"/>
+    </LinearLayout>
+
+
+</TableLayout>
