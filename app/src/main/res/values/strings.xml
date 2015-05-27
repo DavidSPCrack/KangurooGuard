@@ -101,5 +101,7 @@
 
     <string name="accept">OK</string>
     <string name="cancel">Cancel</string>
+    <string name="menu_save">menu_save</string>
+    <string name="menu_delete">menu_delete</string>
 
 </resources>
