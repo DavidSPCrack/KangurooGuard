@@ -1,53 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:background="@drawable/borde">
+    android:layout_height="fill_parent">
 
-        <RelativeLayout
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/message_inbox_vertical_margin"
+        android:layout_marginLeft="@dimen/message_inbox_horizontal_margin"
+        android:layout_marginRight="@dimen/message_inbox_horizontal_margin"
+        android:layout_marginStart="@dimen/message_inbox_horizontal_margin"
+        android:layout_marginTop="@dimen/message_inbox_vertical_margin"
+        android:background="@android:color/background_light">
+
+        <CheckBox
+            android:id="@+id/checkBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/studenlabel"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"/>
+
+        <TextView
+            android:id="@+id/studenlabel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/message_inbox_vertical_margin"
-            android:layout_marginBottom="@dimen/message_inbox_vertical_margin"
-            android:layout_marginLeft="@dimen/message_inbox_horizontal_margin"
-            android:layout_marginRight="@dimen/message_inbox_horizontal_margin"
-            android:layout_marginStart="@dimen/message_inbox_horizontal_margin"
-            android:background="@android:color/background_light">
+            android:layout_alignBottom="@+id/checkBox"
+            android:layout_toRightOf="@+id/checkBox"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@android:color/black" />
 
+        <TextView
+            android:id="@+id/timeLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/studenlabel"
+            android:layout_below="@+id/studenlabel"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/black" />
 
-            <TextView
-                android:id="@+id/senderLabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:paddingLeft="@dimen/activity_horizontal_margin"
-                android:paddingRight="@dimen/activity_horizontal_margin"
-                android:paddingTop="@dimen/message_vertical_padding"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textSize="16sp"
-                android:layout_toLeftOf="@+id/checkBox"
-                android:layout_toStartOf="@+id/checkBox" />
-
-            <TextView
-                android:id="@+id/timeLabel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/senderLabel"
-                android:paddingBottom="@dimen/message_inbox_vertical_margin"
-                android:paddingLeft="@dimen/activity_horizontal_margin"
-                android:paddingRight="@dimen/activity_horizontal_margin"
-                android:textSize="12sp" />
-
-            <CheckBox
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/checkBox"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true" />
-
-        </RelativeLayout>
+    </RelativeLayout>
 </LinearLayout>

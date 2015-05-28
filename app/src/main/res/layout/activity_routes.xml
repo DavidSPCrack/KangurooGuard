@@ -1,31 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="@drawable/borde"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:orientation="vertical">
+
     <TextView
+        android:id="@+id/routelabel"
         style="@style/AuthSubTitlePrincipal"
-        android:text="@string/txtroutes"
-        android:id="@+id/textView"/>
-    <ScrollView
-        style="@style/AuthSubTitlePrincipal"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.32">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" >
-            <ListView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/list_routers"
-                android:background="@color/backgroundlistview" />
-        </LinearLayout>
-    </ScrollView>
-    <TextView
-        style="@style/AuthSubTitlePrincipal"
-        android:text="@string/txtadd"
-        android:id="@+id/txtadd"/>
-</TableLayout>
+        android:text="@string/txtroutes" />
+
+    <ListView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/list_routers"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background"
+        android:cacheColorHint="@android:color/transparent"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="8dp"
+        android:scrollbarStyle="outsideOverlay"
+        android:paddingBottom="8dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="15dp" >
+
+    </ListView>
+</LinearLayout>
