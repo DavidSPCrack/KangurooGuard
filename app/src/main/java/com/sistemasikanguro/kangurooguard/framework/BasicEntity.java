@@ -1,14 +1,10 @@
 package com.sistemasikanguro.kangurooguard.framework;
 
-import com.parse.ParseException;
-import com.parse.ParseObject;
 import com.sistemasikanguro.kangurooguard.util.basic.Fecha;
 import com.sistemasikanguro.kangurooguard.util.basic.Hora;
 import com.sistemasikanguro.kangurooguard.util.basic.Transform;
-import com.sistemasikanguro.kangurooguard.util.thread.ITheadElement;
 
 import java.util.Date;
-import java.util.HashMap;
 
 /**
  * Created by David on 26/04/2015.
@@ -23,46 +19,22 @@ public abstract class BasicEntity {
 
     public static final int DEFAULT_MAX = 1000;
 
-    private HashMap<String, String> datos;
-    private ParseObject pObject;
+    private EstructuraDatos datos;
 
     protected BasicEntity() {
-        this.datos = new HashMap<>();
+        update(new EstructuraDatos(getNombreEstructura()));
     }
 
-    protected BasicEntity(ParseObject pObject) {
-        this.datos = new HashMap<>();
-        this.pObject = pObject;
-        update(this.pObject);
+    protected BasicEntity(EstructuraDatos eDatos) {
+        update(eDatos);
     }
 
-    protected void update() throws ErrorGeneral {
-        try {
-            if (!isNull()) {
-                this.pObject = this.pObject.fetch();
-                update(this.pObject);
-            }
-        } catch (ParseException e) {
-            throw new ErrorGeneral(e);
-        }
-    }
-
-    protected boolean isNull() {
-        return pObject == null;
-    }
-
-    protected void update(ParseObject pObject) {
-        String[] fields = getBasicFields();
-        for (int i = 0; i < fields.length; i++) {
-            addDato(fields[i], pObject.getString(fields[i]));
-        }
-        addDato(ID, pObject.getObjectId());
-        addDato(CREATED_AT, pObject.getCreatedAt());
-        addDato(UPDATED_AT, pObject.getUpdatedAt());
+    protected void update(EstructuraDatos eDatos) {
+        this.datos = eDatos;
     }
 
     protected void addDato(String nombDato, String valor) {
-        this.datos.put(nombDato, valor == null ? "" : valor);
+        this.datos.add(nombDato, valor == null ? "" : valor);
     }
 
     protected void addDato(String key, double d) {
@@ -98,7 +70,7 @@ public abstract class BasicEntity {
     public String getDato(String key) {
         Object aux = null;
         if (key != null)
-            aux = this.datos.get(key);
+            aux = this.datos.getString(key);
         return aux == null ? "" : aux.toString();
     }
 
@@ -162,4 +134,6 @@ public abstract class BasicEntity {
     }
 
     protected abstract String[] getBasicFields();
+
+    protected abstract String getNombreEstructura();
 }
