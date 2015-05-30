@@ -15,7 +15,7 @@
 
         <CheckBox
             android:id="@+id/checkBox"
-            android:background="@drawable/rectangle"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBaseline="@+id/studenlabel"
@@ -24,13 +24,17 @@
 
         <TextView
             android:id="@+id/studenlabel"
-            android:background="@drawable/rectangle_bis"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/checkBox"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/message_vertical_padding"
+            android:textSize="16sp"
+            android:textColor="@color/primary"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
             android:layout_toRightOf="@+id/checkBox"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="@color/primary" />
+            android:layout_toEndOf="@+id/checkBox" />
 
         <TextView
             android:id="@+id/timeLabel"

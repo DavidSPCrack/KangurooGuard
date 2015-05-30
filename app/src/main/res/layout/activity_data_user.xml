@@ -9,9 +9,10 @@
 
     <EditText
         style="@style/AuthEditText"
-        android:background="@drawable/borde"
+        android:background="@drawable/rectangle_bis"
         android:id="@+id/etxtName"
         android:inputType="text"
+        android:layout_weight="0.02"
         android:hint="@string/txtname" />
 
     <Space
@@ -20,9 +21,10 @@
 
     <EditText
         style="@style/AuthEditText"
-        android:background="@drawable/borde"
+        android:background="@drawable/rectangle_bis"
         android:id="@+id/etxtSurname"
         android:inputType="text"
+        android:layout_weight="0.02"
         android:hint="@string/txtsurname" />
 
     <Space
@@ -31,9 +33,10 @@
 
     <EditText
         style="@style/AuthEditText"
-        android:background="@drawable/borde"
+        android:background="@drawable/rectangle_bis"
         android:id="@+id/etxtTelephone"
         android:inputType="number"
+        android:layout_weight="0.02"
         android:hint="@string/txttelephone" />
 
     <Space
@@ -42,9 +45,10 @@
 
     <EditText
         style="@style/AuthEditText"
-        android:background="@drawable/borde"
+        android:background="@drawable/rectangle_bis"
         android:id="@+id/etxtEmail"
         android:inputType="textEmailAddress"
+        android:layout_weight="0.02"
         android:hint="@string/txtemail"/>
 
     <Space
@@ -53,9 +57,10 @@
 
     <EditText
         style="@style/AuthEditText"
-        android:background="@drawable/borde"
+        android:background="@drawable/rectangle_bis"
         android:id="@+id/etxtRoute"
         android:inputType="text"
+        android:layout_weight="0.02"
         android:hint="@string/txtroute"/>
 
     <Space
@@ -64,7 +69,7 @@
 
     <EditText
         style="@style/AuthEditText"
-        android:background="@drawable/borde"
+        android:background="@drawable/rectangle_bis"
         android:id="@+id/etxtCommentStudents"
         android:inputType="textMultiLine"
         android:hint="@string/txtcomments"
