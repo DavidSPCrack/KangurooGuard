@@ -87,21 +87,28 @@
     <string name="txtroutes">ROUTES:</string>
     <string name="txtstudents">STUDENTS:</string>
     <string name="txtadd">Add route</string>
-    <string name="txtname">Name:</string>
-    <string name="txtsurname">Surname:</string>
-    <string name="txtdni">DNI:</string>
-    <string name="txtroute">Route:</string>
-    <string name="txttelephone">Telephone:</string>
-    <string name="txtemail">Email:</string>
-    <string name="txtcomments">Comments:</string>
-    <string name="txtpassword">Password:</string>
-    <string name="txtnewpassword">New Password:</string>
+    <string name="txtname">Name</string>
+    <string name="txtsurname">  Surname</string>
+    <string name="txtdni">DNI</string>
+    <string name="txtroute">Route</string>
+    <string name="txttelephone">Telephone</string>
+    <string name="txtemail">Email</string>
+    <string name="txtcomments">Comments</string>
+    <string name="txtpassword">Password</string>
+    <string name="txtnewpassword">New Password</string>
     <string name="txtrepeat">Repeat Password:</string>
-    <string name="txtnamerouteall">Route Name:</string>
+    <string name="txtnamerouteall">Route Name</string>
 
     <string name="accept">OK</string>
     <string name="cancel">Cancel</string>
     <string name="menu_save">menu_save</string>
     <string name="menu_delete">menu_delete</string>
+
+    <!-- Reference to hint property -->
+    <string name="PasswordOld">OLD PASSWORD</string>
+    <string name="PasswordNew">NEW PASSWORD</string>
+    <string name="PasswordRepeit">REPEIT PASSWORD</string>
+    <string name="txtsurname2">Surname</string>
+
 
 </resources>

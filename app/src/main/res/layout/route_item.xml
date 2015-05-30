@@ -11,7 +11,7 @@
         android:layout_marginRight="@dimen/message_inbox_horizontal_margin"
         android:layout_marginStart="@dimen/message_inbox_horizontal_margin"
         android:layout_marginTop="@dimen/message_inbox_vertical_margin"
-        android:background="@android:color/background_light">
+        android:background="@drawable/rectangle_bis">
 
         <TextView
             android:id="@+id/routelabel"
@@ -22,22 +22,22 @@
             android:paddingLeft="@dimen/activity_horizontal_margin"
             android:paddingRight="@dimen/activity_horizontal_margin"
             android:paddingTop="@dimen/message_vertical_padding"
-            android:textAppearance="?android:attr/textAppearanceMedium"
             android:textSize="16sp"
+            android:textColor="@color/primary"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />
 
         <TextView
-            android:id="@+id/item_counter"
+            android:id="@+id/itemcounter"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="false"
             android:layout_below="@+id/routelabel"
             android:background="@drawable/rectangle"
-            android:paddingBottom="@dimen/message_inbox_vertical_margin"
             android:paddingLeft="@dimen/activity_horizontal_margin"
             android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingBottom="@dimen/message_inbox_vertical_margin"
             android:textSize="12sp" />
 
     </RelativeLayout>
