@@ -15,7 +15,6 @@
 
         <CheckBox
             android:id="@+id/checkBox"
-
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBaseline="@+id/studenlabel"
@@ -30,7 +29,7 @@
             android:paddingRight="@dimen/activity_horizontal_margin"
             android:paddingTop="@dimen/message_vertical_padding"
             android:textSize="16sp"
-            android:textColor="@color/primary"
+            android:textColor="@color/icons"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
             android:layout_toRightOf="@+id/checkBox"
@@ -44,7 +43,7 @@
             android:layout_alignLeft="@+id/studenlabel"
             android:layout_below="@+id/studenlabel"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="@color/primary" />
+            android:textColor="@color/icons" />
     </RelativeLayout>
 
 </LinearLayout>

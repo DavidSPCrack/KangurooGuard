@@ -34,7 +34,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="false"
             android:layout_below="@+id/routelabel"
-            android:background="@drawable/rectangle"
+            android:background="@drawable/rectangle_bis"
             android:paddingLeft="@dimen/activity_horizontal_margin"
             android:paddingRight="@dimen/activity_horizontal_margin"
             android:paddingBottom="@dimen/message_inbox_vertical_margin"
