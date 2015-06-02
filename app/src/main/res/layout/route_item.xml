@@ -23,14 +23,14 @@
             android:paddingRight="@dimen/activity_horizontal_margin"
             android:paddingTop="@dimen/message_vertical_padding"
             android:textSize="16sp"
-            android:textColor="@color/primary"
+            android:textColor="@color/icons"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />
 
         <TextView
             android:id="@+id/itemcounter"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="false"
             android:layout_below="@+id/routelabel"
@@ -38,6 +38,7 @@
             android:paddingLeft="@dimen/activity_horizontal_margin"
             android:paddingRight="@dimen/activity_horizontal_margin"
             android:paddingBottom="@dimen/message_inbox_vertical_margin"
+            android:textColor="@color/icons"
             android:textSize="12sp" />
 
     </RelativeLayout>

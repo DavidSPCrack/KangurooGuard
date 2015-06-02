@@ -14,15 +14,17 @@
         android:background="@drawable/rectangle_bis">
 
         <CheckBox
+            style="@style/AuthEditCheck"
+            android:background="@drawable/rectangle_bis"
             android:id="@+id/checkBox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:layout_alignBaseline="@+id/studenlabel"
             android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"/>
+            android:layout_centerVertical="true"
+            android:checked="false" />
 
         <TextView
             android:id="@+id/studenlabel"
+            android:background="@drawable/rectangle_bis"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -43,6 +45,7 @@
             android:layout_alignLeft="@+id/studenlabel"
             android:layout_below="@+id/studenlabel"
             android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textSize="14sp"
             android:textColor="@color/icons" />
     </RelativeLayout>
 
