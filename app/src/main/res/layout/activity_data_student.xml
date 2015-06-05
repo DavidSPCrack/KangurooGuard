@@ -1,89 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="@drawable/borde"
     android:orientation="vertical"
-    android:weightSum="1">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.sistemasikanguro.kangurooguard.ui.activities.DataStudent">
 
     <EditText
+        style="@style/AuthEditText"
+        android:background="@drawable/rectangle_bis"
         android:id="@+id/etxtName"
-        style="@style/AuthEditText"
-        android:background="@drawable/rectangle_bis"
-        android:layout_weight="0.11"
-        android:gravity="center"
-        android:hint="@string/txtname"
-        android:inputType="text" />
+        android:inputType="text"
+        android:layout_weight="0.02"
+        android:hint="@string/txtnamestudent" />
 
     <Space
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.03" />
+        android:layout_width="10dp"
+        android:layout_height="10dp" />
 
     <EditText
+        style="@style/AuthEditText"
+        android:background="@drawable/rectangle_bis"
         android:id="@+id/etxtSurname"
-        style="@style/AuthEditText"
-        android:layout_weight="0.11"
-        android:background="@drawable/rectangle_bis"
-        android:gravity="center"
-        android:hint="@string/txtsurname2"
-        android:inputType="text" />
+        android:inputType="text"
+        android:layout_weight="0.02"
+        android:hint="@string/txtsurname" />
 
     <Space
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.03" />
+        android:layout_width="10dp"
+        android:layout_height="10dp" />
 
     <EditText
+        style="@style/AuthEditText"
+        android:background="@drawable/rectangle_bis"
         android:id="@+id/etxtTelephone"
-        style="@style/AuthEditText"
-        android:layout_weight="0.11"
-        android:background="@drawable/rectangle_bis"
-        android:gravity="center"
-        android:hint="Telephone"
-        android:inputType="number" />
+        android:inputType="number"
+        android:layout_weight="0.02"
+        android:hint="@string/txttelephone" />
 
     <Space
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.03" />
+        android:layout_width="10dp"
+        android:layout_height="10dp" />
 
     <EditText
+        style="@style/AuthEditText"
+        android:background="@drawable/rectangle_bis"
         android:id="@+id/etxtEmail"
-        style="@style/AuthEditText"
-        android:layout_weight="0.11"
-        android:background="@drawable/rectangle_bis"
-        android:gravity="center"
-        android:hint="Email"
-        android:inputType="textEmailAddress" />
+        android:inputType="textEmailAddress"
+        android:layout_weight="0.02"
+        android:hint="@string/txtemail"/>
 
     <Space
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.03" />
+        android:layout_width="10dp"
+        android:layout_height="10dp" />
 
     <EditText
+        style="@style/AuthEditText"
+        android:background="@drawable/rectangle_bis"
         android:id="@+id/etxtRoute"
-        style="@style/AuthEditText"
-        android:layout_weight="0.11"
-        android:background="@drawable/rectangle_bis"
-        android:gravity="center"
-        android:hint="Route"
-        android:inputType="text" />
+        android:inputType="text"
+        android:layout_weight="0.02"
+        android:hint="@string/txtroute"/>
 
     <Space
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.03" />
+        android:layout_width="10dp"
+        android:layout_height="10dp" />
 
     <EditText
-        android:id="@+id/etxtCommentUser"
         style="@style/AuthEditText"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.25"
         android:background="@drawable/rectangle_bis"
-        android:gravity="center"
-        android:hint="Comments"
-        android:inputType="textMultiLine" />
+        android:id="@+id/etxtCommentStudents"
+        android:inputType="textMultiLine"
+        android:hint="@string/txtcommentstudent"
+        android:layout_weight="0.45"
+        android:textAlignment="textStart"
+        android:layout_height="0dp" />
 
 </LinearLayout>

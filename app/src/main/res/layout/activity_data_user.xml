@@ -13,7 +13,7 @@
         android:id="@+id/etxtName"
         android:inputType="text"
         android:layout_weight="0.02"
-        android:hint="@string/txtname" />
+        android:hint="@string/txtnameuser" />
 
     <Space
         android:layout_width="10dp"
@@ -58,10 +58,10 @@
     <EditText
         style="@style/AuthEditText"
         android:background="@drawable/rectangle_bis"
-        android:id="@+id/etxtRoute"
+        android:id="@+id/etxtdni"
         android:inputType="text"
         android:layout_weight="0.02"
-        android:hint="@string/txtroute"/>
+        android:hint="@string/txtdni"/>
 
     <Space
         android:layout_width="10dp"
@@ -70,9 +70,9 @@
     <EditText
         style="@style/AuthEditText"
         android:background="@drawable/rectangle_bis"
-        android:id="@+id/etxtCommentStudents"
+        android:id="@+id/etxtCommentUser"
         android:inputType="textMultiLine"
-        android:hint="@string/txtcomments"
+        android:hint="@string/txtcommentuser"
         android:layout_weight="0.45"
         android:textAlignment="textStart"
         android:layout_height="0dp" />
