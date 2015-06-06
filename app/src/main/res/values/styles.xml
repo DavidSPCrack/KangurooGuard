@@ -111,7 +111,6 @@
         <item name="android:textColor">@color/icons</item>
         <item name="android:textSize">17sp</item>
         <item name="android:paddingStart">20px</item>
-        <item name="android:paddingTop">20px</item>
     </style>
 
     <style name="AuthEditCheck">
