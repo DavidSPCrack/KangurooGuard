@@ -1,6 +1,5 @@
 package com.sistemasikanguro.kangurooguard.framework;
 
-import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.sistemasikanguro.kangurooguard.util.basic.Fecha;
 import com.sistemasikanguro.kangurooguard.util.basic.Hora;
@@ -25,8 +24,8 @@ public final class EstructuraDatos implements Cloneable, IOrdenacion {
     }
 
     public void update(ParseObject pObject, String[] fields) {
-        for (int i = 0; i < fields.length; i++) {
-            add(fields[i], pObject.getString(fields[i]));
+        for (String field : fields) {
+            add(field, pObject.getString(field));
         }
         add(BasicEntity.ID, pObject.getObjectId());
         add(BasicEntity.CREATED_AT, pObject.getCreatedAt());
@@ -116,7 +115,7 @@ public final class EstructuraDatos implements Cloneable, IOrdenacion {
         try {
             return aux == null ? 0 : Integer.parseInt(aux.toString());
         } catch (NumberFormatException nfe) {
-            return new Double(convert(aux.toString())).intValue();
+            return Double.valueOf(convert(aux.toString())).intValue();
         }
     }
 
@@ -184,17 +183,17 @@ public final class EstructuraDatos implements Cloneable, IOrdenacion {
     }
 
     public String toString() {
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
         sb.append(nombreEstructura);
-        String[] keys = (String[]) datos.keySet().toArray(new String[datos.size()]);
-        for (int i = 0; i < keys.length; i++) {
+        String[] keys = datos.keySet().toArray(new String[datos.size()]);
+        for (String key : keys) {
             sb.append('\n');
-            Object aux = getObject(keys[i]);
+            Object aux = getObject(key);
             if (aux instanceof EstructuraDatos) {
-                sb.append(((EstructuraDatos) aux).toString());
+                sb.append(aux.toString());
                 sb.append('\n');
             }
-            sb.append(keys[i] + " " + aux.toString());
+            sb.append(key).append(" ").append(aux.toString());
         }
         return sb.toString();
     }
@@ -203,12 +202,12 @@ public final class EstructuraDatos implements Cloneable, IOrdenacion {
         identar(0);
         System.out.println(nombreEstructura);
         identar(3);
-        String[] keys = (String[]) datos.keySet().toArray(new String[datos.size()]);
-        for (int i = 0; i < keys.length; i++) {
-            Object aux = getObject(keys[i]);
+        String[] keys = datos.keySet().toArray(new String[datos.size()]);
+        for (String key : keys) {
+            Object aux = getObject(key);
             if (aux instanceof EstructuraDatos)
                 ((EstructuraDatos) aux).print();
-            System.out.println(keys[i] + " " + aux.toString());
+            System.out.println(key + " " + aux.toString());
         }
     }
 

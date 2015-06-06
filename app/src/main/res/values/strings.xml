@@ -115,6 +115,14 @@
     <string name="PasswordNew">NEW PASSWORD</string>
     <string name="PasswordRepeit">REPEIT PASSWORD</string>
     <string name="txtsurname2">Surname</string>
+    <string name="title_option_activity">KangurooGuard</string>
+    <string name="title_activity_datauser">Data User</string>
+    <string name="title_activity_datastudent">Data Student</string>
+    <string name="title_activity_password">Password Activity</string>
+    <string name="title_activity_students">Students Activity</string>
+    <string name="title_activity_routes">Routes Activity</string>
+    <string name="title_activity_addroute">Add Route Activity</string>
+    <string name="logout">Logout</string>
 
 
 </resources>

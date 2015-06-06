@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:stretchColumns="2"
     android:orientation="vertical"
-    android:gravity="center_vertical">
+    android:gravity="center_vertical"
+    tools:context=".ui.activities.OptionActivity">
+
     <TableRow
         android:gravity="center_horizontal"
         android:weightSum="2">
@@ -14,13 +17,16 @@
             android:layout_weight="1"
 
             android:text="@string/route"
-            android:id="@+id/btnOptions01" />
+            android:id="@+id/btnOptions01"
+            android:onClick="openRoutes" />
         <Button
             style="@style/AuthButtonOptions"
             android:background="@drawable/rectangle_bis"
             android:layout_weight="1"
             android:text="@string/data"
-            android:id="@+id/btnOptions02" />
+            android:id="@+id/btnOptions02"
+            android:nestedScrollingEnabled="false"
+            android:onClick="openYourData" />
     </TableRow>
 
     <TableRow
@@ -31,13 +37,15 @@
             android:background="@drawable/rectangle_bis"
             android:layout_weight="1"
             android:text="@string/password"
-            android:id="@+id/btnOptions03" />
+            android:id="@+id/btnOptions03"
+            android:onClick="openPasswordChange" />
         <Button
             style="@style/AuthButtonOptions"
             android:background="@drawable/rectangle_bis"
             android:layout_weight="1"
             android:text="@string/student"
-            android:id="@+id/btnOptions04" />
+            android:id="@+id/btnOptions04"
+            android:onClick="openStudents" />
     </TableRow>
 
     <TableRow
@@ -48,13 +56,15 @@
             android:background="@drawable/rectangle_bis"
             android:layout_weight="1"
             android:text="@string/message"
-            android:id="@+id/btnOptions05" />
+            android:id="@+id/btnOptions05"
+            android:onClick="openMessages" />
         <Button
             style="@style/AuthButtonOptions"
             android:background="@drawable/rectangle_bis"
             android:layout_weight="1"
             android:text="@string/qr"
-            android:id="@+id/btnOptions06" />
+            android:id="@+id/btnOptions06"
+            android:onClick="openQr" />
     </TableRow>
 
 </TableLayout>

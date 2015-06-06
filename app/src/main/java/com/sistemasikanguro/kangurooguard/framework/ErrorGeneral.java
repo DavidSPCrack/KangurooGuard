@@ -149,7 +149,7 @@ public class ErrorGeneral extends Exception {
     private String mensajeVariable(String mensaje) {
         for (int i = 0; i < variables.length; i++) {
             String variable = "&VAR" + (i + 1);
-            boolean exists = !(mensaje.indexOf(variable) < 0);
+            boolean exists = mensaje.contains(variable);
             if (exists)
                 mensaje = mensaje.replace("&VAR" + (i + 1), variables[i]);
             else
@@ -160,7 +160,6 @@ public class ErrorGeneral extends Exception {
 
     public static void error(String mensaje) throws ErrorGeneral {
         CodigoError codigo = new CodigoError("MENSASIS");
-        ErrorGeneral error = new ErrorGeneral(codigo, mensaje);
-        throw error;
+        throw new ErrorGeneral(codigo, mensaje);
     }
 }

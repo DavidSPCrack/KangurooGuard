@@ -7,7 +7,7 @@ import android.view.View;
 import com.sistemasikanguro.kangurooguard.R;
 import com.sistemasikanguro.kangurooguard.util.UtilActivity;
 
-public class LoginActivity extends AbstractAppCompatActivity {
+public final class LoginActivity extends AbstractAppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,8 +19,15 @@ public class LoginActivity extends AbstractAppCompatActivity {
             actionBar.hide();
     }
 
+    public void loginClick(View view) {
+        UtilActivity util = getUtil();
+        util.openNewActivity(OptionActivity.class);
+    }
+
     public void openSignUp(View view) {
         UtilActivity util = getUtil();
-        util.openNewActivity(SignUpActivity.class);
+        util.openNewActivity(SignUpActivity.class, false);
     }
+
+
 }

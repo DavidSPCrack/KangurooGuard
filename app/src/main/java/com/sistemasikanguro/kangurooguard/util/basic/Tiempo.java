@@ -46,7 +46,7 @@ public final class Tiempo {
     }
 
     public String getTiempoDias(boolean precision_minutos, boolean precision_segundos) {
-        StringBuffer tiempo = new StringBuffer();
+        StringBuilder tiempo = new StringBuilder();
         if (dias > 0) {
             tiempo.append(dias);
             tiempo.append("d");
@@ -68,7 +68,7 @@ public final class Tiempo {
     }
 
     public String getTiempoHoras(boolean precision_minutos, boolean precision_segundos) {
-        StringBuffer tiempo = new StringBuffer();
+        StringBuilder tiempo = new StringBuilder();
         tiempo.append(horas);
         tiempo.append("h");
         if (precision_minutos) {

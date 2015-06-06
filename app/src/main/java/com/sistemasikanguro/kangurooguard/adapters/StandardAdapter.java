@@ -25,7 +25,7 @@ public class StandardAdapter<T> extends ArrayAdapter<String> {
     }
 
     public StandardAdapter(Context context, int resource) {
-        this(context, resource, new ArrayList<T>(), new ArrayList<String>());
+        this(context, resource, new ArrayList<>(), new ArrayList<String>());
     }
 
     private static List<String> getStringList(List<?> objects) {

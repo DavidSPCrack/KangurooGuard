@@ -4,25 +4,21 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 
 import com.sistemasikanguro.kangurooguard.R;
-import com.sistemasikanguro.kangurooguard.util.UtilActivity;
 
-public final class SplashActivity extends AbstractAppCompatActivity {
+/**
+ * Created by Andres on 18/05/2015.
+ *
+ * @author andres.alvarez
+ */
+public final class AddRouteActivity extends AbstractAppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash);
+        setContentView(R.layout.activity_addroute);
 
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null)
             actionBar.hide();
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-
-        UtilActivity util = getUtil();
-        util.openNewActivity(LoginActivity.class);
     }
 }

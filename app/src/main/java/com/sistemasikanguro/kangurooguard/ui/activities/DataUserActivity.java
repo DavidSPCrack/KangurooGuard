@@ -1,7 +1,5 @@
 package com.sistemasikanguro.kangurooguard.ui.activities;
 
-import android.app.ActionBar;
-import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -11,16 +9,16 @@ import com.sistemasikanguro.kangurooguard.R;
 
 /**
  * Created by Andres on 18/05/2015.
+ *
+ * @author andres.alvarez
  */
-public class DataUserActivity extends AbstractAppCompatActivity {
+public final class DataUserActivity extends AbstractAppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data_user);
 
-        ActionBar actionBar = getActionBar();
-        actionBar.show();
     }
 
     @Override

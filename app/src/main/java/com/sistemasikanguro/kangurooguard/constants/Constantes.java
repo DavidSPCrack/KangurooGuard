@@ -17,7 +17,7 @@ public class Constantes {
     }
 
     public static final class Users {
-}
+    }
 
     public static final class ParseClasses {
 

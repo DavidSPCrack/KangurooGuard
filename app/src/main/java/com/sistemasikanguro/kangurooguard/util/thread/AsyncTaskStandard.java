@@ -1,7 +1,6 @@
 package com.sistemasikanguro.kangurooguard.util.thread;
 
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.os.AsyncTask;
 
 import com.sistemasikanguro.kangurooguard.R;
@@ -24,7 +23,7 @@ public class AsyncTaskStandard extends AsyncTask<ITheadElement, Integer, ThreadE
 
     public static void doTask(UtilActivity util, ITheadElement... params) {
 
-        if(params == null)
+        if (params == null)
             params = new ITheadElement[0];
 
         AsyncTaskStandard asyncTask = new AsyncTaskStandard(util);
@@ -50,7 +49,7 @@ public class AsyncTaskStandard extends AsyncTask<ITheadElement, Integer, ThreadE
 
     @Override
     protected void onPostExecute(ThreadExecutor te) {
-        if(te.isOk()) {
+        if (te.isOk()) {
             te.postExecute();
             this.pd.dismiss();
         } else {

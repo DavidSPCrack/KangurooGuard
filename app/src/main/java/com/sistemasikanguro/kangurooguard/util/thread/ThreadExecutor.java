@@ -21,7 +21,7 @@ public class ThreadExecutor {
             for (ITheadElement param : params) {
                 param.doInBackground();
             }
-        } catch(ErrorGeneral eg) {
+        } catch (ErrorGeneral eg) {
             this.eg = eg;
         }
     }

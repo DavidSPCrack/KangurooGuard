@@ -71,11 +71,9 @@ public class FileUtilities {
                 } catch (IOException e) {
                     return null;
                 }
-                if (mediaFile != null) {
-                    Log.d(TAG, "File : " + mediaFile.getAbsolutePath());
+                Log.d(TAG, "File : " + mediaFile.getAbsolutePath());
 
-                    return Uri.fromFile(mediaFile);
-                }
+                return Uri.fromFile(mediaFile);
             }
         }
         return null;

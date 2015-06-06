@@ -9,12 +9,12 @@ import com.sistemasikanguro.kangurooguard.R;
  *
  * @author andres.alvarez
  */
-public final class PasswordActivity extends AbstractAppCompatActivity {
+public final class StudentsActivity extends AbstractAppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_password);
+        setContentView(R.layout.activity_student);
 
     }
 }

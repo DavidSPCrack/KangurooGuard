@@ -1,6 +1,5 @@
 package com.sistemasikanguro.kangurooguard.util;
 
-import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
@@ -8,7 +7,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.text.Editable;
 import android.view.View;
 import android.widget.EditText;
@@ -87,10 +85,8 @@ public class UtilActivity {
         alertDialog.setMessage(msg);
         alertDialog.setIcon(R.mipmap.ic_warning_amber);
         alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, button,
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                    }
+                (dialog, which) -> {
+                    dialog.dismiss();
                 });
         alertDialog.show();
     }

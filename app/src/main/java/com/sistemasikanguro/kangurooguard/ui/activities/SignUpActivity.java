@@ -5,11 +5,10 @@ import android.support.v7.app.ActionBar;
 import android.view.View;
 
 import com.sistemasikanguro.kangurooguard.R;
-import com.sistemasikanguro.kangurooguard.ui.activities.AbstractAppCompatActivity;
 import com.sistemasikanguro.kangurooguard.util.UtilActivity;
 
 
-public class SignUpActivity extends AbstractAppCompatActivity {
+public final class SignUpActivity extends AbstractAppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,12 +22,12 @@ public class SignUpActivity extends AbstractAppCompatActivity {
 
     public void signUpClick(View view) {
         UtilActivity util = getUtil();
-        util.openNewActivity(LoginActivity.class, true);
+        util.openNewActivity(OptionActivity.class);
     }
 
     public void cancelClick(View view) {
         UtilActivity util = getUtil();
-        util.openNewActivity(LoginActivity.class, true);
+        util.openNewActivity(LoginActivity.class);
     }
 }
 

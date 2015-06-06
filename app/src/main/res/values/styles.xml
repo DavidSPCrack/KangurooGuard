@@ -107,11 +107,18 @@
     <style name="AuthEditText">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColorHint">@color/secondary_text</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="FormEditText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
         <item name="android:textColorHint">@color/icons</item>
         <item name="android:textColor">@color/icons</item>
         <item name="android:textSize">17sp</item>
-        <item name="android:paddingStart">20px</item>
-        <item name="android:paddingTop">20px</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:paddingTop">20dp</item>
     </style>
 
     <style name="AuthEditCheck">

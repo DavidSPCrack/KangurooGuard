@@ -18,6 +18,45 @@
             android:screenOrientation="portrait" >
         </activity>
         <activity
+            android:name=".ui.activities.OptionActivity"
+            android:label="@string/title_option_activity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".ui.activities.DataUserActivity"
+            android:label="@string/title_activity_datauser"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".ui.activities.OptionActivity">
+        </activity>
+        <activity
+            android:name=".ui.activities.DataStudentActivity"
+            android:label="@string/title_activity_datastudent"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name=".ui.activities.PasswordActivity"
+            android:label="@string/title_activity_password"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".ui.activities.OptionActivity" >
+        </activity>
+        <activity
+            android:name=".ui.activities.StudentsActivity"
+            android:label="@string/title_activity_students"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".ui.activities.OptionActivity" >
+        </activity>
+        <activity
+            android:name=".ui.activities.RoutesActivity"
+            android:label="@string/title_activity_routes"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".ui.activities.OptionActivity" >
+        </activity>
+        <activity
+            android:name=".ui.activities.AddRouteActivity"
+            android:label="@string/title_activity_addroute"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
             android:name=".ui.activities.SplashActivity"
             android:label="@string/title_activity_splash"
             android:screenOrientation="portrait" >

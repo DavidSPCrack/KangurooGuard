@@ -8,7 +8,7 @@
     tools:context="com.sistemasikanguro.kangurooguard.ui.activities.DataStudent">
 
     <EditText
-        style="@style/AuthEditText"
+        style="@style/FormEditText"
         android:background="@drawable/rectangle_bis"
         android:id="@+id/etxtName"
         android:inputType="text"
@@ -20,7 +20,7 @@
         android:layout_height="10dp" />
 
     <EditText
-        style="@style/AuthEditText"
+        style="@style/FormEditText"
         android:background="@drawable/rectangle_bis"
         android:id="@+id/etxtSurname"
         android:inputType="text"
@@ -32,7 +32,7 @@
         android:layout_height="10dp" />
 
     <EditText
-        style="@style/AuthEditText"
+        style="@style/FormEditText"
         android:background="@drawable/rectangle_bis"
         android:id="@+id/etxtTelephone"
         android:inputType="number"
@@ -44,7 +44,7 @@
         android:layout_height="10dp" />
 
     <EditText
-        style="@style/AuthEditText"
+        style="@style/FormEditText"
         android:background="@drawable/rectangle_bis"
         android:id="@+id/etxtEmail"
         android:inputType="textEmailAddress"
@@ -56,7 +56,7 @@
         android:layout_height="10dp" />
 
     <EditText
-        style="@style/AuthEditText"
+        style="@style/FormEditText"
         android:background="@drawable/rectangle_bis"
         android:id="@+id/etxtRoute"
         android:inputType="text"
@@ -68,7 +68,7 @@
         android:layout_height="10dp" />
 
     <EditText
-        style="@style/AuthEditText"
+        style="@style/FormEditText"
         android:background="@drawable/rectangle_bis"
         android:id="@+id/etxtCommentStudents"
         android:inputType="textMultiLine"

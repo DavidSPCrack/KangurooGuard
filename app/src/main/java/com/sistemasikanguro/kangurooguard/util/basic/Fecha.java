@@ -9,7 +9,6 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
-import java.util.Hashtable;
 
 
 /**
@@ -49,16 +48,16 @@ public class Fecha implements Cloneable, IOrdenacion {
     }
 
     private Calendar calendar = null;
-    private int[] dias_mes = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+    private int[] dias_mes = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     private static final String formatoFechaOracle = "dd/MM/yyyy";
     public static final String formatoFechaInvertida = "yyyyMMdd";
     public static final String formatoFechaInvertidaConBarras = "yyyy/MM/dd";
-    private static final String[] meses_romanos = { "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII" };
+    private static final String[] meses_romanos = {"I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII"};
 
     // Castellano
     private static final String[] meses = UtilResource.getStringArray(R.array.meses);
     private static final String[] dias = UtilResource.getStringArray(R.array.dias_num);
-    private static final String[] diasSemana =UtilResource.getStringArray(R.array.dias_sem);
+    private static final String[] diasSemana = UtilResource.getStringArray(R.array.dias_sem);
 
     public Fecha() {
         calendar = new GregorianCalendar();
@@ -109,7 +108,7 @@ public class Fecha implements Cloneable, IOrdenacion {
             }
 
         } catch (ParseException pe) {
-            if (fecha != null && fecha.startsWith("TIME_")) {
+            if (fecha.startsWith("TIME_")) {
                 try {
                     long datemiles = Long.parseLong(fecha.substring(5));
                     Date date = new Date(datemiles);
@@ -119,7 +118,7 @@ public class Fecha implements Cloneable, IOrdenacion {
                     calendar = new GregorianCalendar();
                     setTime(1900, 01, 01);
                 }
-            } else if (fecha != null && fecha.length() == 4) {
+            } else if (fecha.length() == 4) {
                 int year = Transform.toInt(fecha);
                 if (year > 1900 && year < 2200) {
                     calendar = new GregorianCalendar();
@@ -411,7 +410,7 @@ public class Fecha implements Cloneable, IOrdenacion {
      * Devuelve la diferencia entre el numero 99999999 y el número formado por
      * la AAAAMMDD. (Se utiliza para ordenación descendente);
      *
-     * @return
+     * @return valor inverso
      */
     public String getValorInverso() {
         long fecha = Long.parseLong(this.toChar("yyyyMMdd"));
@@ -534,7 +533,7 @@ public class Fecha implements Cloneable, IOrdenacion {
     }
 
     private String getLetters(boolean dayLetters, boolean incluirDia) {
-        StringBuffer aux = new StringBuffer();
+        StringBuilder aux = new StringBuilder();
         if (incluirDia) {
             if (dayLetters) {
                 String[] dias = getDias();
