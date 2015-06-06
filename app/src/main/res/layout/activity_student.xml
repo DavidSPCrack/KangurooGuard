@@ -6,24 +6,24 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/routelabel"
+        android:id="@+id/textView"
         style="@style/AuthSubTitlePrincipal"
-        android:text="@string/txtroutes" />
+        android:text="@string/txtstudents" />
 
-    <ListView xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/list_routers"
+    <ListView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/listView"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:background="@color/background"
         android:cacheColorHint="@android:color/transparent"
         android:divider="@android:color/transparent"
         android:dividerHeight="8dp"
+        android:scrollbarStyle="outsideOverlay"
         android:paddingBottom="8dp"
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
-        android:paddingTop="15dp"
-        android:scrollbarStyle="outsideOverlay">
+        android:paddingTop="15dp" >
 
     </ListView>
-
 </LinearLayout>

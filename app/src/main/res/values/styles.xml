@@ -39,7 +39,7 @@
         <item name="android:layout_margin">2dip</item>
         <item name="android:background">@color/primary_dark</item>
         <item name="android:textColor">@color/icons</item>
-        <item name="android:src">@drawable/button_custom</item>
+        <item name="android:src">@drawable/button_custom_bis</item>
         <item name="android:gravity">center</item>
         <item name="android:paddingLeft">5dip</item>
         <item name="android:paddingRight">5dip</item>
@@ -107,8 +107,16 @@
     <style name="AuthEditText">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColorHint">@color/secondary_text</item>
+        <item name="android:textColorHint">@color/icons</item>
+        <item name="android:textColor">@color/icons</item>
         <item name="android:textSize">17sp</item>
+        <item name="android:paddingStart">20px</item>
+        <item name="android:paddingTop">20px</item>
+    </style>
+
+    <style name="AuthEditCheck">
+        <item name="android:layout_width">30dp</item>
+        <item name="android:layout_height">30dp</item>
     </style>
 
     <style name="AuthBottomLogo">

@@ -56,8 +56,9 @@
         android:id="@+id/buttonDivider"/>
 
     <Button
-        android:id="@+id/signupButton"
         style="@style/AuthButton"
+        android:id="@+id/signupButton"
+        android:background="@drawable/rectangle_bis"
         android:layout_below="@id/editTextLayout"
         android:layout_marginEnd="@dimen/void_dimen"
         android:layout_marginRight="@dimen/void_dimen"
@@ -67,8 +68,9 @@
         android:text="@string/signup_button_label" />
 
     <Button
-        android:id="@+id/cancelButton"
         style="@style/AuthButton"
+        android:id="@+id/cancelButton"
+        android:background="@drawable/rectangle_bis"
         android:layout_below="@id/editTextLayout"
         android:layout_marginLeft="@dimen/void_dimen"
         android:layout_marginStart="@dimen/void_dimen"

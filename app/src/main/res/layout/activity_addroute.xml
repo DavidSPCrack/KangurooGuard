@@ -1,55 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="@drawable/borde"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/borde"
+    android:orientation="vertical"
     android:weightSum="1">
 
     <TextView
-        style="@style/AuthSubTitlePrincipal"
         android:id="@+id/txtNameRoutes"
-        android:text="@string/txtnamerouteall" />
-    <EditText
         style="@style/AuthSubTitlePrincipal"
-        android:background="@drawable/borde"
+        android:text="@string/txtnamerouteall" />
+
+    <EditText
         android:id="@+id/etxtnameroute"
-        android:inputType="text"/>
+        style="@style/AuthEditText"
+
+        android:background="@drawable/rectangle_bis"
+        android:inputType="text" />
 
     <TextView
-        style="@style/AuthSubTitlePrincipal"
         android:id="@+id/txtCommentsRoutes"
+        style="@style/AuthSubTitlePrincipal"
         android:text="@string/txtcomments" />
 
     <EditText
-        style="@style/AuthSubTitlePrincipal"
         android:id="@+id/etxtCommentRoutes"
-        android:background="@drawable/borde"
-        android:inputType="text"
-        android:layout_height="wrap_content"
+        style="@style/AuthEditText"
         android:layout_width="match_parent"
-        android:layout_weight="1" />
+        android:layout_height="368dp"
 
+        android:background="@drawable/rectangle_bis"
+        android:inputType="text" />
     <Space
-        android:layout_width="26dp"
-        android:layout_height="26dp" />
+        android:layout_width="10dp"
+        android:layout_height="10dp" />
+
     <LinearLayout
-        style="?android:attr/buttonBarStyle"
         android:id="@+id/bntListButtons"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <Button android:id="@+id/btnaccept"
             style="@style/AuthButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@drawable/rectangle_bis"
             android:text="@string/accept"/>
         <Button android:id="@+id/btncancel"
             style="@style/AuthButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@drawable/rectangle_bis"
             android:text="@string/cancel"/>
     </LinearLayout>
+
 </LinearLayout>

@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="@drawable/borde"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:stretchColumns="2"
     android:orientation="vertical"
-    android:gravity="center_vertical"
->
+    android:gravity="center_vertical">
     <TableRow
         android:gravity="center_horizontal"
         android:weightSum="2">
         <Button
             style="@style/AuthButtonOptions"
+            android:background="@drawable/rectangle_bis"
             android:layout_weight="1"
+
             android:text="@string/route"
             android:id="@+id/btnOptions01" />
         <Button
             style="@style/AuthButtonOptions"
+            android:background="@drawable/rectangle_bis"
             android:layout_weight="1"
             android:text="@string/data"
             android:id="@+id/btnOptions02" />
@@ -27,11 +28,13 @@
         android:weightSum="2">
         <Button
             style="@style/AuthButtonOptions"
+            android:background="@drawable/rectangle_bis"
             android:layout_weight="1"
             android:text="@string/password"
             android:id="@+id/btnOptions03" />
         <Button
             style="@style/AuthButtonOptions"
+            android:background="@drawable/rectangle_bis"
             android:layout_weight="1"
             android:text="@string/student"
             android:id="@+id/btnOptions04" />
@@ -42,11 +45,13 @@
         android:weightSum="2">
         <Button
             style="@style/AuthButtonOptions"
+            android:background="@drawable/rectangle_bis"
             android:layout_weight="1"
             android:text="@string/message"
             android:id="@+id/btnOptions05" />
         <Button
             style="@style/AuthButtonOptions"
+            android:background="@drawable/rectangle_bis"
             android:layout_weight="1"
             android:text="@string/qr"
             android:id="@+id/btnOptions06" />
