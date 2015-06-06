@@ -21,27 +21,4 @@ public final class DataStudentActivity extends AbstractAppCompatActivity {
 
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_datastudents, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.menu_settings:
-                Log.i("ActionBar", "Settings!");
-                return true;
-            case R.id.menu_save:
-                Log.i("ActionBar", "Guardar!");
-                return true;
-            case R.id.menu_new:
-                Log.i("ActionBar", "Nuevo!");
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
 }
