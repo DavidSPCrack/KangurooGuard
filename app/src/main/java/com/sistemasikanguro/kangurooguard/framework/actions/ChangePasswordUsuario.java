@@ -31,7 +31,7 @@ public class ChangePasswordUsuario extends AbstractAction {
     @Override
     public void doInBackground() throws ErrorGeneral {
         try {
-            Usuario user = Usuario.getInstance();
+            user = Usuario.getInstance();
             if (user != null) {
                 EstructuraDatos eDatos = user.getEstructura();
                 eDatos.add(Usuario.PASSWORD, newPassword);

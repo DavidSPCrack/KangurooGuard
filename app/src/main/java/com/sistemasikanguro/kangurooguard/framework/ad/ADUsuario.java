@@ -76,7 +76,8 @@ public final class ADUsuario extends AbstractAccesoADatos {
                 pUser = pUser.fetch();
                 String[] fields = eDatos.getFields();
                 for (String field : fields) {
-                    pUser.put(field, eDatos.getString(field));
+                    if (isUpdatableField(field))
+                        pUser.put(field, eDatos.getString(field));
                 }
                 pUser.save();
             }

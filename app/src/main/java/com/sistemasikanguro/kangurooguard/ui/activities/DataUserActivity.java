@@ -1,11 +1,11 @@
 package com.sistemasikanguro.kangurooguard.ui.activities;
 
 import android.os.Bundle;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 
 import com.sistemasikanguro.kangurooguard.R;
+import com.sistemasikanguro.kangurooguard.framework.ErrorGeneral;
+import com.sistemasikanguro.kangurooguard.framework.entities.Usuario;
+import com.sistemasikanguro.kangurooguard.util.UtilActivity;
 
 /**
  * Created by Andres on 18/05/2015.
@@ -19,29 +19,19 @@ public final class DataUserActivity extends AbstractAppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data_user);
 
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_datauser, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.menu_settings:
-                Log.i("ActionBar", "Settings!");
-                return true;
-            case R.id.menu_save:
-                Log.i("ActionBar", "Guardar!");
-                return true;
-            case R.id.menu_new:
-                Log.i("ActionBar", "Nuevo!");
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
+        UtilActivity util = getUtil();
+        try {
+            Usuario user = Usuario.getInstance();
+            if (user != null) {
+                util.setEditTextValue(R.id.etxtName, user.getName());
+                util.setEditTextValue(R.id.etxtSurname, user.getSurname());
+                util.setEditTextValue(R.id.etxtdni, user.getNumeroDocumento());
+                util.setEditTextValue(R.id.etxtTelephone, user.getTelephone());
+                util.setEditTextValue(R.id.etxtEmail, user.getEmail());
+                util.setEditTextValue(R.id.etxtCommentUser, user.getComments());
+            }
+        } catch (ErrorGeneral eg) {
+            util.doAlertDialog(eg);
         }
     }
 }

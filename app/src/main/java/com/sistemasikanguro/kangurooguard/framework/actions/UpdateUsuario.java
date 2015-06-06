@@ -41,10 +41,15 @@ public class UpdateUsuario extends AbstractAction {
     @Override
     public void doInBackground() throws ErrorGeneral {
         try {
-            Usuario user = Usuario.getInstance();
+            user = Usuario.getInstance();
             if (user != null) {
                 EstructuraDatos eDatos = user.getEstructura();
-
+                eDatos.add(Usuario.NAME, name);
+                eDatos.add(Usuario.SURNAME, surname);
+                eDatos.add(Usuario.TELEPHONE, telefono);
+                eDatos.add(Usuario.EMAIL, email);
+                eDatos.add(Usuario.NUMEDOCU, dni);
+                eDatos.add(Usuario.COMMENTS, comments);
                 AdmonUsuario admon = new AdmonUsuario();
                 user = admon.updateUsuario(eDatos);
             }

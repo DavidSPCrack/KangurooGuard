@@ -116,6 +116,16 @@ public class UtilActivity {
         return "";
     }
 
+    public void setEditTextValue(int id, String value) {
+        View v = findViewById(id);
+        if (v != null) {
+            if (v instanceof EditText) {
+                EditText et = (EditText) v;
+                et.setText(value);
+            }
+        }
+    }
+
     public String getEditTextValueAndValidate(int id) {
         String text = getEditTextValue(id);
         String field = getEditTextHint(id);

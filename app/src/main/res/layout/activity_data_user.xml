@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.sistemasikanguro.kangurooguard.ui.activities.DataStudent">
+    tools:context=".ui.activities.DataUserActivity">
 
     <EditText
         style="@style/FormEditText"
@@ -47,9 +47,10 @@
         style="@style/FormEditText"
         android:background="@drawable/rectangle_bis"
         android:id="@+id/etxtEmail"
-        android:inputType="textEmailAddress"
+        android:inputType="none"
         android:layout_weight="0.02"
-        android:hint="@string/txtemail"/>
+        android:hint="@string/txtemail"
+        android:enabled="false" />
 
     <Space
         android:layout_width="10dp"

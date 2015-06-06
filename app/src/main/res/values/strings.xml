@@ -123,6 +123,7 @@
     <string name="title_activity_routes">Routes Activity</string>
     <string name="title_activity_addroute">Add Route Activity</string>
     <string name="logout">Logout</string>
+    <string name="new_password_doesnt_match">New password doesn\'t match</string>
 
 
 </resources>
