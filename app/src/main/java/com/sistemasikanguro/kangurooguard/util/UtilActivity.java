@@ -160,9 +160,13 @@ public class UtilActivity {
     }
 
     public ProgressDialog getProgressDialog(int title) {
+        return getProgressDialog(title, getResourceString(R.string.please_wait));
+    }
+
+    public ProgressDialog getProgressDialog(int title, String message) {
         return ProgressDialog.show(mActivity,
                 getResourceString(title),
-                getResourceString(R.string.please_wait), true);
+                message, true);
     }
 
     public void openNewActivity(Class<?> dstClass) {
@@ -184,8 +188,12 @@ public class UtilActivity {
 
     public void hideView(int id) {
         View vFound = findViewById(id);
-        if (vFound != null) {
-            vFound.setVisibility(View.GONE);
+        hideView(vFound);
+    }
+
+    public void hideView(View v) {
+        if (v != null) {
+            v.setVisibility(View.GONE);
         }
     }
 

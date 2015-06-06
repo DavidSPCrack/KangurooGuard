@@ -1,5 +1,7 @@
 package com.sistemasikanguro.kangurooguard.ui;
 
+import android.view.View;
+
 import com.sistemasikanguro.kangurooguard.util.UtilActivity;
 
 /**
@@ -10,4 +12,6 @@ import com.sistemasikanguro.kangurooguard.util.UtilActivity;
 public interface IActividad {
 
     UtilActivity getUtil();
+
+    View getProgressBarView();
 }

@@ -28,8 +28,8 @@ public final class EstructuraDatos implements Cloneable, IOrdenacion {
             add(field, pObject.getString(field));
         }
         add(BasicEntity.ID, pObject.getObjectId());
-        add(BasicEntity.CREATED_AT, pObject.getCreatedAt());
-        add(BasicEntity.UPDATED_AT, pObject.getUpdatedAt());
+        add(BasicEntity.CREATED_AT, new Hora(pObject.getCreatedAt()));
+        add(BasicEntity.UPDATED_AT, new Hora(pObject.getUpdatedAt()));
     }
 
     public void add(String key, Object dato) {
@@ -247,4 +247,18 @@ public final class EstructuraDatos implements Cloneable, IOrdenacion {
         return eDatos.getDouble(field) == getDouble(field);
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (o == null)
+            return false;
+        if (!(o instanceof EstructuraDatos))
+            return false;
+        EstructuraDatos datosOther = (EstructuraDatos) o;
+        if(!nombreEstructura.equals(datosOther.nombreEstructura))
+            return false;
+        if(!this.datos.equals(datosOther.datos))
+            return false;
+
+        return true;
+    }
 }

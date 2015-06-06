@@ -31,7 +31,7 @@ public abstract class AbstractAction implements ITheadElement {
 
     @Override
     public void execute() {
-        AsyncTaskStandard.doTask(getUtil(), this);
+        AsyncTaskStandard.doTask(getUtil(), actividad.getProgressBarView(), this);
     }
 
     protected ErrorGeneral getErrorGeneral() {

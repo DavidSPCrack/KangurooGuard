@@ -15,7 +15,7 @@ import com.sistemasikanguro.kangurooguard.util.UtilResource;
  *
  * @author david.sancho
  */
-public class UpdateUsuario extends AbstractAction {
+public class LoadRutas extends AbstractAction {
 
     private String name;
     private String surname;
@@ -25,7 +25,7 @@ public class UpdateUsuario extends AbstractAction {
 
     private Usuario user;
 
-    public UpdateUsuario(IActividad actividad, String name, String surname, String telefono, String dni, String comments) {
+    public LoadRutas(IActividad actividad, String name, String surname, String telefono, String dni, String comments) {
         super(actividad);
         this.name = name;
         this.surname = surname;

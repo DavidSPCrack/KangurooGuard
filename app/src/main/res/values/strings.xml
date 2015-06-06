@@ -118,12 +118,17 @@
     <string name="title_option_activity">KangurooGuard</string>
     <string name="title_activity_datauser">Data User</string>
     <string name="title_activity_datastudent">Data Student</string>
-    <string name="title_activity_password">Password Activity</string>
+    <string name="title_activity_password">Change your password</string>
     <string name="title_activity_students">Students Activity</string>
     <string name="title_activity_routes">Routes Activity</string>
     <string name="title_activity_addroute">Add Route Activity</string>
     <string name="logout">Logout</string>
     <string name="new_password_doesnt_match">New password doesn\'t match</string>
+    <string name="changing_password">Changing password…</string>
+    <string name="logging_in">Logging in…</string>
+    <string name="logging_out">Logging out…</string>
+    <string name="signing_up">Signing up…</string>
+    <string name="updating_info">Updating info…</string>
 
 
 </resources>

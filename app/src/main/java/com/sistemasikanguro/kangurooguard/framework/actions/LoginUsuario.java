@@ -1,10 +1,12 @@
 package com.sistemasikanguro.kangurooguard.framework.actions;
 
+import com.sistemasikanguro.kangurooguard.R;
 import com.sistemasikanguro.kangurooguard.framework.ErrorGeneral;
 import com.sistemasikanguro.kangurooguard.framework.entities.Usuario;
 import com.sistemasikanguro.kangurooguard.ui.IActividad;
 import com.sistemasikanguro.kangurooguard.ui.activities.OptionActivity;
 import com.sistemasikanguro.kangurooguard.util.UtilActivity;
+import com.sistemasikanguro.kangurooguard.util.UtilResource;
 
 /**
  * Created by David on 10/05/2015.
@@ -44,6 +46,11 @@ public class LoginUsuario extends AbstractAction {
             UtilActivity util = getUtil();
             util.openNewActivity(OptionActivity.class);
         }
+    }
+
+    @Override
+    public String getTitle() {
+        return UtilResource.getString(R.string.logging_in);
     }
 
 }

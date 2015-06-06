@@ -1,6 +1,7 @@
 package com.sistemasikanguro.kangurooguard.ui.activities;
 
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 
 import com.sistemasikanguro.kangurooguard.ui.IActividad;
 import com.sistemasikanguro.kangurooguard.util.UtilActivity;
@@ -16,4 +17,8 @@ public abstract class AbstractAppCompatActivity extends AppCompatActivity implem
         return new UtilActivity(this);
     }
 
+    @Override
+    public View getProgressBarView() {
+        return null;
+    }
 }

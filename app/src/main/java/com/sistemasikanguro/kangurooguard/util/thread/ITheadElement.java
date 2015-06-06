@@ -15,4 +15,5 @@ public interface ITheadElement {
 
     void postExecute();
 
+    String getTitle();
 }

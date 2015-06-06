@@ -1,6 +1,7 @@
 package com.sistemasikanguro.kangurooguard.ui.activities;
 
 import android.app.ListActivity;
+import android.view.View;
 
 import com.sistemasikanguro.kangurooguard.ui.IActividad;
 import com.sistemasikanguro.kangurooguard.util.UtilActivity;
@@ -14,6 +15,11 @@ public abstract class AbstractListActivity extends ListActivity implements IActi
 
     public UtilActivity getUtil() {
         return new UtilActivity(this);
+    }
+
+    @Override
+    public View getProgressBarView() {
+        return null;
     }
 
 }

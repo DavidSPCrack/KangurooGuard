@@ -134,4 +134,14 @@ public class Usuario extends BasicEntity {
     protected String getNombreEstructura() {
         return TABLE_NAME;
     }
+
+    @Override
+    public String toString() {
+        return getUsername();
+    }
+
+    @Override
+    public String getKeyOrder() {
+        return getUsername();
+    }
 }

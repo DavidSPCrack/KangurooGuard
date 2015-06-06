@@ -9,16 +9,19 @@ import com.sistemasikanguro.kangurooguard.framework.ErrorGeneral;
  */
 public class ThreadExecutor {
 
+    private AsyncTaskStandard asyncTask;
     private ITheadElement[] params;
     private ErrorGeneral eg;
 
-    ThreadExecutor(ITheadElement... params) {
+    ThreadExecutor(AsyncTaskStandard asyncTask, ITheadElement... params) {
+        this.asyncTask = asyncTask;
         this.params = params;
     }
 
     void execute() {
         try {
             for (ITheadElement param : params) {
+                asyncTask.publishUpdate(param);
                 param.doInBackground();
             }
         } catch (ErrorGeneral eg) {

@@ -1,6 +1,7 @@
 package com.sistemasikanguro.kangurooguard.ui.fragments;
 
 import android.support.v4.app.ListFragment;
+import android.view.View;
 
 import com.sistemasikanguro.kangurooguard.ui.IActividad;
 import com.sistemasikanguro.kangurooguard.util.UtilActivity;
@@ -16,6 +17,11 @@ public abstract class AbstractListFragment extends ListFragment implements IActi
 
     public UtilActivity getUtil() {
         return new UtilActivity(getActivity());
+    }
+
+    @Override
+    public View getProgressBarView() {
+        return null;
     }
 
 }

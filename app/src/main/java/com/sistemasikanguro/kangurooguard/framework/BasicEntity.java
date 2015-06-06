@@ -1,5 +1,7 @@
 package com.sistemasikanguro.kangurooguard.framework;
 
+import android.support.annotation.NonNull;
+
 import com.sistemasikanguro.kangurooguard.util.basic.Fecha;
 import com.sistemasikanguro.kangurooguard.util.basic.Hora;
 import com.sistemasikanguro.kangurooguard.util.basic.Transform;
@@ -11,7 +13,7 @@ import java.util.Date;
  *
  * @author david.sancho
  */
-public abstract class BasicEntity {
+public abstract class BasicEntity implements Comparable<BasicEntity> {
 
     public static final String ID = "objectId";
     public static final String CREATED_AT = "createdAt";
@@ -139,5 +141,26 @@ public abstract class BasicEntity {
 
     public EstructuraDatos getEstructura() {
         return (EstructuraDatos) datos.clone();
+    }
+
+    @Override
+    public int compareTo(@NonNull BasicEntity another) {
+        return getKeyOrder().compareTo(another.getKeyOrder());
+    }
+
+    public abstract String getKeyOrder();
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null)
+            return false;
+        if (!(o instanceof BasicEntity))
+            return false;
+        BasicEntity entity = (BasicEntity) o;
+        EstructuraDatos datosOther = entity.getEstructura();
+        if(!this.datos.equals(datosOther))
+            return false;
+
+        return true;
     }
 }
