@@ -2,6 +2,8 @@ package com.sistemasikanguro.kangurooguard.framework.actions;
 
 import com.sistemasikanguro.kangurooguard.framework.ErrorGeneral;
 import com.sistemasikanguro.kangurooguard.framework.entities.Usuario;
+import com.sistemasikanguro.kangurooguard.ui.IActividad;
+import com.sistemasikanguro.kangurooguard.ui.activities.LoginActivity;
 import com.sistemasikanguro.kangurooguard.util.UtilActivity;
 
 /**
@@ -11,8 +13,8 @@ import com.sistemasikanguro.kangurooguard.util.UtilActivity;
  */
 public class LogoutUsuario extends AbstractAction {
 
-    public LogoutUsuario(UtilActivity util) {
-        super(util);
+    public LogoutUsuario(IActividad actividad) {
+        super(actividad);
     }
 
     @Override
@@ -22,7 +24,8 @@ public class LogoutUsuario extends AbstractAction {
 
     @Override
     public void postExecute() {
-
+        UtilActivity util = getUtil();
+        util.openNewActivity(LoginActivity.class);
     }
 
 }

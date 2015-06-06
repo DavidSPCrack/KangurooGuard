@@ -1,8 +1,9 @@
 package com.sistemasikanguro.kangurooguard.util;
 
 /**
- *
  * Created by Carlos on 08/02/2015.
+ *
+ * @author david.sancho
  */
 
 import android.graphics.Bitmap;

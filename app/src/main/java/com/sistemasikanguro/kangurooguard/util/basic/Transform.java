@@ -150,16 +150,16 @@ public final class Transform {
         StringBuilder decimal = new StringBuilder();
         boolean decimales = false;
         char[] cars = texto.toCharArray();
-        for (int i = 0; i < cars.length; i++) {
-            if (cars[i] == COMA) {
+        for (char car : cars) {
+            if (car == COMA) {
                 decimales = true;
-            } else if (cars[i] == PUNTO) {
+            } else if (car == PUNTO) {
 
             } else {
                 if (decimales) {
-                    decimal.append(cars[i]);
+                    decimal.append(car);
                 } else {
-                    entero.append(cars[i]);
+                    entero.append(car);
                 }
             }
         }
@@ -228,16 +228,13 @@ public final class Transform {
     public static int toInt(Object obj) {
         if (obj != null) {
             if (obj instanceof Integer) {
-                return ((Integer) obj).intValue();
+                return (Integer) obj;
             }
             if (obj instanceof String) {
                 return getDatoInteger((String) obj);
             }
             if (obj instanceof Float) {
                 return ((Float) obj).intValue();
-            }
-            if (obj instanceof Integer) {
-                return ((Integer) obj).intValue();
             }
         }
         return 0;
@@ -260,15 +257,15 @@ public final class Transform {
 
     private static String tratarStringImporte(String dato) {
         char[] cars = dato.toCharArray();
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
         char dotSeparator = Util.getDotSeparation();
         char groupingSeparator = Util.getGroupingSeparator();
-        for (int i = 0; i < cars.length; i++) {
-            if (cars[i] != groupingSeparator) {
-                if (cars[i] == dotSeparator) {
+        for (char car : cars) {
+            if (car != groupingSeparator) {
+                if (car == dotSeparator) {
                     sb.append('.');
                 } else {
-                    sb.append(cars[i]);
+                    sb.append(car);
                 }
             }
         }
@@ -300,10 +297,10 @@ public final class Transform {
 
     public static long tratarStringSecPoliza(String dato) {
         char[] cars = dato.toCharArray();
-        StringBuffer sb = new StringBuffer();
-        for (int i = 0; i < cars.length; i++) {
-            if (isDigitoNumerico(cars[i]))
-                sb.append(cars[i]);
+        StringBuilder sb = new StringBuilder();
+        for (char car : cars) {
+            if (isDigitoNumerico(car))
+                sb.append(car);
         }
         return Long.parseLong(sb.toString());
     }

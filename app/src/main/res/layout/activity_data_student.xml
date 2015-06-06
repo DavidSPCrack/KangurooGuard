@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/borde"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.sistemasikanguro.kangurooguard.ui.activities.DataStudent">
+
+    <EditText
+        style="@style/FormEditText"
+        android:background="@drawable/rectangle_bis"
+        android:id="@+id/etxtName"
+        android:inputType="text"
+        android:layout_weight="0.02"
+        android:hint="@string/txtnamestudent" />
+
+    <Space
+        android:layout_width="10dp"
+        android:layout_height="10dp" />
+
+    <EditText
+        style="@style/FormEditText"
+        android:background="@drawable/rectangle_bis"
+        android:id="@+id/etxtSurname"
+        android:inputType="text"
+        android:layout_weight="0.02"
+        android:hint="@string/txtsurname" />
+
+    <Space
+        android:layout_width="10dp"
+        android:layout_height="10dp" />
+
+    <EditText
+        style="@style/FormEditText"
+        android:background="@drawable/rectangle_bis"
+        android:id="@+id/etxtTelephone"
+        android:inputType="number"
+        android:layout_weight="0.02"
+        android:hint="@string/txttelephone" />
+
+    <Space
+        android:layout_width="10dp"
+        android:layout_height="10dp" />
+
+    <EditText
+        style="@style/FormEditText"
+        android:background="@drawable/rectangle_bis"
+        android:id="@+id/etxtEmail"
+        android:inputType="textEmailAddress"
+        android:layout_weight="0.02"
+        android:hint="@string/txtemail"/>
+
+    <Space
+        android:layout_width="10dp"
+        android:layout_height="10dp" />
+
+    <EditText
+        style="@style/FormEditText"
+        android:background="@drawable/rectangle_bis"
+        android:id="@+id/etxtRoute"
+        android:inputType="text"
+        android:layout_weight="0.02"
+        android:hint="@string/txtroute"/>
+
+    <Space
+        android:layout_width="10dp"
+        android:layout_height="10dp" />
+
+    <EditText
+        style="@style/FormEditText"
+        android:background="@drawable/rectangle_bis"
+        android:id="@+id/etxtCommentStudents"
+        android:inputType="textMultiLine"
+        android:hint="@string/txtcommentstudent"
+        android:layout_weight="0.45"
+        android:textAlignment="textStart"
+        android:layout_height="0dp" />
+
+</LinearLayout>

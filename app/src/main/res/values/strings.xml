@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">Camins Escolars</string>
 
+    <string name="app_name">Camins Escolars</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="alert">Alert</string>
@@ -9,7 +9,7 @@
     <string name="alert_button">OK</string>
     <string name="background">Kanguroo Background Image</string>
     <string name="subtitle">iKanguro Project</string>
-    <string name="username_hint">Username</string>
+    <string name="username_hint">Email</string>
     <string name="password_hint">Password</string>
     <string name="loginbt">SIGN IN</string>
     <string name="signup_label"><b>Don\'t have an account? Sign up!</b></string>
@@ -76,6 +76,53 @@
     <string name="title_activity_login">LoginActivity</string>
     <string name="title_activity_splash">Camins Escolars</string>
     <string name="logo_ikanguro">Logo iKanguro</string>
+
+    <!-- Reference to options menu -->
+    <string name="route">Route</string>
+    <string name="data">Data</string>
+    <string name="password">Password</string>
+    <string name="message">Message</string>
+    <string name="student">Student</string>
+    <string name="qr">QR</string>
+
+    <!-- Reference to variable names -->
+    <string name="txtroutes">ROUTES:</string>
+    <string name="txtstudents">STUDENTS:</string>
+    <string name="txtadd">Add route</string>
+    <string name="txtname">Name</string>
+    <string name="txtsurname">Surname</string>
+    <string name="txtdni">DNI</string>
+    <string name="txtroute">Route</string>
+    <string name="txttelephone">Telephone</string>
+    <string name="txtemail">Email</string>
+    <string name="txtcomments">Comments</string>
+    <string name="txtpassword">Password</string>
+    <string name="txtnewpassword">New Password</string>
+    <string name="txtrepeat">Repeat Password:</string>
+    <string name="txtnamerouteall">Route Name</string>
+
+    <string name="accept">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="menu_save">menu_save</string>
+    <string name="menu_delete">menu_delete</string>
+
+    <!-- Reference to hint property -->
+    <string name="txtnamestudent">Name student</string>
+    <string name="txtnameuser">Name user</string>
+    <string name="txtcommentstudent">Comments about student</string>
+    <string name="txtcommentuser">Comments about user</string>
+    <string name="PasswordOld">OLD PASSWORD</string>
+    <string name="PasswordNew">NEW PASSWORD</string>
+    <string name="PasswordRepeit">REPEIT PASSWORD</string>
+    <string name="txtsurname2">Surname</string>
+    <string name="title_option_activity">KangurooGuard</string>
+    <string name="title_activity_datauser">Data User</string>
+    <string name="title_activity_datastudent">Data Student</string>
+    <string name="title_activity_password">Password Activity</string>
+    <string name="title_activity_students">Students Activity</string>
+    <string name="title_activity_routes">Routes Activity</string>
+    <string name="title_activity_addroute">Add Route Activity</string>
+    <string name="logout">Logout</string>
 
 
 </resources>

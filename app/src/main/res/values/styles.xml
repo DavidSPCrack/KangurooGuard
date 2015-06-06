@@ -6,11 +6,10 @@
     </style>
 
     <style name="_AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-
         <item name="android:editTextBackground">@drawable/apptheme_edit_text_holo_light</item>
-
     </style>
 
+    <!-- Dimensiones de boton -->
     <style name="AuthButton">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -22,6 +21,29 @@
         <item name="android:buttonStyle">?android:borderlessButtonStyle</item>
     </style>
 
+    <!-- Dimensiones del panel de opciones -->
+    <style name="AuthButtonOptions">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:background">@drawable/button_custom</item>
+        <item name="android:layout_width">125dp</item>
+        <item name="android:layout_height">165dp</item>
+        <item name="android:layout_marginLeft">@dimen/boton_group_left</item>
+        <item name="android:layout_marginRight">@dimen/boton_group_right</item>
+        <item name="android:layout_marginTop">@dimen/boton_group_top</item>
+    </style>
+
+    <style name="AuthButtonGroup">
+        <item name="android:layout_width">125dp</item>
+        <item name="android:layout_height">165dp</item>
+        <item name="android:layout_margin">2dip</item>
+        <item name="android:background">@color/primary_dark</item>
+        <item name="android:textColor">@color/icons</item>
+        <item name="android:src">@drawable/button_custom_bis</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingLeft">5dip</item>
+        <item name="android:paddingRight">5dip</item>
+    </style>
 
     <style name="AuthBackground">
         <item name="android:layout_width">wrap_content</item>
@@ -33,6 +55,22 @@
         <item name="android:layout_alignParentBottom">true</item>
         <item name="android:layout_alignParentRight">true</item>
         <item name="android:background">@color/background</item>
+    </style>
+
+    <style name="AuthTitlePrincipal">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/title</item>
+    </style>
+    <style name="AuthSubTitlePrincipal" parent="AuthTitlePrincipal">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/primary_dark</item>
     </style>
 
     <style name="AuthTitle">
@@ -50,7 +88,6 @@
         <item name="android:textSize">18sp</item>
         <item name="android:textColor">@color/accent</item>
     </style>
-
 
     <style name="AuthFieldContainer">
         <item name="android:layout_width">match_parent</item>
@@ -74,6 +111,21 @@
         <item name="android:textSize">17sp</item>
     </style>
 
+    <style name="FormEditText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColorHint">@color/icons</item>
+        <item name="android:textColor">@color/icons</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:paddingTop">20dp</item>
+    </style>
+
+    <style name="AuthEditCheck">
+        <item name="android:layout_width">30dp</item>
+        <item name="android:layout_height">30dp</item>
+    </style>
+
     <style name="AuthBottomLogo">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -84,6 +136,5 @@
         <item name="android:paddingRight">20dp</item>
         <item name="android:paddingBottom">20dp</item>
     </style>
-
 
 </resources>

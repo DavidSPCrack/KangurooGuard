@@ -6,6 +6,7 @@ import com.sistemasikanguro.kangurooguard.KanApplication;
 
 /**
  * Created by David on 26/04/2015.
+ *
  * @author david.sancho
  */
 public class UtilResource {

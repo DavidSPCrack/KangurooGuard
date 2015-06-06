@@ -2,6 +2,7 @@ package com.sistemasikanguro.kangurooguard.ui.activities;
 
 import android.app.ListActivity;
 
+import com.sistemasikanguro.kangurooguard.ui.IActividad;
 import com.sistemasikanguro.kangurooguard.util.UtilActivity;
 
 /**
@@ -9,9 +10,9 @@ import com.sistemasikanguro.kangurooguard.util.UtilActivity;
  *
  * @author david.sancho
  */
-public abstract class AbstractListActivity extends ListActivity {
+public abstract class AbstractListActivity extends ListActivity implements IActividad {
 
-    protected UtilActivity getUtil() {
+    public UtilActivity getUtil() {
         return new UtilActivity(this);
     }
 

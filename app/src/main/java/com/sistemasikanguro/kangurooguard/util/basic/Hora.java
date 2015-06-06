@@ -5,14 +5,12 @@
 package com.sistemasikanguro.kangurooguard.util.basic;
 
 import java.math.BigInteger;
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
 /**
- *
  * @author alfpar
  */
 public final class Hora extends Fecha {
@@ -100,12 +98,6 @@ public final class Hora extends Fecha {
         return new Hora();
     }
 
-    /**
-     * Devuelve la diferencia entre el numero 99999999 y el número formado por
-     * la AAAAMMDD. (Se utiliza para ordenación descendente);
-     *
-     * @return
-     */
     private final static BigInteger numeroAlto = new BigInteger("99999999999999");
 
     public String getValorInverso() {

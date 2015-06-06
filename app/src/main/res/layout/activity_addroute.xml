@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/borde"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <TextView
+        android:id="@+id/txtNameRoutes"
+        style="@style/AuthSubTitlePrincipal"
+        android:text="@string/txtnamerouteall" />
+
+    <EditText
+        android:id="@+id/etxtnameroute"
+        style="@style/AuthEditText"
+
+        android:background="@drawable/rectangle_bis"
+        android:inputType="text" />
+
+    <TextView
+        android:id="@+id/txtCommentsRoutes"
+        style="@style/AuthSubTitlePrincipal"
+        android:text="@string/txtcomments" />
+
+    <EditText
+        android:id="@+id/etxtCommentRoutes"
+        style="@style/AuthEditText"
+        android:layout_width="match_parent"
+        android:layout_height="368dp"
+
+        android:background="@drawable/rectangle_bis"
+        android:inputType="text" />
+    <Space
+        android:layout_width="10dp"
+        android:layout_height="10dp" />
+
+    <LinearLayout
+        android:id="@+id/bntListButtons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button android:id="@+id/btnaccept"
+            style="@style/AuthButton"
+            android:layout_weight="1"
+            android:background="@drawable/rectangle_bis"
+            android:text="@string/accept"/>
+        <Button android:id="@+id/btncancel"
+            style="@style/AuthButton"
+            android:layout_weight="1"
+            android:background="@drawable/rectangle_bis"
+            android:text="@string/cancel"/>
+    </LinearLayout>
+
+</LinearLayout>

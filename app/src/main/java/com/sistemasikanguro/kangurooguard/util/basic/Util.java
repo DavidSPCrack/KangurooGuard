@@ -66,6 +66,7 @@ public class Util {
             objs[x] = aux;
         }
     }
+
     private static void quickSort(IOrdenacion[] objs, int izquierda, int derecha, int tipoOrden) {
         int i = izquierda;
         int j = derecha;
@@ -91,12 +92,13 @@ public class Util {
         if (i < derecha)
             quickSort(objs, i, derecha, tipoOrden);
     }
+
     public static String getCaracteresNumericos(String cadena) {
         char[] cars = cadena.toCharArray();
         StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < cars.length; i++) {
-            if (isDigitoNumerico(cars[i]))
-                sb.append(cars[i]);
+        for (char car : cars) {
+            if (isDigitoNumerico(car))
+                sb.append(car);
         }
         return sb.toString();
     }

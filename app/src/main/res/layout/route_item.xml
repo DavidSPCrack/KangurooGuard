@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/message_inbox_vertical_margin"
+        android:layout_marginLeft="@dimen/message_inbox_horizontal_margin"
+        android:layout_marginRight="@dimen/message_inbox_horizontal_margin"
+        android:layout_marginStart="@dimen/message_inbox_horizontal_margin"
+        android:layout_marginTop="@dimen/message_inbox_vertical_margin"
+        android:background="@drawable/rectangle_bis">
+
+        <TextView
+            android:id="@+id/routelabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/message_vertical_padding"
+            android:textSize="16sp"
+            android:textColor="@color/icons"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:id="@+id/itemcounter"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="false"
+            android:layout_below="@+id/routelabel"
+            android:background="@drawable/rectangle_bis"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingBottom="@dimen/message_inbox_vertical_margin"
+            android:textColor="@color/icons"
+            android:textSize="12sp" />
+
+    </RelativeLayout>
+</LinearLayout>

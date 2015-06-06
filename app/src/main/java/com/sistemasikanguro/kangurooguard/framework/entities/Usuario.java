@@ -1,12 +1,10 @@
 package com.sistemasikanguro.kangurooguard.framework.entities;
 
-import com.parse.ParseException;
-import com.parse.ParseQuery;
 import com.parse.ParseUser;
 import com.sistemasikanguro.kangurooguard.framework.BasicEntity;
 import com.sistemasikanguro.kangurooguard.framework.ErrorGeneral;
-
-import java.util.List;
+import com.sistemasikanguro.kangurooguard.framework.EstructuraDatos;
+import com.sistemasikanguro.kangurooguard.framework.ad.ADUsuario;
 
 /**
  * Created by David on 26/04/2015.
@@ -24,18 +22,25 @@ public class Usuario extends BasicEntity {
         }
     }
 
+    public static final String TABLE_NAME = "_User";
+
+    public static final String NAME = "name";
+    public static final String SURNAME = "surname";
+    public static final String TELEPHONE = "telephone";
+    public static final String NUMEDOCU = "numedocu";
+    public static final String COMMENTS = "comments";
+
     public static final String USERNAME = "username";
     public static final String PASSWORD = "password";
     public static final String EMAIL = "email";
     public static final String TYPE = "type";
 
-    public static final String[] FIELDS = {USERNAME, PASSWORD, EMAIL, TYPE};
+    public static final String[] FIELDS = {NAME, SURNAME, TELEPHONE, NUMEDOCU, COMMENTS, USERNAME, PASSWORD, EMAIL, TYPE};
 
     private ParseUser pUser;
 
-    Usuario(ParseUser pUser) {
-        super(pUser);
-        this.pUser = pUser;
+    Usuario(EstructuraDatos eDatos) {
+        super(eDatos);
     }
 
     public String getUsername() {
@@ -54,6 +59,26 @@ public class Usuario extends BasicEntity {
         return getDato(TYPE);
     }
 
+    public String getName() {
+        return getDato(NAME);
+    }
+
+    public String getSurname() {
+        return getDato(SURNAME);
+    }
+
+    public String getTelephone() {
+        return getDato(TELEPHONE);
+    }
+
+    public String getNumeroDocumento() {
+        return getDato(NUMEDOCU);
+    }
+
+    public String getComments() {
+        return getDato(COMMENTS);
+    }
+
     public boolean isAdministrador() {
         return getTipo().equals(K.Tipos.ADMINISTRADOR);
     }
@@ -67,35 +92,30 @@ public class Usuario extends BasicEntity {
     }
 
     public static Usuario getInstance(String usuarCod) throws ErrorGeneral {
-        try {
-            ParseQuery<ParseUser> pQuery = ParseUser.getQuery();
-            pQuery.whereContains(USERNAME, usuarCod);
-            List<ParseUser> lista = pQuery.find();
-            if (lista.isEmpty())
-                return null;
-
-            ParseUser pUser = lista.get(0);
-            Usuario user = new Usuario(pUser);
-            return user;
-        } catch (ParseException e) {
-            throw new ErrorGeneral(e);
-        }
+        ADUsuario adatos = new ADUsuario();
+        EstructuraDatos eDatos = adatos.getUsuario(usuarCod);
+        if (eDatos == null)
+            return null;
+        Usuario user = new Usuario(eDatos);
+        return user;
     }
 
-    public static Usuario getInstance() {
-        ParseUser pUser = ParseUser.getCurrentUser();
-        if (pUser == null)
+    public static Usuario getInstance() throws ErrorGeneral {
+        ADUsuario adatos = new ADUsuario();
+        EstructuraDatos eDatos = adatos.getCurrentUser();
+        if (eDatos == null)
             return null;
-        Usuario user = new Usuario(pUser);
+        Usuario user = new Usuario(eDatos);
         return user;
     }
 
     public static Usuario login(String username, String password) throws ErrorGeneral {
         try {
-            ParseUser pUser = ParseUser.logIn(username, password);
-            Usuario user = new Usuario(pUser);
+            ADUsuario adatos = new ADUsuario();
+            EstructuraDatos eDatos = adatos.login(username, password);
+            Usuario user = new Usuario(eDatos);
             return user;
-        } catch (ParseException e) {
+        } catch (ErrorGeneral e) {
             throw new ErrorGeneral(e);
         }
     }
@@ -108,5 +128,10 @@ public class Usuario extends BasicEntity {
     @Override
     public String[] getBasicFields() {
         return FIELDS;
+    }
+
+    @Override
+    protected String getNombreEstructura() {
+        return TABLE_NAME;
     }
 }

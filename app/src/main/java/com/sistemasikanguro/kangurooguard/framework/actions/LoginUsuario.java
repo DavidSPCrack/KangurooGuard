@@ -2,6 +2,8 @@ package com.sistemasikanguro.kangurooguard.framework.actions;
 
 import com.sistemasikanguro.kangurooguard.framework.ErrorGeneral;
 import com.sistemasikanguro.kangurooguard.framework.entities.Usuario;
+import com.sistemasikanguro.kangurooguard.ui.IActividad;
+import com.sistemasikanguro.kangurooguard.ui.activities.OptionActivity;
 import com.sistemasikanguro.kangurooguard.util.UtilActivity;
 
 /**
@@ -16,8 +18,8 @@ public class LoginUsuario extends AbstractAction {
 
     private Usuario user;
 
-    public LoginUsuario(UtilActivity util, String username, String password) {
-        super(util);
+    public LoginUsuario(IActividad actividad, String username, String password) {
+        super(actividad);
         this.username = username;
         this.password = password;
     }
@@ -28,12 +30,20 @@ public class LoginUsuario extends AbstractAction {
 
     @Override
     public void doInBackground() throws ErrorGeneral {
-        user = Usuario.login(username, password);
+        try {
+            user = Usuario.login(username, password);
+        } catch (ErrorGeneral eg) {
+            setErrorGeneral(eg);
+            throw eg;
+        }
     }
 
     @Override
     public void postExecute() {
-
+        if (user != null) {
+            UtilActivity util = getUtil();
+            util.openNewActivity(OptionActivity.class);
+        }
     }
 
 }
