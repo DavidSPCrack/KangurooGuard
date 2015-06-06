@@ -136,4 +136,8 @@ public abstract class BasicEntity {
     protected abstract String[] getBasicFields();
 
     protected abstract String getNombreEstructura();
+
+    public EstructuraDatos getEstructura() {
+        return (EstructuraDatos) datos.clone();
+    }
 }

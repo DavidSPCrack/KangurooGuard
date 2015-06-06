@@ -2,6 +2,7 @@ package com.sistemasikanguro.kangurooguard.ui.activities;
 
 import android.support.v7.app.AppCompatActivity;
 
+import com.sistemasikanguro.kangurooguard.ui.IActividad;
 import com.sistemasikanguro.kangurooguard.util.UtilActivity;
 
 /**
@@ -9,9 +10,9 @@ import com.sistemasikanguro.kangurooguard.util.UtilActivity;
  *
  * @author david.sancho
  */
-public abstract class AbstractAppCompatActivity extends AppCompatActivity {
+public abstract class AbstractAppCompatActivity extends AppCompatActivity implements IActividad {
 
-    protected UtilActivity getUtil() {
+    public UtilActivity getUtil() {
         return new UtilActivity(this);
     }
 

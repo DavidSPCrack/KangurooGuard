@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 
 import com.sistemasikanguro.kangurooguard.R;
+import com.sistemasikanguro.kangurooguard.framework.ErrorGeneral;
+import com.sistemasikanguro.kangurooguard.framework.entities.Usuario;
 import com.sistemasikanguro.kangurooguard.util.UtilActivity;
 
 public final class SplashActivity extends AbstractAppCompatActivity {
@@ -22,7 +24,17 @@ public final class SplashActivity extends AbstractAppCompatActivity {
     protected void onResume() {
         super.onResume();
 
-        UtilActivity util = getUtil();
-        util.openNewActivity(LoginActivity.class);
+        Usuario user = null;
+        try {
+            user = Usuario.getInstance();
+        } catch (ErrorGeneral ignore) {
+        }
+        if (user == null) {
+            UtilActivity util = getUtil();
+            util.openNewActivity(LoginActivity.class);
+        } else {
+            UtilActivity util = getUtil();
+            util.openNewActivity(OptionActivity.class);
+        }
     }
 }

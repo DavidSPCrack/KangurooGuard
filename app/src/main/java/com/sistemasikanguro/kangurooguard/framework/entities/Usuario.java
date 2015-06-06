@@ -24,12 +24,18 @@ public class Usuario extends BasicEntity {
 
     public static final String TABLE_NAME = "_User";
 
+    public static final String NAME = "name";
+    public static final String SURNAME = "surname";
+    public static final String TELEPHONE = "telephone";
+    public static final String NUMEDOCU = "numedocu";
+    public static final String COMMENTS = "comments";
+
     public static final String USERNAME = "username";
     public static final String PASSWORD = "password";
     public static final String EMAIL = "email";
     public static final String TYPE = "type";
 
-    public static final String[] FIELDS = {USERNAME, PASSWORD, EMAIL, TYPE};
+    public static final String[] FIELDS = {NAME, SURNAME, TELEPHONE, NUMEDOCU, COMMENTS, USERNAME, PASSWORD, EMAIL, TYPE};
 
     private ParseUser pUser;
 
@@ -51,6 +57,26 @@ public class Usuario extends BasicEntity {
 
     public String getTipo() {
         return getDato(TYPE);
+    }
+
+    public String getName() {
+        return getDato(NAME);
+    }
+
+    public String getSurname() {
+        return getDato(SURNAME);
+    }
+
+    public String getTelephone() {
+        return getDato(TELEPHONE);
+    }
+
+    public String getNumeroDocumento() {
+        return getDato(NUMEDOCU);
+    }
+
+    public String getComments() {
+        return getDato(COMMENTS);
     }
 
     public boolean isAdministrador() {

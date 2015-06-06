@@ -4,6 +4,8 @@ import android.app.Application;
 
 import com.parse.Parse;
 import com.parse.ParseCrashReporting;
+import com.parse.ParseException;
+import com.parse.ParseUser;
 import com.sistemasikanguro.kangurooguard.util.ParseAD;
 
 /**
@@ -25,10 +27,19 @@ public class KanApplication extends Application {
         Parse.enableLocalDatastore(this);
         ParseCrashReporting.enable(this);
 
-        Parse.initialize(this, "t6VmmFjjxEJmJWlmMPD1OWX74QP0l2lxlMZAoNE1", "YXGs5UvIXHkDwpJ91mrOlzVw5gs0xutvNr7eW25K");
+        Parse.initialize(this, "TryWsZNlenNVm78IatXtzpPEM8G2CJISYEffoznN", "zDr1H4RMytzEWDj42e2neDx76q9Hr0rbugJt6NNW");
 
         ParseAD adatos = ParseAD.getInstance();
         adatos.updateInstallation();
+
+        try {
+            ParseUser pUser = ParseUser.getCurrentUser();
+            if (pUser != null)
+                pUser.fetch();
+        } catch (ParseException e) {
+            ParseUser.logOut();
+        }
+
 
         app = this;
     }

@@ -2,6 +2,7 @@ package com.sistemasikanguro.kangurooguard.ui.fragments;
 
 import android.support.v4.app.Fragment;
 
+import com.sistemasikanguro.kangurooguard.ui.IActividad;
 import com.sistemasikanguro.kangurooguard.util.UtilActivity;
 
 /**
@@ -9,11 +10,11 @@ import com.sistemasikanguro.kangurooguard.util.UtilActivity;
  *
  * @author david.sancho
  */
-public abstract class AbstractFragment extends Fragment {
+public abstract class AbstractFragment extends Fragment implements IActividad {
 
     protected static final String ARG_SECTION_NUMBER = "section_number";
 
-    protected UtilActivity getUtil() {
+    public UtilActivity getUtil() {
         return new UtilActivity(getActivity());
     }
 

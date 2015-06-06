@@ -5,6 +5,8 @@ import android.support.v7.app.ActionBar;
 import android.view.View;
 
 import com.sistemasikanguro.kangurooguard.R;
+import com.sistemasikanguro.kangurooguard.framework.actions.LoginUsuario;
+import com.sistemasikanguro.kangurooguard.framework.actions.SignUpUsuario;
 import com.sistemasikanguro.kangurooguard.util.UtilActivity;
 
 
@@ -21,8 +23,16 @@ public final class SignUpActivity extends AbstractAppCompatActivity {
     }
 
     public void signUpClick(View view) {
-        UtilActivity util = getUtil();
-        util.openNewActivity(OptionActivity.class);
+        final UtilActivity util = getUtil();
+        String username = util.getEditTextValueAndValidate(R.id.usernameField);
+        if (!username.isEmpty()) {
+            String password = util.getEditTextValueAndValidate(R.id.passwordField);
+            if (!password.isEmpty()) {
+
+                SignUpUsuario signUp = new SignUpUsuario(this, username, password, username);
+                signUp.execute();
+            }
+        }
     }
 
     public void cancelClick(View view) {

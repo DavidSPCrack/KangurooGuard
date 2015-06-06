@@ -9,7 +9,7 @@
     <string name="alert_button">OK</string>
     <string name="background">Kanguroo Background Image</string>
     <string name="subtitle">iKanguro Project</string>
-    <string name="username_hint">Username</string>
+    <string name="username_hint">Email</string>
     <string name="password_hint">Password</string>
     <string name="loginbt">SIGN IN</string>
     <string name="signup_label"><b>Don\'t have an account? Sign up!</b></string>

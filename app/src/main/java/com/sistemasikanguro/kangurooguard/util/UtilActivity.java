@@ -85,8 +85,10 @@ public class UtilActivity {
         alertDialog.setMessage(msg);
         alertDialog.setIcon(R.mipmap.ic_warning_amber);
         alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, button,
-                (dialog, which) -> {
-                    dialog.dismiss();
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
                 });
         alertDialog.show();
     }

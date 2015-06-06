@@ -29,8 +29,14 @@ public final class ADUsuario extends AbstractAccesoADatos {
     }
 
     public EstructuraDatos getCurrentUser() throws ErrorGeneral {
-        ParseUser pUser = ParseUser.getCurrentUser();
-        return getEstructuraUsuario(pUser);
+        try {
+            ParseUser pUser = ParseUser.getCurrentUser();
+            if (pUser != null)
+                pUser = pUser.fetchIfNeeded();
+            return getEstructuraUsuario(pUser);
+        } catch (ParseException e) {
+            throw new ErrorGeneral(e);
+        }
     }
 
     public EstructuraDatos login(String username, String password) throws ErrorGeneral {
@@ -50,7 +56,7 @@ public final class ADUsuario extends AbstractAccesoADatos {
         return eDatos;
     }
 
-    private void createUser(EstructuraDatos eDatos) throws ErrorGeneral {
+    void createUser(EstructuraDatos eDatos) throws ErrorGeneral {
         try {
             ParseUser pUser = new ParseUser();
             String[] fields = eDatos.getFields();
@@ -58,6 +64,22 @@ public final class ADUsuario extends AbstractAccesoADatos {
                 pUser.put(field, eDatos.getString(field));
             }
             pUser.signUp();
+        } catch (ParseException e) {
+            throw new ErrorGeneral(e);
+        }
+    }
+
+    void updateUsuario(EstructuraDatos eDatos) throws ErrorGeneral {
+        try {
+            ParseUser pUser = ParseUser.getCurrentUser();
+            if (pUser != null) {
+                pUser = pUser.fetch();
+                String[] fields = eDatos.getFields();
+                for (String field : fields) {
+                    pUser.put(field, eDatos.getString(field));
+                }
+                pUser.save();
+            }
         } catch (ParseException e) {
             throw new ErrorGeneral(e);
         }

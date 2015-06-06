@@ -1,5 +1,7 @@
 package com.sistemasikanguro.kangurooguard.framework.actions;
 
+import com.sistemasikanguro.kangurooguard.framework.ErrorGeneral;
+import com.sistemasikanguro.kangurooguard.ui.IActividad;
 import com.sistemasikanguro.kangurooguard.util.UtilActivity;
 import com.sistemasikanguro.kangurooguard.util.thread.AsyncTaskStandard;
 import com.sistemasikanguro.kangurooguard.util.thread.ITheadElement;
@@ -11,10 +13,16 @@ import com.sistemasikanguro.kangurooguard.util.thread.ITheadElement;
  */
 public abstract class AbstractAction implements ITheadElement {
 
+    private ErrorGeneral eg;
+    private IActividad actividad;
     private UtilActivity util;
 
-    protected AbstractAction(UtilActivity util) {
-        this.util = util;
+    protected AbstractAction(IActividad actividad) {
+        this.util = actividad.getUtil();
+    }
+
+    public IActividad getActividad() {
+        return actividad;
     }
 
     public UtilActivity getUtil() {
@@ -24,5 +32,17 @@ public abstract class AbstractAction implements ITheadElement {
     @Override
     public void execute() {
         AsyncTaskStandard.doTask(getUtil(), this);
+    }
+
+    protected ErrorGeneral getErrorGeneral() {
+        return eg;
+    }
+
+    public void setErrorGeneral(ErrorGeneral eg) {
+        this.eg = eg;
+    }
+
+    public boolean isOk() {
+        return eg == null;
     }
 }
