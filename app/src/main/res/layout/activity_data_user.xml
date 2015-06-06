@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/borde"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <!-- Nombre del padre -->
+    <TextView
+        style="@style/AuthSubTitlePrincipal"
+        android:text="@string/txtname"
+        android:id="@+id/txtName" />
+    <EditText
+        style="@style/AuthSubTitlePrincipal"
+        android:background="@drawable/borde"
+        android:id="@+id/etxtName"
+        android:inputType="text"
+        android:layout_height="wrap_content" />
+
+    <!-- Apellido del padre -->
+    <TextView
+        style="@style/AuthSubTitlePrincipal"
+        android:text="@string/txtsurname"
+        android:id="@+id/txtSurname" />
+    <EditText
+        style="@style/AuthSubTitlePrincipal"
+        android:background="@drawable/borde"
+        android:id="@+id/etxtSurname"
+        android:inputType="text" />
+
+    <!-- DNI del padre -->
+    <TextView
+        style="@style/AuthSubTitlePrincipal"
+        android:text="@string/txtdni"
+        android:id="@+id/txtDni" />
+    <EditText
+        style="@style/AuthSubTitlePrincipal"
+        android:background="@drawable/borde"
+        android:id="@+id/etxtDni"
+        android:inputType="text" />
+
+    <!-- Telefono del padre -->
+    <TextView
+        style="@style/AuthSubTitlePrincipal"
+        android:text="@string/txttelephone"
+        android:id="@+id/txtTelephone" />
+    <EditText
+        style="@style/AuthSubTitlePrincipal"
+        android:background="@drawable/borde"
+        android:id="@+id/etxtTelephone"
+        android:inputType="number" />
+
+    <!-- Email del padre -->
+    <TextView
+        style="@style/AuthSubTitlePrincipal"
+        android:text="@string/txtemail"
+        android:id="@+id/txtEmail" />
+    <EditText
+        style="@style/AuthSubTitlePrincipal"
+        android:background="@drawable/borde"
+        android:id="@+id/etxtEmail"
+        android:inputType="textEmailAddress" />
+
+    <!-- Comentarios -->
+    <TextView
+        style="@style/AuthSubTitlePrincipal"
+        android:text="@string/txtcomments"
+        android:id="@+id/txtCommentsUser" />
+    <EditText
+        style="@style/AuthSubTitlePrincipal"
+        android:background="@drawable/borde"
+        android:id="@+id/etxtCommentUser"
+        android:inputType="textMultiLine"
+        android:layout_height="wrap_content" />
+
+    <Space
+        android:layout_width="30dp"
+        android:layout_height="30dp" />
+
+    <!-- Botones validar -->
+    <LinearLayout
+        android:id="@+id/bntListButtons"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal" >
+
+        <Button android:id="@+id/btnaccept"
+            style="@style/AuthButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/accept"/>
+
+        <Button android:id="@+id/btncancel"
+            style="@style/AuthButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/cancel"/>
+    </LinearLayout>
+
+</LinearLayout>
