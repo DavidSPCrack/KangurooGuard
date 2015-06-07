@@ -1,8 +1,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.sistemasikanguro.kangurooguard.ui.activities.SignUpActivity">
-
 
     <ImageView
         android:id="@+id/backgroundImage"
@@ -28,7 +28,6 @@
             style="@style/AuthEditText"
             android:hint="@string/username_hint"
             android:inputType="textVisiblePassword|textNoSuggestions">
-
             <requestFocus />
         </EditText>
 
@@ -52,7 +51,6 @@
     <Button
         style="@style/AuthButton"
         android:id="@+id/signupButton"
-        android:background="@drawable/rectangle_bis"
         android:layout_below="@id/editTextLayout"
         android:layout_marginEnd="@dimen/void_dimen"
         android:layout_marginRight="@dimen/void_dimen"
@@ -64,7 +62,6 @@
     <Button
         style="@style/AuthButton"
         android:id="@+id/cancelButton"
-        android:background="@drawable/rectangle_bis"
         android:layout_below="@id/editTextLayout"
         android:layout_marginLeft="@dimen/void_dimen"
         android:layout_marginStart="@dimen/void_dimen"

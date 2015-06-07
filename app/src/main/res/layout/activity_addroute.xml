@@ -30,7 +30,6 @@
         style="@style/AuthEditText"
         android:layout_width="match_parent"
         android:layout_height="368dp"
-
         android:background="@drawable/rectangle_bis"
         android:inputType="text" />
     <Space
@@ -45,12 +44,10 @@
         <Button android:id="@+id/btnaccept"
             style="@style/AuthButton"
             android:layout_weight="1"
-            android:background="@drawable/rectangle_bis"
             android:text="@string/accept"/>
         <Button android:id="@+id/btncancel"
             style="@style/AuthButton"
             android:layout_weight="1"
-            android:background="@drawable/rectangle_bis"
             android:text="@string/cancel"/>
     </LinearLayout>
 

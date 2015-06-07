@@ -13,15 +13,12 @@
         android:weightSum="2">
         <Button
             style="@style/AuthButtonOptions"
-            android:background="@drawable/button_custom_bis"
             android:layout_weight="1"
-
             android:text="@string/route"
             android:id="@+id/btnOptions01"
             android:onClick="openRoutes" />
         <Button
             style="@style/AuthButtonOptions"
-            android:background="@drawable/button_custom_bis"
             android:layout_weight="1"
             android:text="@string/data"
             android:id="@+id/btnOptions02"
@@ -34,14 +31,12 @@
         android:weightSum="2">
         <Button
             style="@style/AuthButtonOptions"
-            android:background="@drawable/button_custom_bis"
             android:layout_weight="1"
             android:text="@string/password"
             android:id="@+id/btnOptions03"
             android:onClick="openPasswordChange" />
         <Button
             style="@style/AuthButtonOptions"
-            android:background="@drawable/button_custom_bis"
             android:layout_weight="1"
             android:text="@string/student"
             android:id="@+id/btnOptions04"
@@ -53,14 +48,12 @@
         android:weightSum="2">
         <Button
             style="@style/AuthButtonOptions"
-            android:background="@drawable/button_custom_bis"
             android:layout_weight="1"
             android:text="@string/message"
             android:id="@+id/btnOptions05"
             android:onClick="openMessages" />
         <Button
             style="@style/AuthButtonOptions"
-            android:background="@drawable/button_custom_bis"
             android:layout_weight="1"
             android:text="@string/qr"
             android:id="@+id/btnOptions06"

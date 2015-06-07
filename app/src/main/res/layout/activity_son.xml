@@ -35,18 +35,15 @@
 
         <Button
             style="@style/AuthButton"
-            android:background="@drawable/rectangle_bis"
             android:id="@+id/btnaccept"
             android:layout_weight="1"
             android:text="@string/accept" />
 
         <Button
             style="@style/AuthButton"
-            android:background="@drawable/rectangle_bis"
             android:id="@+id/btncancel"
             android:layout_weight="1"
             android:text="@string/cancel" />
     </LinearLayout>
-
 
 </TableLayout>

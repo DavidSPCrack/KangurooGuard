@@ -43,7 +43,6 @@
 
     <Button
         android:id="@+id/loginbutton"
-        android:background="@drawable/rectangle_bis"
         style="@style/AuthButton"
         android:onClick="loginClick"
         android:text="@string/loginbt"
