@@ -35,7 +35,6 @@ public final class OptionActivity extends AbstractAppCompatActivity {
         int id = item.getItemId();
 
         if (id == R.id.option_logout) {
-
             LogoutUsuario logout = new LogoutUsuario(this);
             logout.execute();
             return true;

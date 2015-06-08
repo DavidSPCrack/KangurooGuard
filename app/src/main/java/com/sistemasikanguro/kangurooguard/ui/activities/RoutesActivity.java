@@ -25,9 +25,6 @@ public final class RoutesActivity extends AbstractAppCompatActivity {
         if (actionBar != null) {
             actionBar.setDisplayShowHomeEnabled(true);
         }
-        if (actionBar != null) {
-            actionBar.setDisplayShowHomeEnabled(true);
-        }
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -50,6 +47,11 @@ public final class RoutesActivity extends AbstractAppCompatActivity {
             return true;
         }
 
+        if (id == R.id.add) {
+            Toast toast = Toast.makeText(getApplicationContext(), "Añade ruta", Toast.LENGTH_SHORT);
+            toast.show();
+            return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 }

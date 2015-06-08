@@ -4,16 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.sistemasikanguro.kangurooguard.ui.activities.DataUser">
     <item
-        android:id="@+id/action_search"
-        android:icon="@drawable/ic_search_white_24dp"
-        android:title="@string/search"
-        app:showAsAction="ifRoom"/>
-    <item
         android:id="@+id/settings"
         android:title="@string/action_settings"
-        app:showAsAction="never" />
+        app:showAsAction="never"/>
     <item
-        android:id="@+id/add"
-        android:title="@string/add"
-        app:showAsAction="never" />
+        android:id="@+id/modify"
+        android:title="@string/modify"
+        app:showAsAction="never"/>
 </menu>
