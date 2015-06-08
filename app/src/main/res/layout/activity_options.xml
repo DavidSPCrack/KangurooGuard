@@ -48,8 +48,8 @@
         android:weightSum="2">
         <Button
             style="@style/AuthButtonOptions"
-            android:layout_weight="1"
             android:text="@string/message"
+            android:layout_weight="1"
             android:id="@+id/btnOptions05"
             android:onClick="openMessages" />
         <Button

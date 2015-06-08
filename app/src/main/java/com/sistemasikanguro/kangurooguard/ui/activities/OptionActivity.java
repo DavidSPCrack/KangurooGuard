@@ -8,7 +8,6 @@ import android.view.View;
 
 import com.sistemasikanguro.kangurooguard.R;
 import com.sistemasikanguro.kangurooguard.framework.actions.LogoutUsuario;
-import com.sistemasikanguro.kangurooguard.framework.actions.SignUpUsuario;
 import com.sistemasikanguro.kangurooguard.util.UtilActivity;
 
 public final class OptionActivity extends AbstractAppCompatActivity {
@@ -66,6 +65,7 @@ public final class OptionActivity extends AbstractAppCompatActivity {
     }
 
     public void openMessages(View view) {
+
 
     }
 
