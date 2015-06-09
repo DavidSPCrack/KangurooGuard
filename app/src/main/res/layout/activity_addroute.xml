@@ -30,35 +30,38 @@
         style="@style/FormEditText"
         android:id="@+id/etxtCommentRoutes"
         android:layout_width="match_parent"
-        android:layout_height="347dp"
+        android:layout_height="198dp"
         android:background="@drawable/rectangle_bis"
         android:hint="@string/routecomments"
         android:gravity="center|start|top"
-        android:inputType="text" />
+        android:inputType="text"
+        android:layout_weight="0.65" />
 
     <Space
         android:layout_width="10dp"
         android:layout_height="10dp" />
 
     <LinearLayout
-        style="@style/AuthButton"
         android:id="@+id/bntListButtons"
-        android:orientation="horizontal">
+        style="?android:attr/buttonBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="63dp"
+        android:orientation="horizontal"
+        android:gravity="bottom"
+        android:layout_weight="0.15">
 
         <Button
-            android:id="@+id/btnaccept"
             style="@style/AuthButton"
+            android:id="@+id/btnaccept"
             android:layout_weight="1"
             android:text="@string/accept"
             android:onClick="changeRoute" />
 
         <Button
-            android:id="@+id/btncancel"
             style="@style/AuthButton"
+            android:id="@+id/btncancel"
             android:layout_weight="1"
             android:text="@string/cancel"
-            android:onClick="CancelRoute"
-            android:nestedScrollingEnabled="false" />
+            android:onClick="CancelRoute" />
     </LinearLayout>
-
 </LinearLayout>
