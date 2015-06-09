@@ -125,7 +125,7 @@
     <string name="title_activity_datauser">Data User</string>
     <string name="title_activity_datastudent">Data Student</string>
     <string name="title_activity_password">Change your password</string>
-    <string name="title_activity_students">Students Activity</string>
+    <string name="title_activity_students">Students List</string>
     <string name="title_activity_routes">Route List</string>
     <string name="title_activity_addroute">Add Route</string>
 

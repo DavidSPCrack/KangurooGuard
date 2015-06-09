@@ -72,6 +72,7 @@
         android:background="@drawable/rectangle_bis"
         android:id="@+id/etxtCommentStudents"
         android:inputType="textMultiLine"
+        android:gravity="top"
         android:hint="@string/txtcommentstudent"
         android:layout_weight="0.45"
         android:textAlignment="textStart"

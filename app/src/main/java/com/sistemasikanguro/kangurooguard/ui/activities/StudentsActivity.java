@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.sistemasikanguro.kangurooguard.R;
+import com.sistemasikanguro.kangurooguard.util.UtilActivity;
 
 /**
  * Created by Andres on 18/05/2015.
@@ -47,11 +48,9 @@ public final class StudentsActivity extends AbstractAppCompatActivity {
             return true;
         }
         if (id == R.id.add) {
-            Toast toast = Toast.makeText(getApplicationContext(), "Añade ruta", Toast.LENGTH_SHORT);
-            toast.show();
-            return true;
+            UtilActivity util = getUtil();
+            util.openNewActivity(DataStudentActivity.class, false);
         }
-
         return super.onOptionsItemSelected(item);
     }
 }

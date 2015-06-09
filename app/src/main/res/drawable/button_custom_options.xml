@@ -3,14 +3,14 @@
 
     <!-- Boton presionado -->
     <item android:state_pressed="true"
-        android:drawable="@drawable/btn_shape_press" />
+        android:drawable="@drawable/button_shape_press" />
 
     <!-- Estado activo con foco de los botones -->
     <item android:state_focused="true"
         android:state_enabled="true"
-        android:drawable="@drawable/btn_shape" />
+        android:drawable="@drawable/button_shape" />
 
     <!-- Estado activo pero sin foco de los botones -->
     <item android:state_enabled="false"
-        android:drawable="@drawable/btn_shape" />
+        android:drawable="@drawable/button_shape" />
 </selector>
