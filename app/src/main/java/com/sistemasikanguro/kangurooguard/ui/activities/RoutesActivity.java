@@ -37,11 +37,6 @@ public final class RoutesActivity extends AbstractAppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        if (id == R.id.settings) {
-            Toast toast = Toast.makeText(getApplicationContext(), "boton de configuracion", Toast.LENGTH_SHORT);
-            toast.show();
-            return true;
-        }
         if (id == R.id.action_search) {
             Toast toast = Toast.makeText(getApplicationContext(), "boton de busqueda", Toast.LENGTH_SHORT);
             toast.show();

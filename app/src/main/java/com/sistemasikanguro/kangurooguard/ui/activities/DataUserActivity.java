@@ -56,26 +56,4 @@ public final class DataUserActivity extends AbstractAppCompatActivity {
         util.openNewActivity(OptionActivity.class);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_data_user, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-
-        if (id == R.id.settings) {
-            Toast toast = Toast.makeText(getApplicationContext(), "boton de configuracion", Toast.LENGTH_SHORT);
-            toast.show();
-            return true;
-        }
-        if (id == R.id.modify) {
-            Toast toast = Toast.makeText(getApplicationContext(), "Modificar", Toast.LENGTH_SHORT);
-            toast.show();
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
 }

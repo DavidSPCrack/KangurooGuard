@@ -78,4 +78,25 @@
         android:textAlignment="textStart"
         android:layout_height="0dp" />
 
+    <LinearLayout
+        android:id="@+id/bntListButtons"
+        style="?android:attr/buttonBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:orientation="horizontal"
+        android:gravity="bottom">
+
+        <Button
+            style="@style/AuthButton"
+            android:id="@+id/btnaccept"
+            android:layout_weight="1"
+            android:text="@string/accept" />
+
+        <Button
+            style="@style/AuthButton"
+            android:id="@+id/btncancel"
+            android:layout_weight="1"
+            android:text="@string/cancel" />
+    </LinearLayout>
+
 </LinearLayout>
