@@ -19,6 +19,7 @@ public abstract class AbstractAction implements ITheadElement {
 
     protected AbstractAction(IActividad actividad) {
         this.util = actividad.getUtil();
+        this.actividad = actividad;
     }
 
     public IActividad getActividad() {
