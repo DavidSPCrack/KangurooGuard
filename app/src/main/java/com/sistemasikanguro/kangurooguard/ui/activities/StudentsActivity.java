@@ -4,9 +4,14 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import com.sistemasikanguro.kangurooguard.R;
+import com.sistemasikanguro.kangurooguard.adapters.PersonsAdapter;
+import com.sistemasikanguro.kangurooguard.adapters.RoutesAdapter;
+import com.sistemasikanguro.kangurooguard.framework.actions.LoadPersonas;
+import com.sistemasikanguro.kangurooguard.framework.actions.LoadRutas;
 import com.sistemasikanguro.kangurooguard.util.UtilActivity;
 
 /**
@@ -15,6 +20,8 @@ import com.sistemasikanguro.kangurooguard.util.UtilActivity;
  * @author andres.alvarez
  */
 public final class StudentsActivity extends AbstractAppCompatActivity {
+
+    private PersonsAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +32,16 @@ public final class StudentsActivity extends AbstractAppCompatActivity {
         if (actionBar != null) {
             actionBar.setDisplayShowHomeEnabled(true);
         }
+        ListView listView = (ListView) findViewById(R.id.listView);
+        this.adapter = new PersonsAdapter(this);
+        listView.setAdapter(this.adapter);
+
+        loadPersonas();
+    }
+
+    private void loadPersonas() {
+        LoadPersonas load = new LoadPersonas(this, adapter, "");
+        load.execute();
     }
 
     @Override

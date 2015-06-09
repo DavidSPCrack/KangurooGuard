@@ -1,13 +1,16 @@
 package com.sistemasikanguro.kangurooguard.ui.activities;
 
-import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
+import android.widget.ListView;
 import android.widget.Toast;
+
 import com.sistemasikanguro.kangurooguard.R;
+import com.sistemasikanguro.kangurooguard.adapters.RoutesAdapter;
+import com.sistemasikanguro.kangurooguard.framework.actions.LoadRutas;
 import com.sistemasikanguro.kangurooguard.util.UtilActivity;
 
 /**
@@ -16,6 +19,8 @@ import com.sistemasikanguro.kangurooguard.util.UtilActivity;
  * @author andres.alvarez
  */
 public final class RoutesActivity extends AbstractAppCompatActivity {
+
+    private RoutesAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +31,36 @@ public final class RoutesActivity extends AbstractAppCompatActivity {
         if (actionBar != null) {
             actionBar.setDisplayShowHomeEnabled(true);
         }
+
+        final SwipeRefreshLayout swipeRefresh = (SwipeRefreshLayout) findViewById(R.id.swipeRefreshLayout);
+        ListView listView = (ListView) findViewById(R.id.list_routers);
+        this.adapter = new RoutesAdapter(this);
+        listView.setAdapter(this.adapter);
+
+        loadRutas();
+
+        swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                loadRutas(swipeRefresh);
+            }
+        });
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    private void loadRutas(SwipeRefreshLayout swipeRefreshLayout) {
+        LoadRutas load = swipeRefreshLayout == null ? new LoadRutas(this, adapter) : new LoadRutas(this, adapter, swipeRefreshLayout);
+        load.execute();
+    }
+
+    private void loadRutas() {
+        loadRutas(null);
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_routes, menu);

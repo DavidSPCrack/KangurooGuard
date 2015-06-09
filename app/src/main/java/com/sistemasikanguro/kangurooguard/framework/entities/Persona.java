@@ -12,17 +12,21 @@ import java.util.ArrayList;
  *
  * @author david.sancho
  */
-public class Ruta extends BasicEntity {
+public class Persona extends BasicEntity {
 
-    public static final String TABLE_NAME = "routes";
+    public static final String TABLE_NAME = "persons";
 
     public static final String NAME = "name";
+    public static final String SURNAME = "surname";
+    public static final String TELEPHONE = "telephone";
+    public static final String EMAIL = "email";
+    public static final String ROUTES = "routes";
     public static final String COMMENTS = "comments";
 
-    public static final String[] FIELDS = {NAME, COMMENTS};
+    public static final String[] FIELDS = {NAME, SURNAME, TELEPHONE, EMAIL, COMMENTS};
 
 
-    Ruta(EstructuraDatos eDatos) {
+    Persona(EstructuraDatos eDatos) {
         super(eDatos);
     }
 
@@ -30,25 +34,37 @@ public class Ruta extends BasicEntity {
         return getDato(NAME);
     }
 
+    public String getSurname() {
+        return getDato(SURNAME);
+    }
+
+    public String getTelephone() {
+        return getDato(TELEPHONE);
+    }
+
+    public String getEmail() {
+        return getDato(EMAIL);
+    }
+
     public String getComments() {
         return getDato(COMMENTS);
     }
 
-    public static Ruta getInstance(String id) throws ErrorGeneral {
+    public static Persona getInstance(String id) throws ErrorGeneral {
         ADVarios adatos = new ADVarios();
         EstructuraDatos eDatos = adatos.getInstance(TABLE_NAME, id);
         if (eDatos == null)
             return null;
-        Ruta user = new Ruta(eDatos);
+        Persona user = new Persona(eDatos);
         return user;
     }
 
-    public static ArrayList<Ruta> getRutas() throws ErrorGeneral {
+    public static ArrayList<Persona> getPersonas(String idRuta) throws ErrorGeneral {
         ADVarios adatos = new ADVarios();
         ArrayList<EstructuraDatos> eDatos = adatos.getInstances(TABLE_NAME, NAME);
-        ArrayList<Ruta> lista = new ArrayList<>();
+        ArrayList<Persona> lista = new ArrayList<>();
         for (int i = 0; i < eDatos.size(); i++) {
-            lista.add(new Ruta(eDatos.get(i)));
+            lista.add(new Persona(eDatos.get(i)));
         }
         return lista;
     }

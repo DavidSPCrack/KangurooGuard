@@ -261,4 +261,8 @@ public final class EstructuraDatos implements Cloneable, IOrdenacion {
 
         return true;
     }
+
+    public String getNombreEstructura() {
+        return nombreEstructura;
+    }
 }

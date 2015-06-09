@@ -7,25 +7,27 @@
     android:orientation="vertical"
     tools:context=".ui.activities.RoutesActivity">
 
-    <TextView
-        android:id="@+id/routelabel"
-        style="@style/AuthSubTitlePrincipal"
-        android:text="@string/txtroutes" />
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <ListView xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/list_routers"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/background"
-        android:cacheColorHint="@android:color/transparent"
-        android:divider="@android:color/transparent"
-        android:dividerHeight="8dp"
-        android:paddingBottom="8dp"
-        android:paddingLeft="5dp"
-        android:paddingRight="5dp"
-        android:paddingTop="15dp"
-        android:scrollbarStyle="outsideOverlay">
+        <ListView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/list_routers"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/background"
+            android:cacheColorHint="@android:color/transparent"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="8dp"
+            android:paddingBottom="8dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="15dp"
+            android:scrollbarStyle="outsideOverlay">
 
-    </ListView>
+        </ListView>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
 
 </LinearLayout>

@@ -6,6 +6,7 @@ import com.parse.ParseQuery;
 import com.sistemasikanguro.kangurooguard.framework.BasicEntity;
 import com.sistemasikanguro.kangurooguard.framework.ErrorGeneral;
 import com.sistemasikanguro.kangurooguard.framework.EstructuraDatos;
+import com.sistemasikanguro.kangurooguard.framework.entities.Persona;
 import com.sistemasikanguro.kangurooguard.framework.entities.Ruta;
 
 import java.util.ArrayList;
@@ -22,49 +23,61 @@ public final class ADVarios extends AbstractAccesoADatos {
     }
 
 
-    public EstructuraDatos getRuta(String id) throws ErrorGeneral {
+    public EstructuraDatos getInstance(String tableName, String id) throws ErrorGeneral {
         try {
-            ParseQuery<ParseObject> pQuery = ParseQuery.getQuery(Ruta.TABLE_NAME);
+            ParseQuery<ParseObject> pQuery = ParseQuery.getQuery(tableName);
             pQuery.whereContains(BasicEntity.ID, id);
             ParseObject pObject = pQuery.getFirst();
-            return getEstructuraRuta(pObject);
+            return getEstructura(pObject, tableName);
         } catch (ParseException e) {
             throw new ErrorGeneral(e);
         }
     }
 
-    public ArrayList<EstructuraDatos> getRutas() throws ErrorGeneral {
+    public ArrayList<EstructuraDatos> getInstances(String tableName, String orderBy) throws ErrorGeneral {
         try {
-            ParseQuery<ParseObject> pQuery = ParseQuery.getQuery(Ruta.TABLE_NAME);
-            pQuery.orderByAscending(Ruta.NAME);
+            ParseQuery<ParseObject> pQuery = ParseQuery.getQuery(tableName);
+            pQuery.orderByAscending(orderBy);
             List<ParseObject> lista = pQuery.find();
-            return getEstructurasRuta(lista);
+            return getListaEstructuras(lista, tableName);
         } catch (ParseException e) {
             throw new ErrorGeneral(e);
         }
     }
 
-    private ArrayList<EstructuraDatos> getEstructurasRuta(List<ParseObject> lista) {
+    public ArrayList<EstructuraDatos> getInstances(String tableName, String fieldName, String fieldVal, String orderBy) throws ErrorGeneral {
+        try {
+            ParseQuery<ParseObject> pQuery = ParseQuery.getQuery(tableName);
+            pQuery.whereContains(fieldName, fieldVal);
+            pQuery.orderByAscending(orderBy);
+            List<ParseObject> lista = pQuery.find();
+            return getListaEstructuras(lista, tableName);
+        } catch (ParseException e) {
+            throw new ErrorGeneral(e);
+        }
+    }
+
+    private ArrayList<EstructuraDatos> getListaEstructuras(List<ParseObject> lista, String tableName) {
         if (lista == null)
             return new ArrayList<EstructuraDatos>();
         ArrayList<EstructuraDatos> edatos = new ArrayList<EstructuraDatos>();
         for (int i = 0; i < lista.size(); i++) {
-            edatos.add(getEstructuraRuta(lista.get(i)));
+            edatos.add(getEstructura(lista.get(i), tableName));
         }
         return edatos;
     }
 
-    private EstructuraDatos getEstructuraRuta(ParseObject pObject) {
+    private EstructuraDatos getEstructura(ParseObject pObject, String tableName) {
         if (pObject == null)
             return null;
-        EstructuraDatos eDatos = new EstructuraDatos(Ruta.TABLE_NAME);
+        EstructuraDatos eDatos = new EstructuraDatos(tableName);
         eDatos.update(pObject, Ruta.FIELDS);
         return eDatos;
     }
 
-    void createRuta(EstructuraDatos eDatos) throws ErrorGeneral {
+    void createObject(String tableName, EstructuraDatos eDatos) throws ErrorGeneral {
         try {
-            ParseObject pObject = new ParseObject(Ruta.TABLE_NAME);
+            ParseObject pObject = new ParseObject(tableName);
             String[] fields = eDatos.getFields();
             for (String field : fields) {
                 pObject.put(field, eDatos.getString(field));
@@ -75,10 +88,10 @@ public final class ADVarios extends AbstractAccesoADatos {
         }
     }
 
-    void updateRuta(EstructuraDatos eDatos) throws ErrorGeneral {
+    void updateObject(String tableName, EstructuraDatos eDatos) throws ErrorGeneral {
         try {
             String id = eDatos.getString(BasicEntity.ID);
-            ParseQuery<ParseObject> pQuery = ParseQuery.getQuery(Ruta.TABLE_NAME);
+            ParseQuery<ParseObject> pQuery = ParseQuery.getQuery(tableName);
             pQuery.whereContains(BasicEntity.ID, id);
             ParseObject pObject = pQuery.getFirst();
             if (pObject != null) {

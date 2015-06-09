@@ -19,6 +19,10 @@ public class UtilResource {
         return getResources().getString(id);
     }
 
+    public static String getString(int id, String var1) {
+        return getResources().getString(id, var1);
+    }
+
     public static String[] getStringArray(int id) {
         return getResources().getStringArray(id);
     }
