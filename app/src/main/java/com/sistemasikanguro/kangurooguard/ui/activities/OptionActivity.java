@@ -5,6 +5,7 @@ import android.support.v7.app.ActionBar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.sistemasikanguro.kangurooguard.R;
 import com.sistemasikanguro.kangurooguard.framework.actions.LogoutUsuario;
@@ -64,11 +65,12 @@ public final class OptionActivity extends AbstractAppCompatActivity {
     }
 
     public void openMessages(View view) {
-
-
+        Toast toast = Toast.makeText(getApplicationContext(), "Mensajes en la próxima versión", Toast.LENGTH_SHORT);
+        toast.show();
     }
 
     public void openQr(View view) {
-
+        Toast toast = Toast.makeText(getApplicationContext(), "Lectura QR en la próxima versión", Toast.LENGTH_SHORT);
+        toast.show();
     }
 }

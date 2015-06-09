@@ -9,15 +9,16 @@
     tools:context=".ui.activities.AddRouteActivity">
 
     <TextView
-        android:id="@+id/txtNameRoutes"
         style="@style/AuthSubTitlePrincipal"
+        android:id="@+id/txtNameRoutes"
         android:text="@string/txtnamerouteall" />
 
     <EditText
+        style="@style/FormEditText"
         android:id="@+id/etxtnameroute"
-        style="@style/AuthEditText"
-
         android:background="@drawable/rectangle_bis"
+        android:hint="@string/routename"
+        android:gravity="top"
         android:inputType="text" />
 
     <TextView
@@ -26,12 +27,15 @@
         android:text="@string/txtcomments" />
 
     <EditText
+        style="@style/FormEditText"
         android:id="@+id/etxtCommentRoutes"
-        style="@style/AuthEditText"
         android:layout_width="match_parent"
-        android:layout_height="368dp"
+        android:layout_height="347dp"
         android:background="@drawable/rectangle_bis"
+        android:hint="@string/routecomments"
+        android:gravity="top"
         android:inputType="text" />
+
     <Space
         android:layout_width="10dp"
         android:layout_height="10dp" />
@@ -41,14 +45,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-        <Button android:id="@+id/btnaccept"
+
+        <Button
+            android:id="@+id/btnaccept"
             style="@style/AuthButton"
             android:layout_weight="1"
-            android:text="@string/accept"/>
-        <Button android:id="@+id/btncancel"
+            android:text="@string/accept"
+            android:onClick="changeRoute" />
+
+        <Button
+            android:id="@+id/btncancel"
             style="@style/AuthButton"
             android:layout_weight="1"
-            android:text="@string/cancel"/>
+            android:text="@string/cancel"
+            android:onClick="CancelRoute"
+            android:nestedScrollingEnabled="false" />
     </LinearLayout>
 
 </LinearLayout>

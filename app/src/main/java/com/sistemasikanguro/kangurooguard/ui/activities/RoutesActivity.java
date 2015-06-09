@@ -1,13 +1,14 @@
 package com.sistemasikanguro.kangurooguard.ui.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
-
 import com.sistemasikanguro.kangurooguard.R;
-import com.sistemasikanguro.kangurooguard.framework.actions.LogoutUsuario;
+import com.sistemasikanguro.kangurooguard.util.UtilActivity;
 
 /**
  * Created by Andres on 18/05/2015.
@@ -46,11 +47,9 @@ public final class RoutesActivity extends AbstractAppCompatActivity {
             toast.show();
             return true;
         }
-
         if (id == R.id.add) {
-            Toast toast = Toast.makeText(getApplicationContext(), "Añade ruta", Toast.LENGTH_SHORT);
-            toast.show();
-            return true;
+            UtilActivity util = getUtil();
+            util.openNewActivity(AddRouteActivity.class, false);
         }
         return super.onOptionsItemSelected(item);
     }

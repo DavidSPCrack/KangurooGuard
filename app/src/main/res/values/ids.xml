@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="routeOld" type="id">routeold</item>
+    <item name="routenew" type="id">newroute</item>
+</resources>
