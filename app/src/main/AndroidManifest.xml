@@ -41,7 +41,8 @@
         <activity
             android:name=".ui.activities.DataStudentActivity"
             android:label="@string/title_activity_datastudent"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait"
+            android:parentActivityName=".ui.activities.StudentsActivity">
         </activity>
         <activity
             android:name=".ui.activities.PasswordActivity"
@@ -64,7 +65,8 @@
         <activity
             android:name=".ui.activities.AddRouteActivity"
             android:label="@string/title_activity_addroute"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait"
+            android:parentActivityName=".ui.activities.RoutesActivity">
         </activity>
         <activity
             android:name=".ui.activities.SplashActivity"
@@ -72,7 +74,6 @@
             android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

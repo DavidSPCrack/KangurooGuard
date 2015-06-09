@@ -18,8 +18,8 @@
         android:id="@+id/etxtnameroute"
         android:background="@drawable/rectangle_bis"
         android:hint="@string/routename"
-        android:gravity="top"
-        android:inputType="text" />
+        android:inputType="text"
+        android:gravity="start|top" />
 
     <TextView
         android:id="@+id/txtCommentsRoutes"
@@ -33,7 +33,7 @@
         android:layout_height="347dp"
         android:background="@drawable/rectangle_bis"
         android:hint="@string/routecomments"
-        android:gravity="top"
+        android:gravity="center|start|top"
         android:inputType="text" />
 
     <Space
@@ -41,9 +41,8 @@
         android:layout_height="10dp" />
 
     <LinearLayout
+        style="@style/AuthButton"
         android:id="@+id/bntListButtons"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <Button
