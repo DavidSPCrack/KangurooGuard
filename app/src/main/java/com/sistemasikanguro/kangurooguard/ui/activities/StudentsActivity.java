@@ -1,6 +1,7 @@
 package com.sistemasikanguro.kangurooguard.ui.activities;
 
 import android.os.Bundle;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -32,17 +33,30 @@ public final class StudentsActivity extends AbstractAppCompatActivity {
         if (actionBar != null) {
             actionBar.setDisplayShowHomeEnabled(true);
         }
+
+        final SwipeRefreshLayout swipeRefresh = (SwipeRefreshLayout) findViewById(R.id.swipeRefreshLayout);
         ListView listView = (ListView) findViewById(R.id.listView);
         this.adapter = new PersonsAdapter(this);
         listView.setAdapter(this.adapter);
 
         loadPersonas();
+        swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                loadPersonas(swipeRefresh);
+            }
+        });
+    }
+
+    private void loadPersonas(SwipeRefreshLayout swipeRefreshLayout) {
+        LoadPersonas load = swipeRefreshLayout == null ? new LoadPersonas(this, adapter,"") : new LoadPersonas(this, adapter, swipeRefreshLayout);
+        load.execute();
     }
 
     private void loadPersonas() {
-        LoadPersonas load = new LoadPersonas(this, adapter, "");
-        load.execute();
+        loadPersonas(null);
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

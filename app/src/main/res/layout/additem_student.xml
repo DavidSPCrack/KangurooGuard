@@ -39,14 +39,21 @@
 
         <TextView
             android:id="@+id/timeLabel"
-            android:background="@drawable/rectangle_bis"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/studenlabel"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_below="@+id/studenlabel"
+            android:background="@drawable/rectangle_bis"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingBottom="@dimen/message_inbox_vertical_margin"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textSize="14sp"
-            android:textColor="@color/icons" />
+            android:textColor="@color/icons"
+            android:textSize="12sp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_toRightOf="@+id/checkBox"
+            android:layout_toEndOf="@+id/checkBox" />
+
     </RelativeLayout>
 
 </LinearLayout>

@@ -1,7 +1,10 @@
 package com.sistemasikanguro.kangurooguard.framework.actions;
 
+import android.support.v4.widget.SwipeRefreshLayout;
+
 import com.sistemasikanguro.kangurooguard.R;
 import com.sistemasikanguro.kangurooguard.adapters.PersonsAdapter;
+import com.sistemasikanguro.kangurooguard.adapters.RoutesAdapter;
 import com.sistemasikanguro.kangurooguard.framework.ErrorGeneral;
 import com.sistemasikanguro.kangurooguard.framework.entities.Persona;
 import com.sistemasikanguro.kangurooguard.ui.IActividad;
@@ -19,6 +22,13 @@ public class LoadPersonas extends AbstractAction {
     private List<Persona> lista;
     private String idRuta;
     private PersonsAdapter adapter;
+    private SwipeRefreshLayout swipeRefresh;
+
+    public LoadPersonas(IActividad actividad, PersonsAdapter rAdapter, SwipeRefreshLayout swipe) {
+        super(actividad);
+        this.adapter = rAdapter;
+        this.swipeRefresh = swipe;
+    }
 
     public LoadPersonas(IActividad actividad, PersonsAdapter rAdapter, String idRuta) {
         super(actividad);
@@ -30,6 +40,7 @@ public class LoadPersonas extends AbstractAction {
     public void doInBackground() throws ErrorGeneral {
         try {
             this.lista = Persona.getPersonas(idRuta);
+
         } catch (ErrorGeneral eg) {
             setErrorGeneral(eg);
             throw eg;
@@ -41,6 +52,10 @@ public class LoadPersonas extends AbstractAction {
         if (isOk()) {
             if (lista != null)
                 this.adapter.refill(lista);
+        }
+        if (swipeRefresh != null) {
+            if (swipeRefresh.isRefreshing())
+                swipeRefresh.setRefreshing(false);
         }
     }
 
