@@ -59,4 +59,8 @@ public class LoadRutas extends AbstractAction {
         return UtilResource.getString(R.string.loading);
     }
 
+    @Override
+    public boolean isShowLoad() {
+        return false;
+    }
 }

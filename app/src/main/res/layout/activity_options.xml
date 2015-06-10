@@ -39,7 +39,7 @@
             style="@style/AuthButtonOptions"
             android:layout_weight="1"
             android:text="@string/student"
-            android:id="@+id/btnOptions04"
+            android:id="@+id/optionStudents"
             android:onClick="openStudents" />
     </TableRow>
 

@@ -32,7 +32,7 @@ public abstract class AbstractAction implements ITheadElement {
 
     @Override
     public void execute() {
-        AsyncTaskStandard.doTask(getUtil(), actividad.getProgressBarView(), this);
+        AsyncTaskStandard.doTask(getUtil(), actividad.getProgressBarView(), isShowLoad(), this);
     }
 
     protected ErrorGeneral getErrorGeneral() {
@@ -45,5 +45,9 @@ public abstract class AbstractAction implements ITheadElement {
 
     public boolean isOk() {
         return eg == null;
+    }
+
+    public boolean isShowLoad() {
+        return true;
     }
 }

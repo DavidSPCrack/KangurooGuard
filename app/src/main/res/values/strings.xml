@@ -140,5 +140,7 @@
     <string name="updating_info">Updating info…</string>
     <string name="number_kids">%1$s kids</string>
     <string name="loading">Loading...</string>
+    <string name="logon_exception">You are not logged on, please logon to continue</string>
+    <string name="sons_option">Sons</string>
 
 </resources>

@@ -5,14 +5,13 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import com.sistemasikanguro.kangurooguard.R;
 import com.sistemasikanguro.kangurooguard.adapters.PersonsAdapter;
-import com.sistemasikanguro.kangurooguard.adapters.RoutesAdapter;
 import com.sistemasikanguro.kangurooguard.framework.actions.LoadPersonas;
-import com.sistemasikanguro.kangurooguard.framework.actions.LoadRutas;
 import com.sistemasikanguro.kangurooguard.util.UtilActivity;
 
 /**
@@ -49,7 +48,7 @@ public final class StudentsActivity extends AbstractAppCompatActivity {
     }
 
     private void loadPersonas(SwipeRefreshLayout swipeRefreshLayout) {
-        LoadPersonas load = swipeRefreshLayout == null ? new LoadPersonas(this, adapter,"") : new LoadPersonas(this, adapter, swipeRefreshLayout);
+        LoadPersonas load = swipeRefreshLayout == null ? new LoadPersonas(this, adapter, "") : new LoadPersonas(this, adapter, swipeRefreshLayout);
         load.execute();
     }
 
@@ -78,5 +77,10 @@ public final class StudentsActivity extends AbstractAppCompatActivity {
             util.openNewActivity(DataStudentActivity.class, false);
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public View getProgressBarView() {
+        return findViewById(R.id.progressBar);
     }
 }

@@ -20,6 +20,7 @@ public class AdmonUsuario {
         eDatos.add(Usuario.USERNAME, username);
         eDatos.add(Usuario.PASSWORD, password);
         eDatos.add(Usuario.EMAIL, email);
+        eDatos.add(Usuario.TYPE, Usuario.K.Tipos.MONITOR);
 
         ADUsuario adatos = new ADUsuario();
         adatos.createUser(eDatos);

@@ -91,13 +91,15 @@
             style="@style/AuthButton"
             android:id="@+id/btnaccept"
             android:layout_weight="1"
-            android:text="@string/accept" />
+            android:text="@string/accept"
+            android:onClick="saveUser" />
 
         <Button
             style="@style/AuthButton"
             android:id="@+id/btncancel"
             android:layout_weight="1"
-            android:text="@string/cancel" />
+            android:text="@string/cancel"
+            android:onClick="cancelClick" />
     </LinearLayout>
 
 </LinearLayout>

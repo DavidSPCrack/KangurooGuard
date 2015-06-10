@@ -18,12 +18,14 @@ public class AsyncTaskStandard extends AsyncTask<ITheadElement, String, ThreadEx
     private View progress;
     private ProgressDialog pd;
     private String initialLoadMsg;
+    private boolean showLoading;
 
-    private AsyncTaskStandard(UtilActivity util, String initialLoadMsg, View progress) {
+    private AsyncTaskStandard(UtilActivity util, String initialLoadMsg, View progress, boolean showLoading) {
         super();
         this.progress = progress;
         this.util = util;
         this.initialLoadMsg = initialLoadMsg;
+        this.showLoading = showLoading;
     }
 
     public static void doTask(UtilActivity util, ITheadElement... params) {
@@ -31,13 +33,17 @@ public class AsyncTaskStandard extends AsyncTask<ITheadElement, String, ThreadEx
     }
 
     public static void doTask(UtilActivity util, View progress, ITheadElement... params) {
+        doTask(util, progress, true, params);
+    }
+
+    public static void doTask(UtilActivity util, View progress, boolean showLoading, ITheadElement... params) {
 
         if (params == null)
             params = new ITheadElement[0];
 
         String initialLoadMsg = params.length > 0 ? params[0].getTitle() : util.getResourceString(R.string.please_wait);
 
-        AsyncTaskStandard asyncTask = new AsyncTaskStandard(util, initialLoadMsg, progress);
+        AsyncTaskStandard asyncTask = new AsyncTaskStandard(util, initialLoadMsg, progress, showLoading);
         asyncTask.execute(params);
     }
 
@@ -62,7 +68,7 @@ public class AsyncTaskStandard extends AsyncTask<ITheadElement, String, ThreadEx
 
     @Override
     protected void onPreExecute() {
-        if (progress == null)
+        if (progress == null && showLoading)
             this.pd = util.getProgressDialog(R.string.please_wait, initialLoadMsg);
     }
 
@@ -83,4 +89,6 @@ public class AsyncTaskStandard extends AsyncTask<ITheadElement, String, ThreadEx
         if (this.progress != null)
             util.hideView(this.progress);
     }
+
+
 }

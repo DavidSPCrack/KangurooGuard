@@ -4,7 +4,6 @@ import android.support.v4.widget.SwipeRefreshLayout;
 
 import com.sistemasikanguro.kangurooguard.R;
 import com.sistemasikanguro.kangurooguard.adapters.PersonsAdapter;
-import com.sistemasikanguro.kangurooguard.adapters.RoutesAdapter;
 import com.sistemasikanguro.kangurooguard.framework.ErrorGeneral;
 import com.sistemasikanguro.kangurooguard.framework.entities.Persona;
 import com.sistemasikanguro.kangurooguard.ui.IActividad;
@@ -62,6 +61,11 @@ public class LoadPersonas extends AbstractAction {
     @Override
     public String getTitle() {
         return UtilResource.getString(R.string.loading);
+    }
+
+    @Override
+    public boolean isShowLoad() {
+        return false;
     }
 
 }

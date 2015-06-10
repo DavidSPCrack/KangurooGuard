@@ -9,6 +9,7 @@ import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.text.Editable;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -122,6 +123,16 @@ public class UtilActivity {
             if (v instanceof EditText) {
                 EditText et = (EditText) v;
                 et.setText(value);
+            }
+        }
+    }
+
+    public void setButtonText(int id, String value) {
+        View v = findViewById(id);
+        if (v != null) {
+            if (v instanceof Button) {
+                Button bt = (Button) v;
+                bt.setText(value);
             }
         }
     }

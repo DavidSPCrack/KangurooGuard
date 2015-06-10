@@ -40,7 +40,7 @@ public final class DataUserActivity extends AbstractAppCompatActivity {
         }
     }
 
-    public void changePassword(View view) throws ErrorGeneral {
+    public void saveUser(View view) throws ErrorGeneral {
         final UtilActivity util = getUtil();
         String name = util.getEditTextValue(R.id.etxtName);
         String surname = util.getEditTextValue(R.id.etxtSurname);

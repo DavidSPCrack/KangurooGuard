@@ -3,6 +3,7 @@ package com.sistemasikanguro.kangurooguard.framework.ad;
 import com.parse.ParseException;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
+import com.sistemasikanguro.kangurooguard.framework.BasicEntity;
 import com.sistemasikanguro.kangurooguard.framework.ErrorGeneral;
 import com.sistemasikanguro.kangurooguard.framework.EstructuraDatos;
 import com.sistemasikanguro.kangurooguard.framework.entities.Usuario;
@@ -84,6 +85,20 @@ public final class ADUsuario extends AbstractAccesoADatos {
         } catch (ParseException e) {
             throw new ErrorGeneral(e);
         }
+    }
+
+    public boolean isUpdatableField(String field) {
+        switch (field) {
+            case BasicEntity.CREATED_AT:
+                return false;
+            case BasicEntity.UPDATED_AT:
+                return false;
+            case BasicEntity.ID:
+                return false;
+            case Usuario.PASSWORD:
+                return false;
+        }
+        return true;
     }
 
 

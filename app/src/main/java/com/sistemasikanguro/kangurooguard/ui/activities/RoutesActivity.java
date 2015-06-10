@@ -5,6 +5,7 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -81,5 +82,10 @@ public final class RoutesActivity extends AbstractAppCompatActivity {
             util.openNewActivity(AddRouteActivity.class, false);
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public View getProgressBarView() {
+        return findViewById(R.id.progressBar);
     }
 }
