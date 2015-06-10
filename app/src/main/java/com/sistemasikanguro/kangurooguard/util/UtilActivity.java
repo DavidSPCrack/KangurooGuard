@@ -17,6 +17,9 @@ import com.parse.ParseObject;
 import com.parse.ParseUser;
 import com.sistemasikanguro.kangurooguard.R;
 import com.sistemasikanguro.kangurooguard.adapters.StandardAdapter;
+import com.sistemasikanguro.kangurooguard.framework.ErrorGeneral;
+import com.sistemasikanguro.kangurooguard.framework.entities.Usuario;
+import com.sistemasikanguro.kangurooguard.ui.activities.LoginActivity;
 
 
 /**
@@ -223,6 +226,36 @@ public class UtilActivity {
 
     public StandardAdapter<ParseObject> getAdapterObjects(int layout) {
         return new StandardAdapter<>(mActivity, layout);
+    }
+
+    public boolean isUsuarioPadre() {
+        Usuario user = getUsuarioActual();
+        return user != null && user.isPadre();
+    }
+
+    public boolean isUsuarioMonitor() {
+        Usuario user = getUsuarioActual();
+        return user != null && user.isMonitor();
+    }
+
+    public boolean isUsuarioAdministrador() {
+        Usuario user = getUsuarioActual();
+        return user != null && user.isAdministrador();
+    }
+
+    public Usuario getUsuarioActual() {
+        try {
+            Usuario user = Usuario.getInstance();
+            if (user == null)
+                throw new ErrorGeneral(getResourceString(R.string.logon_exception));
+
+            return user;
+        } catch (ErrorGeneral eg) {
+            doAlertDialog(eg);
+
+            openNewActivity(LoginActivity.class);
+            return null;
+        }
     }
 
 }

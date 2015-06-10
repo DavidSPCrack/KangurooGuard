@@ -5,13 +5,10 @@ import android.support.v7.app.ActionBar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
 import com.sistemasikanguro.kangurooguard.R;
-import com.sistemasikanguro.kangurooguard.framework.ErrorGeneral;
 import com.sistemasikanguro.kangurooguard.framework.actions.LogoutUsuario;
-import com.sistemasikanguro.kangurooguard.framework.entities.Usuario;
 import com.sistemasikanguro.kangurooguard.util.UtilActivity;
 
 public final class OptionActivity extends AbstractAppCompatActivity {
@@ -27,22 +24,10 @@ public final class OptionActivity extends AbstractAppCompatActivity {
             actionBar.setIcon(R.mipmap.ic_launcher);
         }
 
-        try {
-            Usuario user = Usuario.getInstance();
-            if(user == null)
-                throw new ErrorGeneral(getString(R.string.logon_exception));
-
-            UtilActivity util = getUtil();
-            if(user.isPadre()) {
-                util.setButtonText(R.id.optionStudents, getString(R.string.sons_option));
-            }
-        } catch (ErrorGeneral eg) {
-            UtilActivity util = getUtil();
-            util.doAlertDialog(eg);
-
-            util.openNewActivity(LoginActivity.class);
+        UtilActivity util = getUtil();
+        if (util.isUsuarioPadre()) {
+            util.setButtonText(R.id.optionStudents, getString(R.string.sons_option));
         }
-
     }
 
     @Override
@@ -81,7 +66,10 @@ public final class OptionActivity extends AbstractAppCompatActivity {
 
     public void openStudents(View view) {
         UtilActivity util = getUtil();
-        util.openNewActivity(StudentsActivity.class, false);
+        if (util.isUsuarioPadre())
+            util.openNewActivity(SonActivity.class, false);
+        else
+            util.openNewActivity(StudentsActivity.class, false);
     }
 
     public void openMessages(View view) {

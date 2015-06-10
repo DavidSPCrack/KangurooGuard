@@ -29,9 +29,6 @@ public class KanApplication extends Application {
 
         Parse.initialize(this, "TryWsZNlenNVm78IatXtzpPEM8G2CJISYEffoznN", "zDr1H4RMytzEWDj42e2neDx76q9Hr0rbugJt6NNW");
 
-        ParseAD adatos = ParseAD.getInstance();
-        adatos.updateInstallation();
-
         try {
             ParseUser pUser = ParseUser.getCurrentUser();
             if (pUser != null)
@@ -40,6 +37,8 @@ public class KanApplication extends Application {
             ParseUser.logOut();
         }
 
+        ParseAD adatos = ParseAD.getInstance();
+        adatos.updateInstallation();
 
         app = this;
     }
