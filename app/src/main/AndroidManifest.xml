@@ -51,6 +51,12 @@
             android:parentActivityName=".ui.activities.OptionActivity" >
         </activity>
         <activity
+            android:name=".ui.activities.SonActivity"
+            android:label="@string/title_activity_son"
+            android:screenOrientation="portrait"
+            android:parentActivityName=".ui.activities.OptionActivity" >
+        </activity>
+        <activity
             android:name=".ui.activities.StudentsActivity"
             android:label="@string/title_activity_students"
             android:screenOrientation="portrait"
