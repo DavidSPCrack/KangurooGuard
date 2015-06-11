@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.sistemasikanguro.kangurooguard" >
+    package="com.sistemasikanguro.kangurooguard">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -16,68 +16,65 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
         <activity
             android:name=".ui.activities.SignUpActivity"
             android:label="@string/title_activity_sign_up"
-            android:screenOrientation="portrait" >
-        </activity>
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name=".ui.activities.LoginActivity"
             android:label="@string/title_activity_login"
-            android:screenOrientation="portrait" >
-        </activity>
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name=".ui.activities.OptionActivity"
             android:label="@string/title_option_activity"
-            android:screenOrientation="portrait" >
-        </activity>
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name=".ui.activities.DataUserActivity"
             android:label="@string/title_activity_datauser"
-            android:screenOrientation="portrait"
-            android:parentActivityName=".ui.activities.OptionActivity">
-        </activity>
+            android:parentActivityName=".ui.activities.OptionActivity"
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name=".ui.activities.DataStudentActivity"
             android:label="@string/title_activity_datastudent"
-            android:screenOrientation="portrait"
-            android:parentActivityName=".ui.activities.StudentsActivity">
-        </activity>
+            android:parentActivityName=".ui.activities.StudentsActivity"
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name=".ui.activities.PasswordActivity"
             android:label="@string/title_activity_password"
-            android:screenOrientation="portrait"
-            android:parentActivityName=".ui.activities.OptionActivity" >
-        </activity>
+            android:parentActivityName=".ui.activities.OptionActivity"
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name=".ui.activities.SonActivity"
             android:label="@string/title_activity_son"
-            android:screenOrientation="portrait"
-            android:parentActivityName=".ui.activities.OptionActivity" >
-        </activity>
+            android:parentActivityName=".ui.activities.OptionActivity"
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name=".ui.activities.StudentsActivity"
             android:label="@string/title_activity_students"
-            android:screenOrientation="portrait"
-            android:parentActivityName=".ui.activities.OptionActivity" >
-        </activity>
+            android:parentActivityName=".ui.activities.OptionActivity"
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name=".ui.activities.RoutesActivity"
             android:label="@string/title_activity_routes"
-            android:screenOrientation="portrait"
-            android:parentActivityName=".ui.activities.OptionActivity" >
+            android:parentActivityName=".ui.activities.OptionActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
         </activity>
         <activity
             android:name=".ui.activities.AddRouteActivity"
             android:label="@string/title_activity_addroute"
-            android:screenOrientation="portrait"
-            android:parentActivityName=".ui.activities.RoutesActivity">
-        </activity>
+            android:parentActivityName=".ui.activities.RoutesActivity"
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name=".ui.activities.SplashActivity"
             android:label="@string/title_activity_splash"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

@@ -111,6 +111,7 @@
     <string name="modify">Modify</string>
     <string name="routename">Route Name</string>
     <string name="routecomments">Route Comments</string>
+    <string name="search_hint">search_hint</string>
 
     <!-- Reference to txt names -->
     <string name="txtnamestudent">Name student</string>
@@ -119,7 +120,7 @@
     <string name="txtcommentuser">Comments about user</string>
     <string name="PasswordOld">Old Password</string>
     <string name="PasswordNew">New Password</string>
-    <string name="PasswordRepeit">Repeit Password</string>
+    <string name="PasswordRepeit">Repeat Password</string>
     <string name="txtsurname2">Surname</string>
     <string name="title_option_activity"> KangurooGuard</string>
     <string name="title_activity_datauser">Data User</string>
@@ -131,7 +132,7 @@
     <string name="title_activity_son">List Son</string>
 
     <string name="logout">Logout</string>
-    <string name="search">Buscar</string>
+    <string name="search">Search</string>
 
     <string name="new_password_doesnt_match">New password doesn\'t match</string>
     <string name="changing_password">Changing password…</string>
