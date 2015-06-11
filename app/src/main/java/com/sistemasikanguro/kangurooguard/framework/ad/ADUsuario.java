@@ -7,6 +7,7 @@ import com.sistemasikanguro.kangurooguard.framework.BasicEntity;
 import com.sistemasikanguro.kangurooguard.framework.ErrorGeneral;
 import com.sistemasikanguro.kangurooguard.framework.EstructuraDatos;
 import com.sistemasikanguro.kangurooguard.framework.entities.Usuario;
+import com.sistemasikanguro.kangurooguard.util.ParseAD;
 
 /**
  * Created by usuario.apellido on 15/05/2015.
@@ -43,6 +44,10 @@ public final class ADUsuario extends AbstractAccesoADatos {
     public EstructuraDatos login(String username, String password) throws ErrorGeneral {
         try {
             ParseUser pUser = ParseUser.logIn(username, password);
+
+            ParseAD adatos = ParseAD.getInstance();
+            adatos.updateInstallation();
+
             return getEstructuraUsuario(pUser);
         } catch (ParseException e) {
             throw new ErrorGeneral(e);
@@ -65,6 +70,9 @@ public final class ADUsuario extends AbstractAccesoADatos {
                 pUser.put(field, eDatos.getString(field));
             }
             pUser.signUp();
+
+            ParseAD adatos = ParseAD.getInstance();
+            adatos.updateInstallation();
         } catch (ParseException e) {
             throw new ErrorGeneral(e);
         }

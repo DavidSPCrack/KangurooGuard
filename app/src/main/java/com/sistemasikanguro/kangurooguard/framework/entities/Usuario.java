@@ -5,6 +5,7 @@ import com.sistemasikanguro.kangurooguard.framework.BasicEntity;
 import com.sistemasikanguro.kangurooguard.framework.ErrorGeneral;
 import com.sistemasikanguro.kangurooguard.framework.EstructuraDatos;
 import com.sistemasikanguro.kangurooguard.framework.ad.ADUsuario;
+import com.sistemasikanguro.kangurooguard.util.ParseAD;
 
 /**
  * Created by David on 26/04/2015.
@@ -122,6 +123,9 @@ public class Usuario extends BasicEntity {
 
     public static void logout() {
         ParseUser.logOut();
+
+        ParseAD adatos = ParseAD.getInstance();
+        adatos.updateInstallation();
     }
 
 

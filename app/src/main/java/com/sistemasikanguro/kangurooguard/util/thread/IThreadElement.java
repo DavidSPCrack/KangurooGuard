@@ -7,9 +7,9 @@ import com.sistemasikanguro.kangurooguard.framework.ErrorGeneral;
  *
  * @author david.sancho
  */
-public interface ITheadElement {
+public interface IThreadElement {
 
-    void execute();
+    void execute(IThreadElement... elements);
 
     void doInBackground() throws ErrorGeneral;
 

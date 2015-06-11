@@ -10,17 +10,17 @@ import com.sistemasikanguro.kangurooguard.framework.ErrorGeneral;
 public class ThreadExecutor {
 
     private AsyncTaskStandard asyncTask;
-    private ITheadElement[] params;
+    private IThreadElement[] params;
     private ErrorGeneral eg;
 
-    ThreadExecutor(AsyncTaskStandard asyncTask, ITheadElement... params) {
+    ThreadExecutor(AsyncTaskStandard asyncTask, IThreadElement... params) {
         this.asyncTask = asyncTask;
         this.params = params;
     }
 
     void execute() {
         try {
-            for (ITheadElement param : params) {
+            for (IThreadElement param : params) {
                 asyncTask.publishUpdate(param);
                 param.doInBackground();
             }
@@ -30,7 +30,7 @@ public class ThreadExecutor {
     }
 
     void postExecute() {
-        for (ITheadElement param : params) {
+        for (IThreadElement param : params) {
             param.postExecute();
         }
     }

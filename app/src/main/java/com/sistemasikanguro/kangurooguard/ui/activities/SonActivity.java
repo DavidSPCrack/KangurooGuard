@@ -48,7 +48,7 @@ public final class SonActivity extends AbstractAppCompatActivity {
     }
 
     private void loadPersonas(SwipeRefreshLayout swipeRefreshLayout) {
-        LoadPersonas load = swipeRefreshLayout == null ? new LoadPersonas(this, adapter, "") : new LoadPersonas(this, adapter, swipeRefreshLayout);
+        LoadPersonas load = swipeRefreshLayout == null ? new LoadPersonas(this, adapter, "") : new LoadPersonas(this, adapter, swipeRefreshLayout, "");
         load.execute();
     }
 

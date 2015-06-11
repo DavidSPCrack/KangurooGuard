@@ -4,14 +4,17 @@ import com.sistemasikanguro.kangurooguard.framework.ErrorGeneral;
 import com.sistemasikanguro.kangurooguard.ui.IActividad;
 import com.sistemasikanguro.kangurooguard.util.UtilActivity;
 import com.sistemasikanguro.kangurooguard.util.thread.AsyncTaskStandard;
-import com.sistemasikanguro.kangurooguard.util.thread.ITheadElement;
+import com.sistemasikanguro.kangurooguard.util.thread.IThreadElement;
+
+import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * Created by David on 10/05/2015.
  *
  * @author david.sancho
  */
-public abstract class AbstractAction implements ITheadElement {
+public abstract class AbstractAction implements IThreadElement {
 
     private ErrorGeneral eg;
     private IActividad actividad;
@@ -31,8 +34,15 @@ public abstract class AbstractAction implements ITheadElement {
     }
 
     @Override
-    public void execute() {
-        AsyncTaskStandard.doTask(getUtil(), actividad.getProgressBarView(), isShowLoad(), this);
+    public void execute(IThreadElement... elements) {
+        ArrayList<IThreadElement> lista = new ArrayList<>();
+        lista.add(this);
+        IThreadElement refresh = actividad.getRefreshClass();
+        if(refresh != null)
+            lista.add(refresh);
+        Collections.addAll(lista, elements);
+        IThreadElement[] elementsFinal = lista.toArray(new IThreadElement[lista.size()]);
+        AsyncTaskStandard.doTask(getUtil(), actividad.getProgressBarView(), isShowLoad(), elementsFinal);
     }
 
     protected ErrorGeneral getErrorGeneral() {

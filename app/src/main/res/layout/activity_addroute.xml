@@ -62,6 +62,6 @@
             android:id="@+id/btncancel"
             android:layout_weight="1"
             android:text="@string/cancel"
-            android:onClick="CancelRoute" />
+            android:onClick="cancelRoute" />
     </LinearLayout>
 </LinearLayout>

@@ -11,6 +11,8 @@ import android.widget.Toast;
 import com.sistemasikanguro.kangurooguard.R;
 import com.sistemasikanguro.kangurooguard.framework.ErrorGeneral;
 import com.sistemasikanguro.kangurooguard.framework.actions.ChangePasswordUsuario;
+import com.sistemasikanguro.kangurooguard.framework.actions.CreateRuta;
+import com.sistemasikanguro.kangurooguard.framework.actions.UpdateUsuario;
 import com.sistemasikanguro.kangurooguard.util.UtilActivity;
 
 /**
@@ -32,11 +34,15 @@ public final class AddRouteActivity extends AbstractAppCompatActivity {
     }
 
     public void changeRoute(View view) throws ErrorGeneral {
-        Toast toast = Toast.makeText(getApplicationContext(), "Route Changed", Toast.LENGTH_SHORT);
-        toast.show();
+        final UtilActivity util = getUtil();
+        String name = util.getEditTextValue(R.id.etxtnameroute);
+        String comment = util.getEditTextValue(R.id.etxtCommentRoutes);
+        CreateRuta create = new CreateRuta(this, name, comment);
+        create.execute();
     }
-    public void CancelRoute(View view) throws ErrorGeneral {
-        Toast toast = Toast.makeText(getApplicationContext(), "Route Canceled", Toast.LENGTH_SHORT);
-        toast.show();
+
+    public void cancelRoute(View view) throws ErrorGeneral {
+        final UtilActivity util = getUtil();
+        util.openNewActivity(RoutesActivity.class);
     }
 }

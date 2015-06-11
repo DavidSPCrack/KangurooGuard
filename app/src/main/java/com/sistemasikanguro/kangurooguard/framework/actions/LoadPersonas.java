@@ -23,10 +23,11 @@ public class LoadPersonas extends AbstractAction {
     private PersonsAdapter adapter;
     private SwipeRefreshLayout swipeRefresh;
 
-    public LoadPersonas(IActividad actividad, PersonsAdapter rAdapter, SwipeRefreshLayout swipe) {
+    public LoadPersonas(IActividad actividad, PersonsAdapter rAdapter, SwipeRefreshLayout swipe, String idRuta) {
         super(actividad);
         this.adapter = rAdapter;
         this.swipeRefresh = swipe;
+        this.idRuta = idRuta;
     }
 
     public LoadPersonas(IActividad actividad, PersonsAdapter rAdapter, String idRuta) {

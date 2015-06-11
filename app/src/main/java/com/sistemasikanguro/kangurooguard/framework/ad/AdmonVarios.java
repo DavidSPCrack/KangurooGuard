@@ -41,4 +41,9 @@ public class AdmonVarios {
         ADVarios adatos = new ADVarios();
         adatos.updateObject(eDatos.getNombreEstructura(), eDatos);
     }
+
+    public void deleteObject(EstructuraDatos eDatos) throws ErrorGeneral {
+        ADVarios adatos = new ADVarios();
+        adatos.deleteObject(eDatos.getNombreEstructura(), eDatos);
+    }
 }

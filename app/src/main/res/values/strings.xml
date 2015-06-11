@@ -141,8 +141,13 @@
     <string name="signing_up">Signing up…</string>
     <string name="updating_info">Updating info…</string>
     <string name="number_kids">%1$s kids</string>
-    <string name="loading">Loading...</string>
+    <string name="loading">Loading…</string>
     <string name="logon_exception">You are not logged on, please logon to continue</string>
     <string name="sons_option">Sons</string>
+    <string name="creating_route">Creating route…</string>
+    <string name="deleting">Deleting...</string>
+    <string name="creating_person">Creating person...</string>
+    <string name="action_modify">Modify</string>
+    <string name="action_delete">Delete</string>
 
 </resources>

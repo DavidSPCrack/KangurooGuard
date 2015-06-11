@@ -6,7 +6,6 @@ import com.parse.ParseQuery;
 import com.sistemasikanguro.kangurooguard.framework.BasicEntity;
 import com.sistemasikanguro.kangurooguard.framework.ErrorGeneral;
 import com.sistemasikanguro.kangurooguard.framework.EstructuraDatos;
-import com.sistemasikanguro.kangurooguard.framework.entities.Persona;
 import com.sistemasikanguro.kangurooguard.framework.entities.Ruta;
 
 import java.util.ArrayList;
@@ -101,6 +100,20 @@ public final class ADVarios extends AbstractAccesoADatos {
                         pObject.put(field, eDatos.getString(field));
                 }
                 pObject.save();
+            }
+        } catch (ParseException e) {
+            throw new ErrorGeneral(e);
+        }
+    }
+
+    void deleteObject(String tableName, EstructuraDatos eDatos) throws ErrorGeneral {
+        try {
+            String id = eDatos.getString(BasicEntity.ID);
+            ParseQuery<ParseObject> pQuery = ParseQuery.getQuery(tableName);
+            pQuery.whereContains(BasicEntity.ID, id);
+            ParseObject pObject = pQuery.getFirst();
+            if (pObject != null) {
+                pObject.delete();
             }
         } catch (ParseException e) {
             throw new ErrorGeneral(e);

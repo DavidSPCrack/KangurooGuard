@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.sistemasikanguro.kangurooguard">
+    package="com.sistemasikanguro.kangurooguard" >
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -11,70 +11,107 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
 
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
+    <permission android:protectionLevel="signature"
+        android:name="com.sistemasikanguro.kangurooguard.permission.C2D_MESSAGE" />
+    <uses-permission android:name="com.sistemasikanguro.kangurooguard.permission.C2D_MESSAGE" />
+
+
     <application
         android:name=".KanApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme" >
+
+        <meta-data android:name="com.parse.push.notification_icon" android:resource="@drawable/ic_stat_kan"/>
+
+        <service android:name="com.parse.PushService" />
+        <receiver android:name="com.parse.ParseBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.parse.GcmBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+
+                <category android:name="com.sistemasikanguro.kangurooguard" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.parse.ParsePushBroadcastReceiver" android:exported="false">
+            <intent-filter>
+                <action android:name="com.parse.push.intent.RECEIVE" />
+                <action android:name="com.parse.push.intent.DELETE" />
+                <action android:name="com.parse.push.intent.OPEN" />
+            </intent-filter>
+        </receiver>
+
         <activity
             android:name=".ui.activities.SignUpActivity"
             android:label="@string/title_activity_sign_up"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" >
+        </activity>
         <activity
             android:name=".ui.activities.LoginActivity"
             android:label="@string/title_activity_login"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" >
+        </activity>
         <activity
             android:name=".ui.activities.OptionActivity"
             android:label="@string/title_option_activity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" >
+        </activity>
         <activity
             android:name=".ui.activities.DataUserActivity"
             android:label="@string/title_activity_datauser"
-            android:parentActivityName=".ui.activities.OptionActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"
+            android:parentActivityName=".ui.activities.OptionActivity">
+        </activity>
         <activity
             android:name=".ui.activities.DataStudentActivity"
             android:label="@string/title_activity_datastudent"
-            android:parentActivityName=".ui.activities.StudentsActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"
+            android:parentActivityName=".ui.activities.StudentsActivity">
+        </activity>
         <activity
             android:name=".ui.activities.PasswordActivity"
             android:label="@string/title_activity_password"
-            android:parentActivityName=".ui.activities.OptionActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"
+            android:parentActivityName=".ui.activities.OptionActivity" >
+        </activity>
         <activity
             android:name=".ui.activities.SonActivity"
             android:label="@string/title_activity_son"
-            android:parentActivityName=".ui.activities.OptionActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"
+            android:parentActivityName=".ui.activities.OptionActivity" >
+        </activity>
         <activity
             android:name=".ui.activities.StudentsActivity"
             android:label="@string/title_activity_students"
-            android:parentActivityName=".ui.activities.OptionActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"
+            android:parentActivityName=".ui.activities.OptionActivity" >
+        </activity>
         <activity
             android:name=".ui.activities.RoutesActivity"
             android:label="@string/title_activity_routes"
-            android:parentActivityName=".ui.activities.OptionActivity"
-            android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.SEARCH" />
-            </intent-filter>
-            <meta-data
-                android:name="android.app.searchable"
-                android:resource="@xml/searchable" />
+            android:screenOrientation="portrait"
+            android:parentActivityName=".ui.activities.OptionActivity" >
         </activity>
         <activity
             android:name=".ui.activities.AddRouteActivity"
             android:label="@string/title_activity_addroute"
-            android:parentActivityName=".ui.activities.RoutesActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait"
+            android:parentActivityName=".ui.activities.RoutesActivity">
+        </activity>
         <activity
             android:name=".ui.activities.SplashActivity"
             android:label="@string/title_activity_splash"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

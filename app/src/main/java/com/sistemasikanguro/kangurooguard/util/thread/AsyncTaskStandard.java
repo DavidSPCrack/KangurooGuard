@@ -12,7 +12,7 @@ import com.sistemasikanguro.kangurooguard.util.UtilActivity;
  *
  * @author david.sancho
  */
-public class AsyncTaskStandard extends AsyncTask<ITheadElement, String, ThreadExecutor> {
+public class AsyncTaskStandard extends AsyncTask<IThreadElement, String, ThreadExecutor> {
 
     private UtilActivity util;
     private View progress;
@@ -28,18 +28,18 @@ public class AsyncTaskStandard extends AsyncTask<ITheadElement, String, ThreadEx
         this.showLoading = showLoading;
     }
 
-    public static void doTask(UtilActivity util, ITheadElement... params) {
+    public static void doTask(UtilActivity util, IThreadElement... params) {
         doTask(util, null, params);
     }
 
-    public static void doTask(UtilActivity util, View progress, ITheadElement... params) {
+    public static void doTask(UtilActivity util, View progress, IThreadElement... params) {
         doTask(util, progress, true, params);
     }
 
-    public static void doTask(UtilActivity util, View progress, boolean showLoading, ITheadElement... params) {
+    public static void doTask(UtilActivity util, View progress, boolean showLoading, IThreadElement... params) {
 
         if (params == null)
-            params = new ITheadElement[0];
+            params = new IThreadElement[0];
 
         String initialLoadMsg = params.length > 0 ? params[0].getTitle() : util.getResourceString(R.string.please_wait);
 
@@ -48,13 +48,13 @@ public class AsyncTaskStandard extends AsyncTask<ITheadElement, String, ThreadEx
     }
 
     @Override
-    protected ThreadExecutor doInBackground(ITheadElement... params) {
+    protected ThreadExecutor doInBackground(IThreadElement... params) {
         ThreadExecutor te = new ThreadExecutor(this, params);
         te.execute();
         return te;
     }
 
-    void publishUpdate(ITheadElement param) {
+    void publishUpdate(IThreadElement param) {
         publishProgress(param.getTitle());
     }
 
