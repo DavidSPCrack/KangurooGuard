@@ -45,6 +45,6 @@ public final class PasswordActivity extends AbstractAppCompatActivity {
 
     public void cancelClick(View view) {
         UtilActivity util = getUtil();
-        util.openNewActivity(OptionActivity.class);
+        util.openNewHomeActivity(OptionActivity.class);
     }
 }

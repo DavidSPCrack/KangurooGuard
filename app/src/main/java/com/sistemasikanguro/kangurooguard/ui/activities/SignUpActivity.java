@@ -7,6 +7,8 @@ import android.view.View;
 import com.sistemasikanguro.kangurooguard.R;
 import com.sistemasikanguro.kangurooguard.framework.actions.LoginUsuario;
 import com.sistemasikanguro.kangurooguard.framework.actions.SignUpUsuario;
+import com.sistemasikanguro.kangurooguard.framework.parameters.DefaultActionParameters;
+import com.sistemasikanguro.kangurooguard.framework.parameters.IActionParameters;
 import com.sistemasikanguro.kangurooguard.util.UtilActivity;
 
 
@@ -29,7 +31,7 @@ public final class SignUpActivity extends AbstractAppCompatActivity {
             String password = util.getEditTextValueAndValidate(R.id.passwordField);
             if (!password.isEmpty()) {
 
-                SignUpUsuario signUp = new SignUpUsuario(this, username, password, username);
+                SignUpUsuario signUp = new SignUpUsuario(this);
                 signUp.execute();
             }
         }
@@ -37,7 +39,17 @@ public final class SignUpActivity extends AbstractAppCompatActivity {
 
     public void cancelClick(View view) {
         UtilActivity util = getUtil();
-        util.openNewActivity(LoginActivity.class);
+        util.openNewHomeActivity(LoginActivity.class);
+    }
+
+    @Override
+    public IActionParameters getParameters() {
+        final UtilActivity util = getUtil();
+        IActionParameters parameters = new DefaultActionParameters();
+        parameters.add(SignUpUsuario.Parameters.USERNAME, util.getEditTextValue(R.id.usernameField));
+        parameters.add(SignUpUsuario.Parameters.PASSWORD, util.getEditTextValue(R.id.passwordField));
+        parameters.add(SignUpUsuario.Parameters.EMAIL, util.getEditTextValue(R.id.usernameField));
+        return parameters;
     }
 }
 

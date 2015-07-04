@@ -74,7 +74,7 @@ public final class SonActivity extends AbstractAppCompatActivity {
         }
         if (id == R.id.add) {
             UtilActivity util = getUtil();
-            util.openNewActivity(DataStudentActivity.class, false);
+            util.openNewActivity(DataStudentActivity.class);
         }
         return super.onOptionsItemSelected(item);
     }

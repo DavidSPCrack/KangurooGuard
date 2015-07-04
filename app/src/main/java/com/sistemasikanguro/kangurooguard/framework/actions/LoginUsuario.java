@@ -3,6 +3,7 @@ package com.sistemasikanguro.kangurooguard.framework.actions;
 import com.sistemasikanguro.kangurooguard.R;
 import com.sistemasikanguro.kangurooguard.framework.ErrorGeneral;
 import com.sistemasikanguro.kangurooguard.framework.entities.Usuario;
+import com.sistemasikanguro.kangurooguard.framework.parameters.IActionParameters;
 import com.sistemasikanguro.kangurooguard.ui.IActividad;
 import com.sistemasikanguro.kangurooguard.ui.activities.OptionActivity;
 import com.sistemasikanguro.kangurooguard.util.UtilActivity;
@@ -15,15 +16,21 @@ import com.sistemasikanguro.kangurooguard.util.UtilResource;
  */
 public class LoginUsuario extends AbstractAction {
 
+    public class Parameters {
+        public static final String USERNAME = "USERNAME";
+        public static final String PASSWORD = "PASSWORD";
+    }
+
     private String username;
     private String password;
 
     private Usuario user;
 
-    public LoginUsuario(IActividad actividad, String username, String password) {
+    public LoginUsuario(IActividad actividad) {
         super(actividad);
-        this.username = username;
-        this.password = password;
+        IActionParameters parameters = getParameters();
+        this.username = parameters.getString(Parameters.USERNAME);
+        this.password = parameters.getString(Parameters.PASSWORD);
     }
 
     public Usuario getUser() {
@@ -44,7 +51,7 @@ public class LoginUsuario extends AbstractAction {
     public void postExecute() {
         if (user != null) {
             UtilActivity util = getUtil();
-            util.openNewActivity(OptionActivity.class);
+            util.openNewHomeActivity(OptionActivity.class);
         }
     }
 

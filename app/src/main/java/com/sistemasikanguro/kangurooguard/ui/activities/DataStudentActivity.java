@@ -35,9 +35,9 @@ public final class DataStudentActivity extends AbstractAppCompatActivity {
     public void cancelClick(View view) {
         UtilActivity util = getUtil();
         if (util.isUsuarioPadre())
-            util.openNewActivity(SonActivity.class, false);
+            util.openNewActivity(SonActivity.class);
         else
-            util.openNewActivity(StudentsActivity.class, false);
+            util.openNewActivity(StudentsActivity.class);
     }
 
 

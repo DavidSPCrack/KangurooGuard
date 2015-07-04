@@ -51,25 +51,25 @@ public final class OptionActivity extends AbstractAppCompatActivity {
 
     public void openRoutes(View view) {
         UtilActivity util = getUtil();
-        util.openNewActivity(RoutesActivity.class, false);
+        util.openNewActivity(RoutesActivity.class);
     }
 
     public void openYourData(View view) {
         UtilActivity util = getUtil();
-        util.openNewActivity(DataUserActivity.class, false);
+        util.openNewActivity(DataUserActivity.class);
     }
 
     public void openPasswordChange(View view) {
         UtilActivity util = getUtil();
-        util.openNewActivity(PasswordActivity.class, false);
+        util.openNewActivity(PasswordActivity.class);
     }
 
     public void openStudents(View view) {
         UtilActivity util = getUtil();
         if (util.isUsuarioPadre())
-            util.openNewActivity(SonActivity.class, false);
+            util.openNewActivity(SonActivity.class);
         else
-            util.openNewActivity(StudentsActivity.class, false);
+            util.openNewActivity(StudentsActivity.class);
     }
 
     public void openMessages(View view) {

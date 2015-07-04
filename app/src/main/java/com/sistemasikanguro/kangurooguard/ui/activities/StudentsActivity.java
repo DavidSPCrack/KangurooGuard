@@ -17,7 +17,6 @@ import com.sistemasikanguro.kangurooguard.R;
 import com.sistemasikanguro.kangurooguard.adapters.PersonsAdapter;
 import com.sistemasikanguro.kangurooguard.framework.actions.LoadPersonas;
 import com.sistemasikanguro.kangurooguard.framework.entities.Persona;
-import com.sistemasikanguro.kangurooguard.framework.entities.Ruta;
 import com.sistemasikanguro.kangurooguard.util.UtilActivity;
 import com.sistemasikanguro.kangurooguard.util.thread.IThreadElement;
 
@@ -91,7 +90,7 @@ public final class StudentsActivity extends AbstractAppCompatActivity {
         }
         if (id == R.id.add) {
             UtilActivity util = getUtil();
-            util.openNewActivity(DataStudentActivity.class, false);
+            util.openNewTaskActivity(DataStudentActivity.class);
         }
         return super.onOptionsItemSelected(item);
     }

@@ -1,18 +1,12 @@
 package com.sistemasikanguro.kangurooguard.ui.activities;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 import com.sistemasikanguro.kangurooguard.R;
 import com.sistemasikanguro.kangurooguard.framework.ErrorGeneral;
-import com.sistemasikanguro.kangurooguard.framework.actions.ChangePasswordUsuario;
 import com.sistemasikanguro.kangurooguard.framework.actions.CreateRuta;
-import com.sistemasikanguro.kangurooguard.framework.actions.UpdateUsuario;
 import com.sistemasikanguro.kangurooguard.util.UtilActivity;
 
 /**

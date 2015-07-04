@@ -120,7 +120,7 @@ public final class RoutesActivity extends AbstractAppCompatActivity {
         }
         if (id == R.id.add) {
             UtilActivity util = getUtil();
-            util.openNewActivity(AddRouteActivity.class, false);
+            util.openNewTaskActivity(AddRouteActivity.class);
         }
         return super.onOptionsItemSelected(item);
     }

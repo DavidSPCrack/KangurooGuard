@@ -31,10 +31,10 @@ public final class SplashActivity extends AbstractAppCompatActivity {
         }
         if (user == null) {
             UtilActivity util = getUtil();
-            util.openNewActivity(LoginActivity.class);
+            util.openNewHomeActivity(LoginActivity.class);
         } else {
             UtilActivity util = getUtil();
-            util.openNewActivity(OptionActivity.class);
+            util.openNewHomeActivity(OptionActivity.class);
         }
     }
 }

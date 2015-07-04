@@ -1,15 +1,13 @@
 package com.sistemasikanguro.kangurooguard.ui.activities;
 
-import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.view.View;
 
-import com.parse.LogInCallback;
-import com.parse.ParseException;
-import com.parse.ParseUser;
 import com.sistemasikanguro.kangurooguard.R;
 import com.sistemasikanguro.kangurooguard.framework.actions.LoginUsuario;
+import com.sistemasikanguro.kangurooguard.framework.parameters.DefaultActionParameters;
+import com.sistemasikanguro.kangurooguard.framework.parameters.IActionParameters;
 import com.sistemasikanguro.kangurooguard.util.UtilActivity;
 
 public final class LoginActivity extends AbstractAppCompatActivity {
@@ -31,7 +29,7 @@ public final class LoginActivity extends AbstractAppCompatActivity {
             String password = util.getEditTextValueAndValidate(R.id.passwordField);
             if (!password.isEmpty()) {
 
-                LoginUsuario login = new LoginUsuario(this, username, password);
+                LoginUsuario login = new LoginUsuario(this);
                 login.execute();
             }
         }
@@ -39,8 +37,15 @@ public final class LoginActivity extends AbstractAppCompatActivity {
 
     public void openSignUp(View view) {
         UtilActivity util = getUtil();
-        util.openNewActivity(SignUpActivity.class, false);
+        util.openNewActivity(SignUpActivity.class);
     }
 
-
+    @Override
+    public IActionParameters getParameters() {
+        final UtilActivity util = getUtil();
+        IActionParameters parameters = new DefaultActionParameters();
+        parameters.add(LoginUsuario.Parameters.USERNAME, util.getEditTextValue(R.id.usernameField));
+        parameters.add(LoginUsuario.Parameters.PASSWORD, util.getEditTextValue(R.id.passwordField));
+        return parameters;
+    }
 }

@@ -47,9 +47,9 @@ public class CreatePersona extends AbstractAction {
         if (isOk()) {
             UtilActivity util = getUtil();
             if (util.isUsuarioPadre())
-                util.openNewActivity(SonActivity.class, false);
+                util.openNewActivity(SonActivity.class);
             else
-                util.openNewActivity(StudentsActivity.class, false);
+                util.openNewActivity(StudentsActivity.class);
         }
     }
 

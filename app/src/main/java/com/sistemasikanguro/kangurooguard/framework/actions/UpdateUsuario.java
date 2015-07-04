@@ -62,7 +62,7 @@ public class UpdateUsuario extends AbstractAction {
     public void postExecute() {
         if (isOk()) {
             UtilActivity util = getUtil();
-            util.openNewActivity(OptionActivity.class);
+            util.openNewHomeActivity(OptionActivity.class);
         }
     }
 

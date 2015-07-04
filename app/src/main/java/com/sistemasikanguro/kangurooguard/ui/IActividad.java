@@ -2,6 +2,7 @@ package com.sistemasikanguro.kangurooguard.ui;
 
 import android.view.View;
 
+import com.sistemasikanguro.kangurooguard.framework.parameters.IActionParameters;
 import com.sistemasikanguro.kangurooguard.util.UtilActivity;
 import com.sistemasikanguro.kangurooguard.util.thread.IThreadElement;
 
@@ -17,6 +18,8 @@ public interface IActividad {
     View getProgressBarView();
 
     IThreadElement getRefreshClass();
+
+    IActionParameters getParameters();
 
     void refreshList();
 }

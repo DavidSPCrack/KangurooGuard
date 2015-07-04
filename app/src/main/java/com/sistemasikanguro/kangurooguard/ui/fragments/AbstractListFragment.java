@@ -3,6 +3,7 @@ package com.sistemasikanguro.kangurooguard.ui.fragments;
 import android.support.v4.app.ListFragment;
 import android.view.View;
 
+import com.sistemasikanguro.kangurooguard.framework.parameters.IActionParameters;
 import com.sistemasikanguro.kangurooguard.ui.IActividad;
 import com.sistemasikanguro.kangurooguard.util.UtilActivity;
 import com.sistemasikanguro.kangurooguard.util.thread.IThreadElement;
@@ -33,6 +34,11 @@ public abstract class AbstractListFragment extends ListFragment implements IActi
 
     @Override
     public void refreshList() {
+    }
+
+    @Override
+    public IActionParameters getParameters() {
+        return null;
     }
 
 }

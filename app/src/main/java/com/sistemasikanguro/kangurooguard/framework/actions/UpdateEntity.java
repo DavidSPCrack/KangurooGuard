@@ -5,8 +5,8 @@ import com.sistemasikanguro.kangurooguard.framework.ErrorGeneral;
 import com.sistemasikanguro.kangurooguard.framework.EstructuraDatos;
 import com.sistemasikanguro.kangurooguard.framework.ad.AdmonVarios;
 import com.sistemasikanguro.kangurooguard.framework.entities.Ruta;
+import com.sistemasikanguro.kangurooguard.framework.parameters.IActionParameters;
 import com.sistemasikanguro.kangurooguard.ui.IActividad;
-import com.sistemasikanguro.kangurooguard.ui.activities.RoutesActivity;
 import com.sistemasikanguro.kangurooguard.util.UtilActivity;
 import com.sistemasikanguro.kangurooguard.util.UtilResource;
 
@@ -17,16 +17,19 @@ import com.sistemasikanguro.kangurooguard.util.UtilResource;
  */
 public class UpdateEntity extends AbstractAction {
 
+    public class Parameters {
+        public static final String ESTRUCTURA_DATOS = "ESTRUCTURA_DATOS";
+        public static final String CLASS_DESTINO = "CLASS_DESTINO";
+    }
+
     private EstructuraDatos eDatos;
     private Class<?> dstClass;
 
 
-    public UpdateEntity(IActividad actividad, Ruta ruta, String name, String comments, Class<?> dstClass) {
+    public UpdateEntity(IActividad actividad) {
         super(actividad);
-        EstructuraDatos eDatos = ruta.getEstructura();
-        eDatos.add(Ruta.NAME, name);
-        eDatos.add(Ruta.COMMENTS, comments);
-        this.eDatos = eDatos;
+        IActionParameters parameters = getParameters();
+        this.eDatos = parameters.get;
         this.dstClass = dstClass;
     }
 

@@ -3,6 +3,7 @@ package com.sistemasikanguro.kangurooguard.ui.activities;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.sistemasikanguro.kangurooguard.framework.parameters.IActionParameters;
 import com.sistemasikanguro.kangurooguard.ui.IActividad;
 import com.sistemasikanguro.kangurooguard.util.UtilActivity;
 import com.sistemasikanguro.kangurooguard.util.thread.IThreadElement;
@@ -30,5 +31,10 @@ public abstract class AbstractAppCompatActivity extends AppCompatActivity implem
 
     @Override
     public void refreshList() {
+    }
+
+    @Override
+    public IActionParameters getParameters() {
+        return null;
     }
 }

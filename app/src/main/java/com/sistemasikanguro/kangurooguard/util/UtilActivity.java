@@ -183,17 +183,28 @@ public class UtilActivity {
                 message, true);
     }
 
-    public void openNewActivity(Class<?> dstClass) {
-        openNewActivity(dstClass, true);
+    public void openNewHomeActivity(Class<?> dstClass) {
+        Intent intent = getIntent(dstClass, true, true);
+        mActivity.startActivity(intent);
     }
 
-    public void openNewActivity(Class<?> dstClass, boolean swClearTask) {
-        Intent intent = new Intent(mActivity, dstClass);
-        if (swClearTask) {
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        }
+    public void openNewTaskActivity(Class<?> dstClass) {
+        Intent intent = getIntent(dstClass, true, false);
         mActivity.startActivity(intent);
+    }
+
+    public void openNewActivity(Class<?> dstClass) {
+        Intent intent = getIntent(dstClass, false, false);
+        mActivity.startActivity(intent);
+    }
+
+    private Intent getIntent(Class<?> dstClass, boolean newTask, boolean clearTask) {
+        Intent intent = new Intent(mActivity, dstClass);
+        if (newTask)
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        if (clearTask)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        return intent;
     }
 
     public void hideProgressDialog(ProgressDialog progressDialog) {
@@ -253,7 +264,7 @@ public class UtilActivity {
         } catch (ErrorGeneral eg) {
             doAlertDialog(eg);
 
-            openNewActivity(LoginActivity.class);
+            openNewHomeActivity(LoginActivity.class);
             return null;
         }
     }

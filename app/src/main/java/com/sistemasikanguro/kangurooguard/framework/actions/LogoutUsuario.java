@@ -27,7 +27,7 @@ public class LogoutUsuario extends AbstractAction {
     @Override
     public void postExecute() {
         UtilActivity util = getUtil();
-        util.openNewActivity(LoginActivity.class);
+        util.openNewHomeActivity(LoginActivity.class);
     }
 
     @Override
