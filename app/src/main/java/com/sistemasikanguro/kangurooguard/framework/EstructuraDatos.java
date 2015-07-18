@@ -1,5 +1,7 @@
 package com.sistemasikanguro.kangurooguard.framework;
 
+import android.support.annotation.NonNull;
+
 import com.parse.ParseObject;
 import com.sistemasikanguro.kangurooguard.util.basic.Fecha;
 import com.sistemasikanguro.kangurooguard.util.basic.Hora;
@@ -182,6 +184,7 @@ public final class EstructuraDatos implements Cloneable, IOrdenacion {
         datos = eDatos.datos;
     }
 
+    @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append(nombreEstructura);
@@ -254,9 +257,9 @@ public final class EstructuraDatos implements Cloneable, IOrdenacion {
         if (!(o instanceof EstructuraDatos))
             return false;
         EstructuraDatos datosOther = (EstructuraDatos) o;
-        if(!nombreEstructura.equals(datosOther.nombreEstructura))
+        if (!nombreEstructura.equals(datosOther.nombreEstructura))
             return false;
-        if(!this.datos.equals(datosOther.datos))
+        if (!this.datos.equals(datosOther.datos))
             return false;
 
         return true;
