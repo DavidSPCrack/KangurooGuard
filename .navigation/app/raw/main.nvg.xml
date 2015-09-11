@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<navigationModel
+  ns = "http://schemas.android.com?import=com.android.tools.idea.editors.navigation.model.*">
+  <locations  
+    class = "java.util.ArrayList">
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "com.sistemasikanguro.kangurooguard.ui.activities.LoginActivity"/>
+      <point      
+        x = "500"      
+        y = "5620"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "com.sistemasikanguro.kangurooguard.ui.activities.DataStudentActivity"/>
+      <point      
+        x = "600"      
+        y = "5720"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "com.sistemasikanguro.kangurooguard.ui.activities.SplashActivity"/>
+      <point      
+        x = "648"      
+        y = "5772"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "com.sistemasikanguro.kangurooguard.ui.activities.OptionActivity"/>
+      <point      
+        x = "500"      
+        y = "1480"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.MenuState"      
+        className = "com.sistemasikanguro.kangurooguard.ui.activities.OptionActivity"/>
+      <point      
+        x = "1768"      
+        y = "1480"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "com.sistemasikanguro.kangurooguard.ui.activities.AddRouteActivity"/>
+      <point      
+        x = "700"      
+        y = "5820"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "com.sistemasikanguro.kangurooguard.ui.activities.PasswordActivity"/>
+      <point      
+        x = "748"      
+        y = "5868"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "com.sistemasikanguro.kangurooguard.ui.activities.StudentsActivity"/>
+      <point      
+        x = "2380"      
+        y = "4164"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.MenuState"      
+        className = "com.sistemasikanguro.kangurooguard.ui.activities.StudentsActivity"/>
+      <point      
+        x = "2536"      
+        y = "3628"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "com.sistemasikanguro.kangurooguard.ui.activities.DataUserActivity"/>
+      <point      
+        x = "550"      
+        y = "5670"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "com.sistemasikanguro.kangurooguard.ui.activities.SonActivity"/>
+      <point      
+        x = "500"      
+        y = "100"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.MenuState"      
+        className = "com.sistemasikanguro.kangurooguard.ui.activities.SonActivity"/>
+      <point      
+        x = "1768"      
+        y = "100"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "com.sistemasikanguro.kangurooguard.ui.activities.RoutesActivity"/>
+      <point      
+        x = "500"      
+        y = "2860"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.MenuState"      
+        className = "com.sistemasikanguro.kangurooguard.ui.activities.RoutesActivity"/>
+      <point      
+        x = "1952"      
+        y = "2780"/>
+    </statePointEntry>
+    <statePointEntry>
+      <state      
+        class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
+        className = "com.sistemasikanguro.kangurooguard.ui.activities.SignUpActivity"/>
+      <point      
+        x = "800"      
+        y = "5920"/>
+    </statePointEntry>
+  </locations>
+</navigationModel>

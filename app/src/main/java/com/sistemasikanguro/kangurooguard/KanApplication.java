@@ -23,6 +23,7 @@ public class KanApplication extends Application {
 
     @Override
     public void onCreate() {
+        super.onCreate();
         // Enable Local Datastore.
         Parse.enableLocalDatastore(this);
         ParseCrashReporting.enable(this);
@@ -39,6 +40,7 @@ public class KanApplication extends Application {
 
         ParseAD adatos = ParseAD.getInstance();
         adatos.updateInstallation();
+        AnalyticsTrackers.initialize(this);
 
         app = this;
     }

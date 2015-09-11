@@ -29,8 +29,9 @@ public class UpdateEntity extends AbstractAction {
     public UpdateEntity(IActividad actividad) {
         super(actividad);
         IActionParameters parameters = getParameters();
-        this.eDatos = parameters.get;
-        this.dstClass = dstClass;
+        this.eDatos = parameters.getEstructura(Parameters.ESTRUCTURA_DATOS);
+        this.dstClass = parameters.getClase(Parameters.CLASS_DESTINO);
+
     }
 
     @Override
