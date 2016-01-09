@@ -1,7 +1,7 @@
 <resources>
 
     <!-- Base application theme. -->
-        <style name="AppTheme" parent="@style/_AppTheme">
+    <style name="AppTheme" parent="@style/_AppTheme">
         <!-- Customize your theme here. -->
     </style>
 
@@ -28,6 +28,7 @@
         <item name="android:textSize">16sp</item>
         <item name="android:textColor">@android:color/white</item>
         <item name="android:buttonStyle">?android:borderlessButtonStyle</item>
+        <item name="android:layout_marginTop">@dimen/button_padding_top</item>
     </style>
 
     <!-- Dimensiones del panel de opciones -->
@@ -126,8 +127,8 @@
         <item name="android:textColorHint">@color/divider</item>
         <item name="android:textColor">@color/icons</item>
         <item name="android:textSize">17sp</item>
-        <item name="android:paddingLeft">20dp</item>
-        <item name="android:paddingTop">20dp</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:paddingTop">15dp</item>
     </style>
 
     <style name="AuthEditCheck">

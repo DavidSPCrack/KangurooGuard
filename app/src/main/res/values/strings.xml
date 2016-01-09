@@ -7,7 +7,7 @@
     <string name="please_wait">Please wait…</string>
     <string name="alert_button">OK</string>
     <string name="background">Background Image</string>
-    <string name="subtitle">DrCrack Project</string>
+    <string name="subtitle">A Chaos Phoenix project</string>
     <string name="username_hint">Email</string>
     <string name="password_hint">Password</string>
     <string name="loginbt">SIGN IN</string>
@@ -114,15 +114,15 @@
     <string name="search_hint">search_hint</string>
 
     <!-- Reference to txt names -->
-    <string name="txtnamestudent">Name student</string>
-    <string name="txtnameuser">Name user</string>
+    <string name="txtnamestudent">Name</string>
+    <string name="txtnameuser">Name</string>
     <string name="txtcommentstudent">Comments about student</string>
     <string name="txtcommentuser">Comments about user</string>
     <string name="PasswordOld">Old Password</string>
     <string name="PasswordNew">New Password</string>
     <string name="PasswordRepeit">Repeat Password</string>
     <string name="txtsurname2">Surname</string>
-    <string name="title_option_activity"> KangurooGuard</string>
+    <string name="title_option_activity"> Attendance Control</string>
     <string name="title_activity_datauser">Data User</string>
     <string name="title_activity_datastudent">Data Student</string>
     <string name="title_activity_password">Change your password</string>
@@ -149,5 +149,6 @@
     <string name="creating_person">Creating person…</string>
     <string name="action_modify">Modify</string>
     <string name="action_delete">Delete</string>
+    <string name="oldpassword_doesnt_match">Old password doesn\'t match</string>
 
 </resources>

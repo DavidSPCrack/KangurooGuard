@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.sistemasikanguro.kangurooguard.ui.activities.SignUpActivity">
+    tools:context="com.chaosphoenix.kangurooguard.ui.activities.SignUpActivity">
 
     <ImageView
         android:id="@+id/backgroundImage"
@@ -45,7 +45,6 @@
         android:layout_below="@id/editTextLayout"
         android:layout_alignBottom="@+id/cancelButton"
         android:layout_centerHorizontal="true"
-        android:background="@android:color/darker_gray"
         android:id="@+id/buttonDivider"/>
 
     <Button
@@ -72,7 +71,7 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:src="@drawable/ic_ikanguro_logo"
+        android:src="@mipmap/ic_warning_amber"
         android:contentDescription="@string/logo_app"
         style="@style/AuthBottomLogo"/>
 

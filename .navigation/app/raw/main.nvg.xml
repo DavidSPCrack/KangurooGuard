@@ -6,7 +6,7 @@
     <statePointEntry>
       <state      
         class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
-        className = "com.sistemasikanguro.kangurooguard.ui.activities.LoginActivity"/>
+        className = "com.chaosphoenix.kangurooguard.ui.activities.LoginActivity"/>
       <point      
         x = "500"      
         y = "5620"/>
@@ -14,7 +14,7 @@
     <statePointEntry>
       <state      
         class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
-        className = "com.sistemasikanguro.kangurooguard.ui.activities.DataStudentActivity"/>
+        className = "com.chaosphoenix.kangurooguard.ui.activities.DataStudentActivity"/>
       <point      
         x = "600"      
         y = "5720"/>
@@ -22,7 +22,7 @@
     <statePointEntry>
       <state      
         class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
-        className = "com.sistemasikanguro.kangurooguard.ui.activities.SplashActivity"/>
+        className = "com.chaosphoenix.kangurooguard.ui.activities.SplashActivity"/>
       <point      
         x = "648"      
         y = "5772"/>
@@ -30,7 +30,7 @@
     <statePointEntry>
       <state      
         class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
-        className = "com.sistemasikanguro.kangurooguard.ui.activities.OptionActivity"/>
+        className = "com.chaosphoenix.kangurooguard.ui.activities.OptionActivity"/>
       <point      
         x = "500"      
         y = "1480"/>
@@ -38,7 +38,7 @@
     <statePointEntry>
       <state      
         class = "com.android.tools.idea.editors.navigation.model.MenuState"      
-        className = "com.sistemasikanguro.kangurooguard.ui.activities.OptionActivity"/>
+        className = "com.chaosphoenix.kangurooguard.ui.activities.OptionActivity"/>
       <point      
         x = "1768"      
         y = "1480"/>
@@ -46,7 +46,7 @@
     <statePointEntry>
       <state      
         class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
-        className = "com.sistemasikanguro.kangurooguard.ui.activities.AddRouteActivity"/>
+        className = "com.chaosphoenix.kangurooguard.ui.activities.AddRouteActivity"/>
       <point      
         x = "700"      
         y = "5820"/>
@@ -54,7 +54,7 @@
     <statePointEntry>
       <state      
         class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
-        className = "com.sistemasikanguro.kangurooguard.ui.activities.PasswordActivity"/>
+        className = "com.chaosphoenix.kangurooguard.ui.activities.PasswordActivity"/>
       <point      
         x = "748"      
         y = "5868"/>
@@ -62,7 +62,7 @@
     <statePointEntry>
       <state      
         class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
-        className = "com.sistemasikanguro.kangurooguard.ui.activities.StudentsActivity"/>
+        className = "com.chaosphoenix.kangurooguard.ui.activities.StudentsActivity"/>
       <point      
         x = "2380"      
         y = "4164"/>
@@ -70,7 +70,7 @@
     <statePointEntry>
       <state      
         class = "com.android.tools.idea.editors.navigation.model.MenuState"      
-        className = "com.sistemasikanguro.kangurooguard.ui.activities.StudentsActivity"/>
+        className = "com.chaosphoenix.kangurooguard.ui.activities.StudentsActivity"/>
       <point      
         x = "2536"      
         y = "3628"/>
@@ -78,7 +78,7 @@
     <statePointEntry>
       <state      
         class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
-        className = "com.sistemasikanguro.kangurooguard.ui.activities.DataUserActivity"/>
+        className = "com.chaosphoenix.kangurooguard.ui.activities.DataUserActivity"/>
       <point      
         x = "550"      
         y = "5670"/>
@@ -86,7 +86,7 @@
     <statePointEntry>
       <state      
         class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
-        className = "com.sistemasikanguro.kangurooguard.ui.activities.SonActivity"/>
+        className = "com.chaosphoenix.kangurooguard.ui.activities.SonActivity"/>
       <point      
         x = "500"      
         y = "100"/>
@@ -94,7 +94,7 @@
     <statePointEntry>
       <state      
         class = "com.android.tools.idea.editors.navigation.model.MenuState"      
-        className = "com.sistemasikanguro.kangurooguard.ui.activities.SonActivity"/>
+        className = "com.chaosphoenix.kangurooguard.ui.activities.SonActivity"/>
       <point      
         x = "1768"      
         y = "100"/>
@@ -102,7 +102,7 @@
     <statePointEntry>
       <state      
         class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
-        className = "com.sistemasikanguro.kangurooguard.ui.activities.RoutesActivity"/>
+        className = "com.chaosphoenix.kangurooguard.ui.activities.RoutesActivity"/>
       <point      
         x = "500"      
         y = "2860"/>
@@ -110,7 +110,7 @@
     <statePointEntry>
       <state      
         class = "com.android.tools.idea.editors.navigation.model.MenuState"      
-        className = "com.sistemasikanguro.kangurooguard.ui.activities.RoutesActivity"/>
+        className = "com.chaosphoenix.kangurooguard.ui.activities.RoutesActivity"/>
       <point      
         x = "1952"      
         y = "2780"/>
@@ -118,7 +118,7 @@
     <statePointEntry>
       <state      
         class = "com.android.tools.idea.editors.navigation.model.ActivityState"      
-        className = "com.sistemasikanguro.kangurooguard.ui.activities.SignUpActivity"/>
+        className = "com.chaosphoenix.kangurooguard.ui.activities.SignUpActivity"/>
       <point      
         x = "800"      
         y = "5920"/>

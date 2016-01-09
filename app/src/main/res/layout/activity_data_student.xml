@@ -5,78 +5,46 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.sistemasikanguro.kangurooguard.ui.activities.DataStudent">
+    tools:context="com.chaosphoenix.kangurooguard.ui.activities.DataStudent">
 
-    <EditText
-        style="@style/FormEditText"
-        android:background="@drawable/rectangle_bis"
-        android:id="@+id/etxtName"
-        android:inputType="text"
-        android:layout_weight="0.02"
-        android:hint="@string/txtnamestudent" />
+    <LinearLayout
+        android:id="@+id/editTextLayout"
+        style="@style/AuthFieldContainer">
 
-    <Space
-        android:layout_width="10dp"
-        android:layout_height="10dp" />
+        <EditText
+            android:id="@+id/etxtName"
+            style="@style/AuthEditText"
+            android:inputType="text"
+            android:hint="@string/txtnamestudent">
 
-    <EditText
-        style="@style/FormEditText"
-        android:background="@drawable/rectangle_bis"
-        android:id="@+id/etxtSurname"
-        android:inputType="text"
-        android:layout_weight="0.02"
-        android:hint="@string/txtsurname" />
+            <requestFocus />
+        </EditText>
 
-    <Space
-        android:layout_width="10dp"
-        android:layout_height="10dp" />
+        <EditText
+            android:id="@+id/etxtTelephone"
+            style="@style/AuthEditText"
+            android:inputType="number"
+            android:hint="@string/txttelephone" />
 
-    <EditText
-        style="@style/FormEditText"
-        android:background="@drawable/rectangle_bis"
-        android:id="@+id/etxtTelephone"
-        android:inputType="number"
-        android:layout_weight="0.02"
-        android:hint="@string/txttelephone" />
+        <EditText
+            android:id="@+id/etxtEmail"
+            style="@style/AuthEditText"
+            android:inputType="textEmailAddress"
+            android:hint="@string/txtemail" />
 
-    <Space
-        android:layout_width="10dp"
-        android:layout_height="10dp" />
+        <EditText
+            android:id="@+id/etxtRoute"
+            style="@style/AuthEditText"
+            android:inputType="text"
+            android:hint="@string/txtroute" />
 
-    <EditText
-        style="@style/FormEditText"
-        android:background="@drawable/rectangle_bis"
-        android:id="@+id/etxtEmail"
-        android:inputType="textEmailAddress"
-        android:layout_weight="0.02"
-        android:hint="@string/txtemail"/>
+        <EditText
+            android:id="@+id/etxtCommentStudents"
+            style="@style/AuthEditText"
+            android:inputType="textMultiLine"
+            android:hint="@string/txtcommentstudent" />
 
-    <Space
-        android:layout_width="10dp"
-        android:layout_height="10dp" />
-
-    <EditText
-        style="@style/FormEditText"
-        android:background="@drawable/rectangle_bis"
-        android:id="@+id/etxtRoute"
-        android:inputType="text"
-        android:layout_weight="0.02"
-        android:hint="@string/txtroute"/>
-
-    <Space
-        android:layout_width="10dp"
-        android:layout_height="10dp" />
-
-    <EditText
-        style="@style/FormEditText"
-        android:background="@drawable/rectangle_bis"
-        android:id="@+id/etxtCommentStudents"
-        android:inputType="textMultiLine"
-        android:gravity="top"
-        android:hint="@string/txtcommentstudent"
-        android:layout_weight="0.45"
-        android:textAlignment="textStart"
-        android:layout_height="0dp" />
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/bntListButtons"
@@ -90,13 +58,15 @@
             style="@style/AuthButton"
             android:id="@+id/btnaccept"
             android:layout_weight="1"
-            android:text="@string/accept" />
+            android:text="@string/accept"
+            android:onClick="savePerson" />
 
         <Button
             style="@style/AuthButton"
             android:id="@+id/btncancel"
             android:layout_weight="1"
-            android:text="@string/cancel" />
+            android:text="@string/cancel"
+            android:onClick="cancelClick" />
     </LinearLayout>
 
 </LinearLayout>
