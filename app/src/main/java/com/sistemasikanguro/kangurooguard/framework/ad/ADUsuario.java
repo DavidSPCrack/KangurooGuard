@@ -5,7 +5,7 @@ import com.parse.ParseQuery;
 import com.parse.ParseUser;
 import com.sistemasikanguro.kangurooguard.framework.BasicEntity;
 import com.sistemasikanguro.kangurooguard.framework.ErrorGeneral;
-import com.sistemasikanguro.kangurooguard.framework.EstructuraDatos;
+import com.sistemasikanguro.kangurooguard.framework.DataSource;
 import com.sistemasikanguro.kangurooguard.framework.entities.Usuario;
 import com.sistemasikanguro.kangurooguard.util.ParseAD;
 
@@ -19,7 +19,7 @@ public final class ADUsuario extends AbstractAccesoADatos {
     public ADUsuario() {
     }
 
-    public EstructuraDatos getUsuario(String usuarCod) throws ErrorGeneral {
+    public DataSource getUsuario(String usuarCod) throws ErrorGeneral {
         try {
             ParseQuery<ParseUser> pQuery = ParseUser.getQuery();
             pQuery.whereContains(Usuario.USERNAME, usuarCod);
@@ -30,7 +30,7 @@ public final class ADUsuario extends AbstractAccesoADatos {
         }
     }
 
-    public EstructuraDatos getCurrentUser() throws ErrorGeneral {
+    public DataSource getCurrentUser() throws ErrorGeneral {
         try {
             ParseUser pUser = ParseUser.getCurrentUser();
             if (pUser != null)
@@ -41,7 +41,7 @@ public final class ADUsuario extends AbstractAccesoADatos {
         }
     }
 
-    public EstructuraDatos login(String username, String password) throws ErrorGeneral {
+    public DataSource login(String username, String password) throws ErrorGeneral {
         try {
             ParseUser pUser = ParseUser.logIn(username, password);
 
@@ -54,15 +54,15 @@ public final class ADUsuario extends AbstractAccesoADatos {
         }
     }
 
-    private EstructuraDatos getEstructuraUsuario(ParseUser pUser) {
+    private DataSource getEstructuraUsuario(ParseUser pUser) {
         if (pUser == null)
             return null;
-        EstructuraDatos eDatos = new EstructuraDatos(Usuario.TABLE_NAME);
+        DataSource eDatos = new DataSource(Usuario.TABLE_NAME);
         eDatos.update(pUser, Usuario.FIELDS);
         return eDatos;
     }
 
-    void createUser(EstructuraDatos eDatos) throws ErrorGeneral {
+    void createUser(DataSource eDatos) throws ErrorGeneral {
         try {
             ParseUser pUser = new ParseUser();
             String[] fields = eDatos.getFields();
@@ -78,7 +78,7 @@ public final class ADUsuario extends AbstractAccesoADatos {
         }
     }
 
-    void updateUsuario(EstructuraDatos eDatos) throws ErrorGeneral {
+    void updateUsuario(DataSource eDatos) throws ErrorGeneral {
         try {
             ParseUser pUser = ParseUser.getCurrentUser();
             if (pUser != null) {

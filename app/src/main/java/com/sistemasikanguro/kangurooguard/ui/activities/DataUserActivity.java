@@ -1,15 +1,14 @@
 package com.sistemasikanguro.kangurooguard.ui.activities;
 
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 import com.sistemasikanguro.kangurooguard.R;
+import com.sistemasikanguro.kangurooguard.framework.DataSource;
 import com.sistemasikanguro.kangurooguard.framework.ErrorGeneral;
-import com.sistemasikanguro.kangurooguard.framework.actions.UpdateUsuario;
+import com.sistemasikanguro.kangurooguard.framework.actions.UpdateEntity;
 import com.sistemasikanguro.kangurooguard.framework.entities.Usuario;
+import com.sistemasikanguro.kangurooguard.framework.parameters.IActionParameters;
 import com.sistemasikanguro.kangurooguard.util.UtilActivity;
 
 /**
@@ -41,14 +40,13 @@ public final class DataUserActivity extends AbstractAppCompatActivity {
     }
 
     public void saveUser(View view) throws ErrorGeneral {
-        final UtilActivity util = getUtil();
-        String name = util.getEditTextValue(R.id.etxtName);
-        String surname = util.getEditTextValue(R.id.etxtSurname);
-        String numedocu = util.getEditTextValue(R.id.etxtdni);
-        String telephone = util.getEditTextValue(R.id.etxtTelephone);
-        String comment = util.getEditTextValue(R.id.etxtCommentUser);
-        UpdateUsuario update = new UpdateUsuario(this, name, surname, telephone, numedocu, comment);
+        UpdateEntity update = new UpdateEntity(this);
         update.execute();
+    }
+
+    @Override
+    public IActionParameters getParameters() {
+        return super.getParameters();
     }
 
     public void cancelClick(View view) {
@@ -56,4 +54,21 @@ public final class DataUserActivity extends AbstractAppCompatActivity {
         util.openNewHomeActivity(OptionActivity.class);
     }
 
+    @Override
+    public DataSource getDataSource() {
+        final UtilActivity util = getUtil();
+        String name = util.getEditTextValue(R.id.etxtName);
+        String surname = util.getEditTextValue(R.id.etxtSurname);
+        String numedocu = util.getEditTextValue(R.id.etxtdni);
+        String telephone = util.getEditTextValue(R.id.etxtTelephone);
+        String comment = util.getEditTextValue(R.id.etxtCommentUser);
+
+        DataSource ds = new DataSource(Usuario.TABLE_NAME);
+        ds.add(Usuario.NAME, name);
+        ds.add(Usuario.SURNAME, surname);
+        ds.add(Usuario.NUMEDOCU, numedocu);
+        ds.add(Usuario.TELEPHONE, telephone);
+        ds.add(Usuario.COMMENTS, comment);
+        return ds;
+    }
 }

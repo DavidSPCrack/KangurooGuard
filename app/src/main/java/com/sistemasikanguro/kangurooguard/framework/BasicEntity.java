@@ -2,6 +2,7 @@ package com.sistemasikanguro.kangurooguard.framework;
 
 import android.support.annotation.NonNull;
 
+import com.sistemasikanguro.kangurooguard.framework.parameters.IActionParameters;
 import com.sistemasikanguro.kangurooguard.util.basic.Fecha;
 import com.sistemasikanguro.kangurooguard.util.basic.Hora;
 import com.sistemasikanguro.kangurooguard.util.basic.Transform;
@@ -21,17 +22,17 @@ public abstract class BasicEntity implements Comparable<BasicEntity> {
 
     public static final int DEFAULT_MAX = 1000;
 
-    private EstructuraDatos datos;
+    private DataSource datos;
 
     protected BasicEntity() {
-        update(new EstructuraDatos(getNombreEstructura()));
+        update(new DataSource(getStructureName()));
     }
 
-    protected BasicEntity(EstructuraDatos eDatos) {
+    protected BasicEntity(DataSource eDatos) {
         update(eDatos);
     }
 
-    protected void update(EstructuraDatos eDatos) {
+    protected void update(DataSource eDatos) {
         this.datos = eDatos;
     }
 
@@ -137,10 +138,10 @@ public abstract class BasicEntity implements Comparable<BasicEntity> {
 
     protected abstract String[] getBasicFields();
 
-    protected abstract String getNombreEstructura();
+    protected abstract String getStructureName();
 
-    public EstructuraDatos getEstructura() {
-        return (EstructuraDatos) datos.clone();
+    public DataSource getEstructura() {
+        return (DataSource) datos.clone();
     }
 
     @Override
@@ -157,10 +158,17 @@ public abstract class BasicEntity implements Comparable<BasicEntity> {
         if (!(o instanceof BasicEntity))
             return false;
         BasicEntity entity = (BasicEntity) o;
-        EstructuraDatos datosOther = entity.getEstructura();
-        if(!this.datos.equals(datosOther))
-            return false;
+        DataSource datosOther = entity.getEstructura();
+        return this.datos.equals(datosOther);
+    }
 
-        return true;
+    public static DataSource getDataSource(BasicEntity entity, IActionParameters parameters) {
+        String[] names = entity.getBasicFields();
+        String dsName = entity.getStructureName();
+        DataSource ds = new DataSource(dsName);
+        for (String name : names) {
+            ds.add(name, parameters.getString(name));
+        }
+        return ds;
     }
 }

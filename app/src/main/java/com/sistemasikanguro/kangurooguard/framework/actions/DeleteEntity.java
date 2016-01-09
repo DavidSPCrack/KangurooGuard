@@ -3,12 +3,9 @@ package com.sistemasikanguro.kangurooguard.framework.actions;
 import com.sistemasikanguro.kangurooguard.R;
 import com.sistemasikanguro.kangurooguard.framework.BasicEntity;
 import com.sistemasikanguro.kangurooguard.framework.ErrorGeneral;
-import com.sistemasikanguro.kangurooguard.framework.EstructuraDatos;
+import com.sistemasikanguro.kangurooguard.framework.DataSource;
 import com.sistemasikanguro.kangurooguard.framework.ad.AdmonVarios;
-import com.sistemasikanguro.kangurooguard.framework.entities.Ruta;
 import com.sistemasikanguro.kangurooguard.ui.IActividad;
-import com.sistemasikanguro.kangurooguard.ui.activities.RoutesActivity;
-import com.sistemasikanguro.kangurooguard.util.UtilActivity;
 import com.sistemasikanguro.kangurooguard.util.UtilResource;
 
 /**
@@ -28,7 +25,7 @@ public class DeleteEntity extends AbstractAction {
     @Override
     public void doInBackground() throws ErrorGeneral {
         try {
-            EstructuraDatos eDatos = bEntity.getEstructura();
+            DataSource eDatos = bEntity.getEstructura();
             AdmonVarios admon = new AdmonVarios();
             admon.updateObject(eDatos);
         } catch (ErrorGeneral eg) {

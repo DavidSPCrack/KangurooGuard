@@ -3,6 +3,9 @@ package com.sistemasikanguro.kangurooguard.ui.activities;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.sistemasikanguro.kangurooguard.framework.DataSource;
+import com.sistemasikanguro.kangurooguard.framework.actions.AbstractAction;
+import com.sistemasikanguro.kangurooguard.framework.parameters.DefaultActionParameters;
 import com.sistemasikanguro.kangurooguard.framework.parameters.IActionParameters;
 import com.sistemasikanguro.kangurooguard.ui.IActividad;
 import com.sistemasikanguro.kangurooguard.util.UtilActivity;
@@ -35,6 +38,17 @@ public abstract class AbstractAppCompatActivity extends AppCompatActivity implem
 
     @Override
     public IActionParameters getParameters() {
+        IActionParameters parameters = new DefaultActionParameters();
+        parameters.add(AbstractAction.Parameters.CLASS_DESTINO, getDestinationClass());
+        parameters.add(AbstractAction.Parameters.ESTRUCTURA_DATOS, getDataSource());
+        return parameters;
+    }
+
+    public Class<?> getDestinationClass() {
+        return null;
+    }
+
+    public DataSource getDataSource() {
         return null;
     }
 }

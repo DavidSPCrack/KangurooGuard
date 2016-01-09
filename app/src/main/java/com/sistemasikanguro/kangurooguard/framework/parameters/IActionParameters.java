@@ -1,6 +1,6 @@
 package com.sistemasikanguro.kangurooguard.framework.parameters;
 
-import com.sistemasikanguro.kangurooguard.framework.EstructuraDatos;
+import com.sistemasikanguro.kangurooguard.framework.DataSource;
 import com.sistemasikanguro.kangurooguard.util.basic.Fecha;
 import com.sistemasikanguro.kangurooguard.util.basic.Hora;
 
@@ -27,11 +27,11 @@ public interface IActionParameters {
 
     void add(String key, boolean dato);
 
-    void add(String key, EstructuraDatos dato);
+    void add(String key, DataSource dato);
 
     Object getObject(String key);
 
-    EstructuraDatos getEstructura(String key);
+    DataSource getEstructura(String key);
 
     Class<?> getClase(String key);
 

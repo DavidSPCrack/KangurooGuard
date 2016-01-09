@@ -17,6 +17,11 @@ import java.util.Collections;
  * @author david.sancho
  */
 public abstract class AbstractAction implements IThreadElement {
+    
+    public class Parameters {
+        public static final String ESTRUCTURA_DATOS = "ESTRUCTURA_DATOS";
+        public static final String CLASS_DESTINO = "CLASS_DESTINO";
+    }
 
     private ErrorGeneral eg;
     private IActividad actividad;

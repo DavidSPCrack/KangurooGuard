@@ -5,7 +5,7 @@ import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.sistemasikanguro.kangurooguard.framework.BasicEntity;
 import com.sistemasikanguro.kangurooguard.framework.ErrorGeneral;
-import com.sistemasikanguro.kangurooguard.framework.EstructuraDatos;
+import com.sistemasikanguro.kangurooguard.framework.DataSource;
 import com.sistemasikanguro.kangurooguard.framework.entities.Ruta;
 
 import java.util.ArrayList;
@@ -22,7 +22,7 @@ public final class ADVarios extends AbstractAccesoADatos {
     }
 
 
-    public EstructuraDatos getInstance(String tableName, String id) throws ErrorGeneral {
+    public DataSource getInstance(String tableName, String id) throws ErrorGeneral {
         try {
             ParseQuery<ParseObject> pQuery = ParseQuery.getQuery(tableName);
             pQuery.whereContains(BasicEntity.ID, id);
@@ -33,7 +33,7 @@ public final class ADVarios extends AbstractAccesoADatos {
         }
     }
 
-    public ArrayList<EstructuraDatos> getInstances(String tableName, String orderBy) throws ErrorGeneral {
+    public ArrayList<DataSource> getInstances(String tableName, String orderBy) throws ErrorGeneral {
         try {
             ParseQuery<ParseObject> pQuery = ParseQuery.getQuery(tableName);
             pQuery.orderByAscending(orderBy);
@@ -44,7 +44,7 @@ public final class ADVarios extends AbstractAccesoADatos {
         }
     }
 
-    public ArrayList<EstructuraDatos> getInstances(String tableName, String fieldName, String fieldVal, String orderBy) throws ErrorGeneral {
+    public ArrayList<DataSource> getInstances(String tableName, String fieldName, String fieldVal, String orderBy) throws ErrorGeneral {
         try {
             ParseQuery<ParseObject> pQuery = ParseQuery.getQuery(tableName);
             pQuery.whereContains(fieldName, fieldVal);
@@ -56,25 +56,25 @@ public final class ADVarios extends AbstractAccesoADatos {
         }
     }
 
-    private ArrayList<EstructuraDatos> getListaEstructuras(List<ParseObject> lista, String tableName) {
+    private ArrayList<DataSource> getListaEstructuras(List<ParseObject> lista, String tableName) {
         if (lista == null)
-            return new ArrayList<EstructuraDatos>();
-        ArrayList<EstructuraDatos> edatos = new ArrayList<EstructuraDatos>();
+            return new ArrayList<DataSource>();
+        ArrayList<DataSource> edatos = new ArrayList<DataSource>();
         for (int i = 0; i < lista.size(); i++) {
             edatos.add(getEstructura(lista.get(i), tableName));
         }
         return edatos;
     }
 
-    private EstructuraDatos getEstructura(ParseObject pObject, String tableName) {
+    private DataSource getEstructura(ParseObject pObject, String tableName) {
         if (pObject == null)
             return null;
-        EstructuraDatos eDatos = new EstructuraDatos(tableName);
+        DataSource eDatos = new DataSource(tableName);
         eDatos.update(pObject, Ruta.FIELDS);
         return eDatos;
     }
 
-    void createObject(String tableName, EstructuraDatos eDatos) throws ErrorGeneral {
+    void createObject(String tableName, DataSource eDatos) throws ErrorGeneral {
         try {
             ParseObject pObject = new ParseObject(tableName);
             String[] fields = eDatos.getFields();
@@ -87,7 +87,7 @@ public final class ADVarios extends AbstractAccesoADatos {
         }
     }
 
-    void updateObject(String tableName, EstructuraDatos eDatos) throws ErrorGeneral {
+    void updateObject(String tableName, DataSource eDatos) throws ErrorGeneral {
         try {
             String id = eDatos.getString(BasicEntity.ID);
             ParseQuery<ParseObject> pQuery = ParseQuery.getQuery(tableName);
@@ -106,7 +106,7 @@ public final class ADVarios extends AbstractAccesoADatos {
         }
     }
 
-    void deleteObject(String tableName, EstructuraDatos eDatos) throws ErrorGeneral {
+    void deleteObject(String tableName, DataSource eDatos) throws ErrorGeneral {
         try {
             String id = eDatos.getString(BasicEntity.ID);
             ParseQuery<ParseObject> pQuery = ParseQuery.getQuery(tableName);

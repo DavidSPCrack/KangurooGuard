@@ -6,7 +6,8 @@ import android.view.View;
 
 import com.sistemasikanguro.kangurooguard.R;
 import com.sistemasikanguro.kangurooguard.framework.ErrorGeneral;
-import com.sistemasikanguro.kangurooguard.framework.actions.CreateRuta;
+import com.sistemasikanguro.kangurooguard.framework.actions.CreateEntity;
+import com.sistemasikanguro.kangurooguard.framework.entities.Ruta;
 import com.sistemasikanguro.kangurooguard.util.UtilActivity;
 
 /**
@@ -31,8 +32,9 @@ public final class AddRouteActivity extends AbstractAppCompatActivity {
         final UtilActivity util = getUtil();
         String name = util.getEditTextValue(R.id.etxtnameroute);
         String comment = util.getEditTextValue(R.id.etxtCommentRoutes);
-        CreateRuta create = new CreateRuta(this, name, comment);
-        create.execute();
+       // Ruta ruta =
+       // CreateEntity create = new CreateEntity(this, name, comment);
+        //create.execute();
     }
 
     public void cancelRoute(View view) throws ErrorGeneral {

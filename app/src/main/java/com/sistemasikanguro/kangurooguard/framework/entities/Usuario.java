@@ -2,8 +2,8 @@ package com.sistemasikanguro.kangurooguard.framework.entities;
 
 import com.parse.ParseUser;
 import com.sistemasikanguro.kangurooguard.framework.BasicEntity;
+import com.sistemasikanguro.kangurooguard.framework.DataSource;
 import com.sistemasikanguro.kangurooguard.framework.ErrorGeneral;
-import com.sistemasikanguro.kangurooguard.framework.EstructuraDatos;
 import com.sistemasikanguro.kangurooguard.framework.ad.ADUsuario;
 import com.sistemasikanguro.kangurooguard.util.ParseAD;
 
@@ -38,9 +38,11 @@ public class Usuario extends BasicEntity {
 
     public static final String[] FIELDS = {NAME, SURNAME, TELEPHONE, NUMEDOCU, COMMENTS, USERNAME, PASSWORD, EMAIL, TYPE};
 
+    public static final Usuario INSTANCE_VOID = new Usuario(new DataSource(TABLE_NAME));
+
     private ParseUser pUser;
 
-    Usuario(EstructuraDatos eDatos) {
+    Usuario(DataSource eDatos) {
         super(eDatos);
     }
 
@@ -92,9 +94,14 @@ public class Usuario extends BasicEntity {
         return getTipo().equals(K.Tipos.PADRE);
     }
 
+
+    public static Usuario getInstanceVoid() {
+        return INSTANCE_VOID;
+    }
+
     public static Usuario getInstance(String usuarCod) throws ErrorGeneral {
         ADUsuario adatos = new ADUsuario();
-        EstructuraDatos eDatos = adatos.getUsuario(usuarCod);
+        DataSource eDatos = adatos.getUsuario(usuarCod);
         if (eDatos == null)
             return null;
         Usuario user = new Usuario(eDatos);
@@ -103,7 +110,7 @@ public class Usuario extends BasicEntity {
 
     public static Usuario getInstance() throws ErrorGeneral {
         ADUsuario adatos = new ADUsuario();
-        EstructuraDatos eDatos = adatos.getCurrentUser();
+        DataSource eDatos = adatos.getCurrentUser();
         if (eDatos == null)
             return null;
         Usuario user = new Usuario(eDatos);
@@ -113,7 +120,7 @@ public class Usuario extends BasicEntity {
     public static Usuario login(String username, String password) throws ErrorGeneral {
         try {
             ADUsuario adatos = new ADUsuario();
-            EstructuraDatos eDatos = adatos.login(username, password);
+            DataSource eDatos = adatos.login(username, password);
             Usuario user = new Usuario(eDatos);
             return user;
         } catch (ErrorGeneral e) {
@@ -135,7 +142,7 @@ public class Usuario extends BasicEntity {
     }
 
     @Override
-    protected String getNombreEstructura() {
+    protected String getStructureName() {
         return TABLE_NAME;
     }
 

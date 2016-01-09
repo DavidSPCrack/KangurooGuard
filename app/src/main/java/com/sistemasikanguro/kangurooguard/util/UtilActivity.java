@@ -68,9 +68,22 @@ public class UtilActivity {
         return mActivity.findViewById(id);
     }
 
+    public int getIdentifier(String name, String type, String defPackage) {
+        Resources res = getResources();
+        return res.getIdentifier(name, type, defPackage);
+    }
+
     public String getResourceString(int id) {
         Resources res = getResources();
         return res.getString(id);
+    }
+
+    public String getResourceString(String name) {
+        int id = getIdentifier(name, "values", null);
+        if(id == 0) {
+            return "";
+        }
+        return getResourceString(id);
     }
 
     public String getResourceString(int id, String var1) {

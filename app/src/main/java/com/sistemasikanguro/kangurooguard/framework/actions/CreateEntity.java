@@ -2,9 +2,10 @@ package com.sistemasikanguro.kangurooguard.framework.actions;
 
 import com.sistemasikanguro.kangurooguard.R;
 import com.sistemasikanguro.kangurooguard.framework.ErrorGeneral;
+import com.sistemasikanguro.kangurooguard.framework.DataSource;
 import com.sistemasikanguro.kangurooguard.framework.ad.AdmonVarios;
+import com.sistemasikanguro.kangurooguard.framework.parameters.IActionParameters;
 import com.sistemasikanguro.kangurooguard.ui.IActividad;
-import com.sistemasikanguro.kangurooguard.ui.activities.RoutesActivity;
 import com.sistemasikanguro.kangurooguard.util.UtilActivity;
 import com.sistemasikanguro.kangurooguard.util.UtilResource;
 
@@ -13,23 +14,23 @@ import com.sistemasikanguro.kangurooguard.util.UtilResource;
  *
  * @author david.sancho
  */
-public class CreateRuta extends AbstractAction {
+public class CreateEntity extends AbstractAction {
 
-    private String name;
-    private String comments;
+    private DataSource eDatos;
+    private Class<?> dstClass;
 
-
-    public CreateRuta(IActividad actividad, String name, String comments) {
+    public CreateEntity(IActividad actividad) {
         super(actividad);
-        this.name = name;
-        this.comments = comments;
+        IActionParameters parameters = getParameters();
+        this.eDatos = parameters.getEstructura(Parameters.ESTRUCTURA_DATOS);
+        this.dstClass = parameters.getClase(Parameters.CLASS_DESTINO);
     }
 
     @Override
     public void doInBackground() throws ErrorGeneral {
         try {
             AdmonVarios admon = new AdmonVarios();
-            admon.crearRuta(name, comments);
+            admon.crearEntity(eDatos);
         } catch (ErrorGeneral eg) {
             setErrorGeneral(eg);
             throw eg;
@@ -40,13 +41,13 @@ public class CreateRuta extends AbstractAction {
     public void postExecute() {
         if (isOk()) {
             UtilActivity util = getUtil();
-            util.openNewActivity(RoutesActivity.class);
+            util.openNewActivity(dstClass);
         }
     }
 
     @Override
     public String getTitle() {
-        return UtilResource.getString(R.string.creating_route);
+        return UtilResource.getString(R.string.updating_info);
     }
 
 }

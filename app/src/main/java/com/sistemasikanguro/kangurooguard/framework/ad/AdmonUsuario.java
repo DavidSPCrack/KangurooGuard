@@ -1,7 +1,7 @@
 package com.sistemasikanguro.kangurooguard.framework.ad;
 
 import com.sistemasikanguro.kangurooguard.framework.ErrorGeneral;
-import com.sistemasikanguro.kangurooguard.framework.EstructuraDatos;
+import com.sistemasikanguro.kangurooguard.framework.DataSource;
 import com.sistemasikanguro.kangurooguard.framework.entities.Usuario;
 
 /**
@@ -16,7 +16,7 @@ public class AdmonUsuario {
     }
 
     public Usuario crearUsuario(String username, String password, String email) throws ErrorGeneral {
-        EstructuraDatos eDatos = new EstructuraDatos(Usuario.TABLE_NAME);
+        DataSource eDatos = new DataSource(Usuario.TABLE_NAME);
         eDatos.add(Usuario.USERNAME, username);
         eDatos.add(Usuario.PASSWORD, password);
         eDatos.add(Usuario.EMAIL, email);
@@ -27,7 +27,7 @@ public class AdmonUsuario {
         return Usuario.getInstance();
     }
 
-    public Usuario updateUsuario(EstructuraDatos eDatos) throws ErrorGeneral {
+    public Usuario updateUsuario(DataSource eDatos) throws ErrorGeneral {
         ADUsuario adatos = new ADUsuario();
         adatos.updateUsuario(eDatos);
         return Usuario.getInstance();

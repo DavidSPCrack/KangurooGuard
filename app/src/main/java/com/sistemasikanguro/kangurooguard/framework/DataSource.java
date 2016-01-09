@@ -1,7 +1,5 @@
 package com.sistemasikanguro.kangurooguard.framework;
 
-import android.support.annotation.NonNull;
-
 import com.parse.ParseObject;
 import com.sistemasikanguro.kangurooguard.util.basic.Fecha;
 import com.sistemasikanguro.kangurooguard.util.basic.Hora;
@@ -14,13 +12,13 @@ import java.util.HashMap;
 /**
  * @author david.sancho
  */
-public final class EstructuraDatos implements Cloneable, IOrdenacion {
+public final class DataSource implements Cloneable, IOrdenacion {
 
     private String nombreEstructura;
     private int identacion = 0;
     private HashMap<String, Object> datos;
 
-    public EstructuraDatos(String nombreEstructura) {
+    public DataSource(String nombreEstructura) {
         this.nombreEstructura = nombreEstructura;
         datos = new HashMap<String, Object>();
     }
@@ -70,7 +68,7 @@ public final class EstructuraDatos implements Cloneable, IOrdenacion {
         add(key, dato ? "S" : "N");
     }
 
-    public void add(String key, EstructuraDatos dato) {
+    public void add(String key, DataSource dato) {
         datos.put(key, dato);
     }
 
@@ -150,9 +148,9 @@ public final class EstructuraDatos implements Cloneable, IOrdenacion {
         return aux == null ? new Hora(1900, 1, 1, 0, 0, 0) : new Hora(aux.toString());
     }
 
-    public EstructuraDatos getEstructuraDatos(String key) {
+    public DataSource getEstructuraDatos(String key) {
         Object aux = getObject(key);
-        return (EstructuraDatos) (aux == null ? new EstructuraDatos(key) : aux);
+        return (DataSource) (aux == null ? new DataSource(key) : aux);
     }
 
     public Object getObject(String key) {
@@ -175,12 +173,12 @@ public final class EstructuraDatos implements Cloneable, IOrdenacion {
 
     @Override
     public Object clone() {
-        EstructuraDatos eDatos = new EstructuraDatos(nombreEstructura);
+        DataSource eDatos = new DataSource(nombreEstructura);
         eDatos.datos = (HashMap<String, Object>) this.datos.clone();
         return eDatos;
     }
 
-    public void setEstructuraDatos(EstructuraDatos eDatos) {
+    public void setEstructuraDatos(DataSource eDatos) {
         datos = eDatos.datos;
     }
 
@@ -192,7 +190,7 @@ public final class EstructuraDatos implements Cloneable, IOrdenacion {
         for (String key : keys) {
             sb.append('\n');
             Object aux = getObject(key);
-            if (aux instanceof EstructuraDatos) {
+            if (aux instanceof DataSource) {
                 sb.append(aux.toString());
                 sb.append('\n');
             }
@@ -208,8 +206,8 @@ public final class EstructuraDatos implements Cloneable, IOrdenacion {
         String[] keys = datos.keySet().toArray(new String[datos.size()]);
         for (String key : keys) {
             Object aux = getObject(key);
-            if (aux instanceof EstructuraDatos)
-                ((EstructuraDatos) aux).print();
+            if (aux instanceof DataSource)
+                ((DataSource) aux).print();
             System.out.println(key + " " + aux.toString());
         }
     }
@@ -242,11 +240,11 @@ public final class EstructuraDatos implements Cloneable, IOrdenacion {
         return datos.size();
     }
 
-    public boolean esIgual(EstructuraDatos eDatos, String field) {
+    public boolean esIgual(DataSource eDatos, String field) {
         return eDatos.getString(field).equals(getString(field));
     }
 
-    public boolean esIgualDouble(EstructuraDatos eDatos, String field) {
+    public boolean esIgualDouble(DataSource eDatos, String field) {
         return eDatos.getDouble(field) == getDouble(field);
     }
 
@@ -254,9 +252,9 @@ public final class EstructuraDatos implements Cloneable, IOrdenacion {
     public boolean equals(Object o) {
         if (o == null)
             return false;
-        if (!(o instanceof EstructuraDatos))
+        if (!(o instanceof DataSource))
             return false;
-        EstructuraDatos datosOther = (EstructuraDatos) o;
+        DataSource datosOther = (DataSource) o;
         if (!nombreEstructura.equals(datosOther.nombreEstructura))
             return false;
         if (!this.datos.equals(datosOther.datos))
@@ -265,7 +263,7 @@ public final class EstructuraDatos implements Cloneable, IOrdenacion {
         return true;
     }
 
-    public String getNombreEstructura() {
+    public String getStructureName() {
         return nombreEstructura;
     }
 }

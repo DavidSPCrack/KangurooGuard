@@ -2,9 +2,8 @@ package com.sistemasikanguro.kangurooguard.framework.actions;
 
 import com.sistemasikanguro.kangurooguard.R;
 import com.sistemasikanguro.kangurooguard.framework.ErrorGeneral;
-import com.sistemasikanguro.kangurooguard.framework.EstructuraDatos;
+import com.sistemasikanguro.kangurooguard.framework.DataSource;
 import com.sistemasikanguro.kangurooguard.framework.ad.AdmonVarios;
-import com.sistemasikanguro.kangurooguard.framework.entities.Ruta;
 import com.sistemasikanguro.kangurooguard.framework.parameters.IActionParameters;
 import com.sistemasikanguro.kangurooguard.ui.IActividad;
 import com.sistemasikanguro.kangurooguard.util.UtilActivity;
@@ -22,7 +21,7 @@ public class UpdateEntity extends AbstractAction {
         public static final String CLASS_DESTINO = "CLASS_DESTINO";
     }
 
-    private EstructuraDatos eDatos;
+    private DataSource eDatos;
     private Class<?> dstClass;
 
 
@@ -31,7 +30,6 @@ public class UpdateEntity extends AbstractAction {
         IActionParameters parameters = getParameters();
         this.eDatos = parameters.getEstructura(Parameters.ESTRUCTURA_DATOS);
         this.dstClass = parameters.getClase(Parameters.CLASS_DESTINO);
-
     }
 
     @Override

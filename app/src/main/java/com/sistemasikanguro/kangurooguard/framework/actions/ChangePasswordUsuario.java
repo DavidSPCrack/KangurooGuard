@@ -2,7 +2,7 @@ package com.sistemasikanguro.kangurooguard.framework.actions;
 
 import com.sistemasikanguro.kangurooguard.R;
 import com.sistemasikanguro.kangurooguard.framework.ErrorGeneral;
-import com.sistemasikanguro.kangurooguard.framework.EstructuraDatos;
+import com.sistemasikanguro.kangurooguard.framework.DataSource;
 import com.sistemasikanguro.kangurooguard.framework.ad.AdmonUsuario;
 import com.sistemasikanguro.kangurooguard.framework.entities.Usuario;
 import com.sistemasikanguro.kangurooguard.ui.IActividad;
@@ -35,7 +35,7 @@ public class ChangePasswordUsuario extends AbstractAction {
         try {
             user = Usuario.getInstance();
             if (user != null) {
-                EstructuraDatos eDatos = user.getEstructura();
+                DataSource eDatos = user.getEstructura();
                 eDatos.add(Usuario.PASSWORD, newPassword);
                 AdmonUsuario admon = new AdmonUsuario();
                 user = admon.updateUsuario(eDatos);

@@ -73,7 +73,7 @@
     <ImageView
         android:id="@+id/imageView"
         android:src="@drawable/ic_ikanguro_logo"
-        android:contentDescription="@string/logo_ikanguro"
+        android:contentDescription="@string/logo_app"
         style="@style/AuthBottomLogo"/>
 
 </RelativeLayout>

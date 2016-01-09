@@ -1,8 +1,8 @@
 package com.sistemasikanguro.kangurooguard.framework.entities;
 
 import com.sistemasikanguro.kangurooguard.framework.BasicEntity;
+import com.sistemasikanguro.kangurooguard.framework.DataSource;
 import com.sistemasikanguro.kangurooguard.framework.ErrorGeneral;
-import com.sistemasikanguro.kangurooguard.framework.EstructuraDatos;
 import com.sistemasikanguro.kangurooguard.framework.ad.ADVarios;
 
 import java.util.ArrayList;
@@ -21,8 +21,10 @@ public class Ruta extends BasicEntity {
 
     public static final String[] FIELDS = {NAME, COMMENTS};
 
+    public static final Ruta INSTANCE_VOID = new Ruta(new DataSource(TABLE_NAME));
 
-    Ruta(EstructuraDatos eDatos) {
+
+    Ruta(DataSource eDatos) {
         super(eDatos);
     }
 
@@ -34,9 +36,14 @@ public class Ruta extends BasicEntity {
         return getDato(COMMENTS);
     }
 
+
+    public static Ruta getInstanceVoid() {
+        return INSTANCE_VOID;
+    }
+
     public static Ruta getInstance(String id) throws ErrorGeneral {
         ADVarios adatos = new ADVarios();
-        EstructuraDatos eDatos = adatos.getInstance(TABLE_NAME, id);
+        DataSource eDatos = adatos.getInstance(TABLE_NAME, id);
         if (eDatos == null)
             return null;
         Ruta user = new Ruta(eDatos);
@@ -45,7 +52,7 @@ public class Ruta extends BasicEntity {
 
     public static ArrayList<Ruta> getRutas() throws ErrorGeneral {
         ADVarios adatos = new ADVarios();
-        ArrayList<EstructuraDatos> eDatos = adatos.getInstances(TABLE_NAME, NAME);
+        ArrayList<DataSource> eDatos = adatos.getInstances(TABLE_NAME, NAME);
         ArrayList<Ruta> lista = new ArrayList<>();
         for (int i = 0; i < eDatos.size(); i++) {
             lista.add(new Ruta(eDatos.get(i)));
@@ -59,7 +66,7 @@ public class Ruta extends BasicEntity {
     }
 
     @Override
-    protected String getNombreEstructura() {
+    protected String getStructureName() {
         return TABLE_NAME;
     }
 

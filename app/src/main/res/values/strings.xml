@@ -1,13 +1,13 @@
 <resources>
 
-    <string name="app_name">Camins Escolars</string>
+    <string name="app_name">Attendance Control</string>
     <string name="hello_world">Hello world!</string>
     <string name="alert">Alert</string>
     <string name="field_missing">The field %1$s is required.</string>
     <string name="please_wait">Please wait…</string>
     <string name="alert_button">OK</string>
-    <string name="background">Kanguroo Background Image</string>
-    <string name="subtitle">iKanguro Project</string>
+    <string name="background">Background Image</string>
+    <string name="subtitle">DrCrack Project</string>
     <string name="username_hint">Email</string>
     <string name="password_hint">Password</string>
     <string name="loginbt">SIGN IN</string>
@@ -73,8 +73,8 @@
     <string name="unknow">DESCONOCIDO</string>
     <string name="of">de</string>
     <string name="title_activity_login">LoginActivity</string>
-    <string name="title_activity_splash">Camins Escolars</string>
-    <string name="logo_ikanguro">Logo iKanguro</string>
+    <string name="title_activity_splash">Attendance Control</string>
+    <string name="logo_app">Logo App</string>
 
     <!-- Reference to options menu -->
     <string name="route">Route</string>
@@ -145,8 +145,8 @@
     <string name="logon_exception">You are not logged on, please logon to continue</string>
     <string name="sons_option">Sons</string>
     <string name="creating_route">Creating route…</string>
-    <string name="deleting">Deleting...</string>
-    <string name="creating_person">Creating person...</string>
+    <string name="deleting">Deleting…</string>
+    <string name="creating_person">Creating person…</string>
     <string name="action_modify">Modify</string>
     <string name="action_delete">Delete</string>
 

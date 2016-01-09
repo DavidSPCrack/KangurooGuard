@@ -1,6 +1,6 @@
 package com.sistemasikanguro.kangurooguard.framework.parameters;
 
-import com.sistemasikanguro.kangurooguard.framework.EstructuraDatos;
+import com.sistemasikanguro.kangurooguard.framework.DataSource;
 import com.sistemasikanguro.kangurooguard.util.basic.Fecha;
 import com.sistemasikanguro.kangurooguard.util.basic.Hora;
 
@@ -13,10 +13,10 @@ public abstract class AbstractActionParameters implements IActionParameters {
 
     private static final String NAME = "ACTION_PARAMETERS";
 
-    private EstructuraDatos eDatos;
+    private DataSource eDatos;
 
     public AbstractActionParameters() {
-        eDatos = new EstructuraDatos(NAME);
+        eDatos = new DataSource(NAME);
     }
 
     @Override
@@ -60,7 +60,7 @@ public abstract class AbstractActionParameters implements IActionParameters {
     }
 
     @Override
-    public void add(String key, EstructuraDatos dato) {
+    public void add(String key, DataSource dato) {
         eDatos.add(key, dato);
     }
 
@@ -115,7 +115,7 @@ public abstract class AbstractActionParameters implements IActionParameters {
     }
 
     @Override
-    public EstructuraDatos getEstructura(String key) {
+    public DataSource getEstructura(String key) {
         return eDatos.getEstructuraDatos(key);
     }
 
